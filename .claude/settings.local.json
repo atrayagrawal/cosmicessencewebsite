@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc \"D:\\\\Cosmic Essence\\\\CE Foundations\\\\ICP - Neha.docx\" -t markdown)",
+      "Bash(pandoc \"ICP - Neha.docx\" -t markdown)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}
