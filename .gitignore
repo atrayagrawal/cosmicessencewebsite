@@ -1,0 +1,26 @@
+# Node modules (if you install any packages)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# Local environment
+.env
+.env.local
+
+# Netlify local (if using Netlify CLI)
+.netlify/

@@ -61,43 +61,56 @@
     </div>
   </header>
 
+  <!-- Dynamic Resources Container -->
   <section class="section">
     <div class="container">
+      <!-- Resources will be loaded here by cms-content.js -->
+      <div class="resources-grid" id="resources-grid">
+        <p>Loading resources...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fallback: Static resources if CMS isn't set up -->
+  <section class="section" id="resources-fallback" style="display: none;">
+    <div class="container">
+      <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-6);">Resources not loading from CMS. Showing default resources:</p>
+
       <div class="resources-grid">
 
         <div class="resource-card">
           <span class="tag tag-students">PDF</span>
           <h4 class="mt-4">The CE Starter Guide</h4>
           <p>5 physics-based thinking tools every teenager (and parent) should have.</p>
-          <a href="#" class="btn btn-ghost">Download →</a>
+          <a href="/contact.html" class="btn btn-ghost">Download →</a>
         </div>
 
         <div class="resource-card">
           <span class="tag tag-students">Template</span>
           <h4 class="mt-4">First Principles Reality Table</h4>
           <p>A worksheet for stripping away assumptions and thinking from truth.</p>
-          <a href="#" class="btn btn-ghost">Download →</a>
+          <a href="/contact.html" class="btn btn-ghost">Download →</a>
         </div>
 
         <div class="resource-card">
           <span class="tag tag-students">Template</span>
           <h4 class="mt-4">Experiment Canvas</h4>
           <p>Map your hypotheses, tests, and learning in one page.</p>
-          <a href="#" class="btn btn-ghost">Download →</a>
+          <a href="/contact.html" class="btn btn-ghost">Download →</a>
         </div>
 
         <div class="resource-card">
           <span class="tag tag-students">Template</span>
           <h4 class="mt-4">Inversion Map</h4>
           <p>Avoid failure by thinking backwards from what you don't want.</p>
-          <a href="#" class="btn btn-ghost">Download →</a>
+          <a href="/contact.html" class="btn btn-ghost">Download →</a>
         </div>
 
         <div class="resource-card">
           <span class="tag tag-students">Template</span>
           <h4 class="mt-4">The Flywheel Canvas</h4>
           <p>Design self-reinforcing systems that compound over time.</p>
-          <a href="#" class="btn btn-ghost">Download →</a>
+          <a href="/contact.html" class="btn btn-ghost">Download →</a>
         </div>
 
       </div>
@@ -150,5 +163,16 @@
   </footer>
 
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/cms-content.js"></script>
+
+  <script>
+    // Show fallback if resources don't load within 3 seconds
+    setTimeout(function() {
+      const resourcesGrid = document.getElementById('resources-grid');
+      if (resourcesGrid && (resourcesGrid.innerHTML.includes('Loading') || resourcesGrid.children.length === 0)) {
+        document.getElementById('resources-fallback').style.display = 'block';
+      }
+    }, 3000);
+  </script>
 </body>
 </html>

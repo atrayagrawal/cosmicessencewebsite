@@ -3,13 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Cosmic Essence Education</title>
-  <meta name="description" content="Ideas, frameworks, and stories from Cosmic Essence Education.">
-
-  <meta property="og:title" content="Blog | Cosmic Essence Education">
-  <meta property="og:description" content="Ideas, frameworks, and stories from Cosmic Essence.">
-  <meta property="og:image" content="/assets/images/og-image.jpg">
-  <meta property="og:url" content="https://cosmicessence.co.in/blog/">
+  <title>Blog Post | Cosmic Essence Education</title>
+  <meta name="description" content="Read the full article on Cosmic Essence blog.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +12,48 @@
 
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css"
+
+  <style>
+    .blog-post {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .blog-post h1 {
+      margin-bottom: var(--space-6);
+    }
+    .blog-content {
+      margin-top: var(--space-8);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-4);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-3);
+    }
+    .blog-content p {
+      margin-bottom: var(--space-5);
+    }
+    .blog-content ul, .blog-content ol {
+      margin-bottom: var(--space-5);
+      padding-left: var(--space-6);
+    }
+    .blog-content li {
+      margin-bottom: var(--space-2);
+    }
+    .blog-content a {
+      color: var(--ce-orange);
+      text-decoration: underline;
+    }
+    .blog-content blockquote {
+      border-left: 3px solid var(--ce-orange);
+      padding-left: var(--space-6);
+      margin: var(--space-8) 0;
+      font-style: italic;
+      color: var(--ce-dark-gray);
+    }
+  </style>
 </head>
 <body>
 
@@ -53,53 +90,17 @@
     </div>
   </nav>
 
-  <header class="page-header">
+  <section class="section" style="padding-top: var(--space-12);">
     <div class="container">
-      <span class="label">Writing</span>
-      <h1>CE Blog</h1>
-      <p style="color: var(--ce-mid-gray); max-width: 700px; margin-top: var(--space-4);">Ideas, frameworks, and stories.</p>
-    </div>
-  </header>
-
-  <!-- Dynamic Blog Posts Container -->
-  <section class="section">
-    <div class="container">
-      <!-- Posts will be loaded here by cms-content.js -->
-      <div class="blog-list" id="blog-list">
-        <!-- Default message while loading -->
-        <p>Loading posts...</p>
+      <!-- Dynamic Post Container -->
+      <div id="post-container">
+        <p>Loading post...</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Fallback: Static content shown if CMS isn't set up yet -->
-  <section class="section" id="static-fallback" style="display: none;">
-    <div class="container">
-      <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-6);">CMS posts not loading? These are the latest posts:</p>
-
-      <article class="blog-card" style="margin-bottom: var(--space-6);">
-        <span class="blog-card-category">Frameworks</span>
-        <h4>The First Principles Reality Table</h4>
-        <p class="blog-card-date">April 15, 2025</p>
-        <p class="blog-card-excerpt">How to strip away assumptions and think from truth. A practical exercise from the 4D framework.</p>
-        <a href="#" class="btn btn-ghost">Read More →</a>
-      </article>
-
-      <article class="blog-card" style="margin-bottom: var(--space-6);">
-        <span class="blog-card-category">Student Stories</span>
-        <h4>How Anurag Built His First Flywheel</h4>
-        <p class="blog-card-date">April 10, 2025</p>
-        <p class="blog-card-excerpt">From a physics concept to a working business model. Inside the student journey.</p>
-        <a href="#" class="btn btn-ghost">Read More →</a>
-      </article>
-
-      <article class="blog-card" style="margin-bottom: var(--space-6);">
-        <span class="blog-card-category">Physics × Business</span>
-        <h4>Why Activation Energy Explains Everything</h4>
-        <p class="blog-card-date">April 5, 2025</p>
-        <p class="blog-card-excerpt">The chemistry concept that predicts startup success better than any MBA framework.</p>
-        <a href="#" class="btn btn-ghost">Read More →</a>
-      </article>
+      <!-- Back to Blog -->
+      <div style="margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--ce-light-gray);">
+        <a href="/blog/" class="btn btn-ghost">← Back to All Posts</a>
+      </div>
     </div>
   </section>
 
@@ -150,15 +151,5 @@
 
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/cms-content.js"></script>
-
-  <script>
-    // Show fallback if posts don't load within 3 seconds
-    setTimeout(function() {
-      const blogList = document.getElementById('blog-list');
-      if (blogList && (blogList.innerHTML.includes('Loading') || blogList.children.length === 0)) {
-        document.getElementById('static-fallback').style.display = 'block';
-      }
-    }, 3000);
-  </script>
 </body>
 </html>

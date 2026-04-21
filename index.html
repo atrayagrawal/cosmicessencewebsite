@@ -288,32 +288,13 @@
         <h2>Ideas, Frameworks & Stories</h2>
       </div>
 
-      <div class="blog-grid">
-        <!-- Blog Post 1 -->
+      <!-- Dynamic Blog Posts (loaded from CMS) -->
+      <div class="blog-grid" id="homepage-blog">
+        <!-- Posts will be loaded here by cms-content.js -->
         <article class="blog-card">
           <span class="blog-card-category">Frameworks</span>
-          <h4>The First Principles Reality Table</h4>
-          <p class="blog-card-date">April 15, 2025</p>
-          <p class="blog-card-excerpt">How to strip away assumptions and think from truth. A practical exercise from the 4D framework.</p>
-          <a href="/blog/" class="btn btn-ghost">Read More →</a>
-        </article>
-
-        <!-- Blog Post 2 -->
-        <article class="blog-card">
-          <span class="blog-card-category">Student Stories</span>
-          <h4>How Anurag Built His First Flywheel</h4>
-          <p class="blog-card-date">April 10, 2025</p>
-          <p class="blog-card-excerpt">From a physics concept to a working business model. Inside the student journey.</p>
-          <a href="/blog/" class="btn btn-ghost">Read More →</a>
-        </article>
-
-        <!-- Blog Post 3 -->
-        <article class="blog-card">
-          <span class="blog-card-category">Physics × Business</span>
-          <h4>Why Activation Energy Explains Everything</h4>
-          <p class="blog-card-date">April 5, 2025</p>
-          <p class="blog-card-excerpt">The chemistry concept that predicts startup success better than any MBA framework.</p>
-          <a href="/blog/" class="btn btn-ghost">Read More →</a>
+          <h4>Loading latest posts...</h4>
+          <p class="blog-card-excerpt">Connecting to CMS...</p>
         </article>
       </div>
 
@@ -441,5 +422,15 @@
 
   <!-- Scripts -->
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/cms-content.js"></script>
+
+  <script>
+    // Load featured posts on homepage
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.getElementById('homepage-blog')) {
+        loadBlogPosts('#homepage-blog', { limit: 3 });
+      }
+    });
+  </script>
 </body>
 </html>

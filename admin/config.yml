@@ -5,17 +5,23 @@ backend:
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
+# Enable editorial workflow for drafts (Draft → Review → Published)
+publish_mode: editorial_workflow
+
 collections:
   - name: "blog"
     label: "Blog Posts"
     folder: "_content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/post.html?slug={{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Category", name: "category", widget: "select", options: ["Physics × Business", "Student Stories", "Frameworks", "CE Updates"] }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Brief summary shown in listings" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true, hint: "Set to false when ready to publish" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Show on homepage" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
@@ -25,10 +31,11 @@ collections:
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Role/Status", name: "role", widget: "string", hint: "e.g., 'Grade 11 student' or 'Accepted to Duke'" }
       - { label: "Quote", name: "quote", widget: "text" }
-      - { label: "Program", name: "program", widget: "string", required: false }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Program", name: "program", widget: "select", options: ["First Spark", "Founders Blueprint", "The Walk", "Math Classes", "General"], required: false }
+      - { label: "Show on Homepage", name: "featured", widget: "boolean", default: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
 
   - name: "resources"
     label: "Resources"
@@ -37,6 +44,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Format", name: "format", widget: "select", options: ["PDF", "Guide", "Report", "Template"] }
-      - { label: "Download Link", name: "download_url", widget: "string" }
-      - { label: "Gated (requires email)", name: "gated", widget: "boolean", default: true }
+      - { label: "Format", name: "format", widget: "select", options: ["PDF", "Guide", "Report", "Template", "Video", "Audio"] }
+      - { label: "Download Link", name: "download_url", widget: "string", hint: "Google Drive link or direct URL" }
+      - { label: "Requires Email (Gated)", name: "gated", widget: "boolean", default: true, hint: "Check if user must submit email before downloading" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
