@@ -1,17 +1,17 @@
 ---
-title: "The First Principles Reality Table"
+title: The First Principles Reality Table
 date: 2025-04-15T10:00:00.000Z
-category: "Frameworks"
-excerpt: "How to strip away assumptions and think from truth. A practical exercise from the 4D framework."
+category: Frameworks
+excerpt: How to strip away assumptions and think from truth. A practical
+  exercise from the 4D framework.
 draft: false
 featured: true
 ---
-
-# The First Principles Reality Table
-
 When we think about problems, we often start with assumptions. We assume things are a certain way because that's how they've always been, or because that's what everyone says.
 
 But what if we stripped all that away?
+
+![](/assets/images/uploads/atray.jpg)
 
 ## The Exercise
 
@@ -24,10 +24,11 @@ Be specific. "I want to start a business" is too vague. "I want to help students
 ### Step 2: List all your assumptions
 
 What are you assuming about:
-- Your customers?
-- Your product?
-- The market?
-- The problem itself?
+
+* Your customers?
+* Your product?
+* The market?
+* The problem itself?
 
 ### Step 3: For each assumption, ask: Is this actually true?
 
