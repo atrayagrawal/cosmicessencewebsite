@@ -11,7 +11,7 @@ When we think about problems, we often start with assumptions. We assume things 
 
 But what if we stripped all that away?
 
-![](/assets/images/uploads/atray.jpg)
+![](/assets/images/uploads/atray-bust-formal.png)
 
 ## The Exercise
 
