@@ -4,31 +4,133 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Founder & CEO's Walk | Cosmic Essence Education</title>
-  <meta name="description" content="298 years of entrepreneurship lessons walked through Jaipur. For students and adults.">
+  <meta name="description" content="A 2-hour immersive walk through Jaipur's walled city. Learn 298-year-old entrepreneurship lessons from the Jaipur Maharajas. For adults and students.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/logo-small.png">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="The Founder & CEO's Walk | Cosmic Essence Education">
-  <meta property="og:description" content="298 years of entrepreneurship lessons walked through Jaipur.">
+  <meta property="og:description" content="298-year-old lessons in entrepreneurship through the Jaipur Maharajas. A 2-hour immersive walking experience.">
   <meta property="og:image" content="/assets/images/og-image.png">
   <meta property="og:url" content="https://cosmicessence.co.in/programs/founder-ceos-walk.html">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 
+  <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    /* Tab styles */
+    .tab-container {
+      margin-bottom: var(--space-8);
+    }
+    .tab-buttons {
+      display: flex;
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+      border-bottom: 2px solid var(--ce-light-gray);
+    }
+    .tab-btn {
+      padding: var(--space-3) var(--space-6);
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: var(--text-base);
+      color: var(--ce-mid-gray);
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active {
+      color: var(--ce-black);
+      border-bottom-color: var(--ce-orange);
+    }
+    .tab-btn:hover {
+      color: var(--ce-black);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Walk stops timeline */
+    .walk-stop {
+      border-left: 3px solid var(--ce-orange);
+      padding-left: var(--space-6);
+      margin-bottom: var(--space-8);
+      position: relative;
+    }
+    .walk-stop::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 15px;
+      height: 15px;
+      background: var(--ce-orange);
+      border-radius: 50%;
+    }
+    .stop-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: var(--text-sm);
+      color: var(--ce-orange);
+      margin-bottom: var(--space-2);
+    }
+    .stop-title {
+      margin-bottom: var(--space-2);
+    }
+    .stop-duration {
+      font-size: var(--text-sm);
+      color: var(--ce-mid-gray);
+      margin-bottom: var(--space-3);
+    }
+
+    /* Self-guided card */
+    .self-guided-card {
+      background: linear-gradient(135deg, var(--ce-off-white) 0%, #f5f0eb 100%);
+      border: 2px solid var(--ce-light-gray);
+      border-radius: 8px;
+      padding: var(--space-8);
+      margin-top: var(--space-8);
+    }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-6) 0;
+    }
+    .pricing-table th,
+    .pricing-table td {
+      padding: var(--space-3) var(--space-4);
+      text-align: left;
+      border-bottom: 1px solid var(--ce-light-gray);
+    }
+    .pricing-table th {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: var(--ce-black);
+      background: var(--ce-off-white);
+    }
+    .pricing-table tr:last-child td {
+      border-bottom: none;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="nav">
     <div class="container nav-inner">
       <a href="/" class="nav-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-      <img src="/assets/images/logo-small.png" alt="" style="height: 32px; width: auto;">
-      <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--ce-black);">Cosmic Essence Education</span>
-    </a>
+        <img src="/assets/images/logo-small.png" alt="" style="height: 32px; width: auto;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--ce-black);">Cosmic Essence Education</span>
+      </a>
 
       <div class="nav-links">
         <a href="/programs/" class="nav-link active">Programs</a>
@@ -59,149 +161,422 @@
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section class="program-hero">
     <div class="container program-hero-content">
-      <span class="label">2-Hour Experience</span>
+      <span class="label">2-Hour Immersive Experience</span>
       <h1>The Founder & CEO's Walk</h1>
-      <p style="font-size: var(--text-xl); margin-bottom: var(--space-4);">298 Years of Entrepreneurship Lessons. Walked.</p>
-      <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-6);">Through the streets of Jaipur · History as case study · Architecture as metaphor</p>
-      <a href="/contact.html" class="btn btn-primary">Book Your Walk</a>
+      <p style="font-size: var(--text-xl); margin-bottom: var(--space-4);">298-Year-Old Lessons in Entrepreneurship Through the Jaipur Maharajas</p>
+      <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-6);">
+        An immersive walk through hidden lanes, terraces, and forgotten stories — designed for those who love culture, entrepreneurship, and intelligent exploration.
+      </p>
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center;">
+        <a href="#booking" class="btn btn-primary">Book a Guided Walk</a>
+        <a href="#self-guided" class="btn btn-secondary">Explore Self-Guided Option →</a>
+      </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Quick Stats -->
+  <section class="section bg-off-white" style="padding: var(--space-8) 0;">
     <div class="container">
-      <div class="tab-container">
-        <div class="tab-buttons">
-          <button class="tab-btn active" data-tab="students">For Students</button>
-          <button class="tab-btn" data-tab="adults">For Adults/Founders</button>
+      <div class="stats-grid" style="margin: 0;">
+        <div>
+          <span class="stat-number">2</span>
+          <span class="stat-label">Hours</span>
         </div>
-
-        <div id="students" class="tab-content active">
-          <h3 class="mb-4">What Students Experience</h3>
-          <p class="mb-6">A immersive journey through Jaipur's hidden locations. We explore how historical decisions shaped empires — and extract frameworks for modern business challenges.</p>
-          <ul style="padding-left: var(--space-6);">
-            <li style="margin-bottom: var(--space-3);">Access rare viewpoints and hidden entryways</li>
-            <li style="margin-bottom: var(--space-3);">Learn how the past connects to Apple, Amazon, Tesla</li>
-            <li style="margin-bottom: var(--space-3);">Understand strategy through lived experience</li>
-            <li>Build context for your own entrepreneurial journey</li>
-          </ul>
+        <div>
+          <span class="stat-number">8</span>
+          <span class="stat-label">Spots Max</span>
         </div>
-
-        <div id="adults" class="tab-content">
-          <h3 class="mb-4">What Adults & Founders Experience</h3>
-          <p class="mb-6">A strategic, story-driven experience for discerning professionals. Perfect for hotel guests, corporate groups, and leadership retreats.</p>
-          <ul style="padding-left: var(--space-6);">
-            <li style="margin-bottom: var(--space-3);">A 300-year-old case study in leadership and scale</li>
-            <li style="margin-bottom: var(--space-3);">Real historical decisions applied to modern strategy</li>
-            <li style="margin-bottom: var(--space-3);">Connect culture, policy, and entrepreneurial insight</li>
-            <li>High intellectual density in a compact 2-hour format</li>
-          </ul>
+        <div>
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Historic Stops</span>
+        </div>
+        <div>
+          <span class="stat-number">298</span>
+          <span class="stat-label">Years of History</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-off-white">
-    <div class="container">
-      <span class="label">What You'll Take Away</span>
-      <h2 class="mb-6">The Walk Experience</h2>
-
-      <div class="grid grid-2">
-        <div>
-          <h4 class="mb-3">Hidden Locations</h4>
-          <p class="mb-6">Access viewpoints and spaces not on standard tours. See the city through the eyes of history.</p>
-
-          <h4 class="mb-3">Strategic Frameworks</h4>
-          <p class="mb-6">Real historical decisions that teach modern concepts in leadership and scale.</p>
-
-          <h4 class="mb-3">Global Connections</h4>
-          <p>Connect Jaipur's past to how companies like Apple, Amazon, Tesla, Meta, and Microsoft operate today.</p>
-        </div>
-
-        <div>
-          <h4 class="mb-3">Cultural Intelligence</h4>
-          <p class="mb-6">A deeper, more nuanced understanding of how culture shapes commerce.</p>
-
-          <h4 class="mb-3">Intellectual Stimulation</h4>
-          <p class="mb-6">High-density learning in a beautiful, immersive setting.</p>
-
-          <h4 class="mb-3">Shareable Moments</h4>
-          <p>Content worth sharing. Stories worth retelling.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- The Experience - Tabs for Adults vs Students -->
   <section class="section">
     <div class="container">
       <span class="label">The Experience</span>
-      <h2 class="mb-8">Walk Through History</h2>
+      <h2 class="mb-6">A Walk Designed For Two Audiences</h2>
+      <p class="mb-8" style="max-width: 700px;">Not a tour. Not a lecture. This is thoughtfully curated experiential education where Jaipur's rulers become CEOs, its streets become case studies, and its architecture becomes a live MBA in design, power, culture, and decision-making.</p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-4);">
-        <div style="border-radius: 4px; overflow: hidden;">
-          <img src="/assets/images/walk-jaipur-1.jpg" alt="Jaipur Walk Location" style="width: 100%; height: 250px; object-fit: cover;">
+      <div class="tab-container">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="adults">For Adults</button>
+          <button class="tab-btn" data-tab="students">For Students & Parents</button>
         </div>
-        <div style="border-radius: 4px; overflow: hidden;">
-          <img src="/assets/images/walk-jaipur-2.jpg" alt="Jaipur Walk Location" style="width: 100%; height: 250px; object-fit: cover;">
+
+        <!-- Adults Tab -->
+        <div id="adults" class="tab-content active">
+          <div class="two-col" style="align-items: flex-start;">
+            <div>
+              <h3 class="mb-4">Who This Is Perfect For</h3>
+              <ul style="padding-left: var(--space-5); margin-bottom: var(--space-6);">
+                <li style="margin-bottom: var(--space-3);">Founders, CEOs, Senior Leaders and Founding Teams</li>
+                <li style="margin-bottom: var(--space-3);">Young Professionals seeking a clarity reset</li>
+                <li style="margin-bottom: var(--space-3);">Creators, operators, and learners who enjoy learning through history</li>
+                <li style="margin-bottom: var(--space-3);">Solo explorers and tourists seeking depth, not sightseeing</li>
+                <li style="margin-bottom: var(--space-3);">Couples or friend groups looking for an enriching experience</li>
+                <li>Anyone who wants to think better</li>
+              </ul>
+
+              <h3 class="mb-4">What You'll Take Away</h3>
+              <ul style="padding-left: var(--space-5);">
+                <li style="margin-bottom: var(--space-3);"><strong>3–5 powerful founder mental models</strong> you can apply in business and decision-making</li>
+                <li style="margin-bottom: var(--space-3);"><strong>Concepts in Strategy</strong> that are all around us but never been decoded</li>
+                <li style="margin-bottom: var(--space-3);">Common threads that connect <strong>Silicon Valley, Apple, WeWork, and Reliance to Jaipur</strong></li>
+                <li style="margin-bottom: var(--space-3);"><strong>Mistakes that were made</strong> and their modern-day parallels</li>
+                <li>How Jaipur's economy was built, scaled, and protected</li>
+              </ul>
+            </div>
+            <div class="card" style="background: var(--ce-off-white);">
+              <h4 style="color: var(--ce-orange); margin-bottom: var(--space-4);">What Makes This Different</h4>
+              <p class="mb-4">This is thoughtfully <strong>curated experiential education</strong> where:</p>
+              <ul style="padding-left: var(--space-4);">
+                <li style="margin-bottom: var(--space-2);">Jaipur's rulers become CEOs</li>
+                <li style="margin-bottom: var(--space-2);">Its streets become case studies</li>
+                <li style="margin-bottom: var(--space-2);">Its architecture becomes a live MBA in design, power, culture, and decision-making</li>
+              </ul>
+              <p style="margin-top: var(--space-4); font-style: italic; color: var(--ce-mid-gray);">"I loved my walk. Atray shared business stories from past and connected it to today. This is going to help enormously in my journey as an entrepreneur."<br>— Isabel, Netherlands</p>
+            </div>
+          </div>
         </div>
-        <div style="border-radius: 4px; overflow: hidden;">
-          <img src="/assets/images/walk-jaipur-3.jpg" alt="Jaipur Walk Location" style="width: 100%; height: 250px; object-fit: cover;">
+
+        <!-- Students Tab -->
+        <div id="students" class="tab-content">
+          <div class="two-col" style="align-items: flex-start;">
+            <div>
+              <h3 class="mb-4">Who This Is Perfect For</h3>
+              <ul style="padding-left: var(--space-5); margin-bottom: var(--space-6);">
+                <li style="margin-bottom: var(--space-3);">Parents who want meaningful, educational experiences for their children</li>
+                <li style="margin-bottom: var(--space-3);">Students aged 12+ who are curious, driven, and love real-world learning</li>
+                <li style="margin-bottom: var(--space-3);">High School Students curious about business models, physics, systems, and innovation</li>
+                <li style="margin-bottom: var(--space-3);">College Students who want to learn the stories underneath the Arts and Crafts</li>
+                <li>Families looking for an unforgettable shared memory</li>
+              </ul>
+
+              <h3 class="mb-4">What Students Take Away</h3>
+              <ul style="padding-left: var(--space-5);">
+                <li style="margin-bottom: var(--space-3);"><strong>Mental Models</strong> that help you make better decisions in your life</li>
+                <li style="margin-bottom: var(--space-3);"><strong>Early access</strong> to future Cosmic Essence Bootcamp and Programs</li>
+                <li style="margin-bottom: var(--space-3);">For parents: a <strong>meaningful bonding moment</strong> with your child</li>
+                <li style="margin-bottom: var(--space-3);">For young adults: a <strong>confidence-boosting introduction</strong> to entrepreneurial thinking</li>
+                <li>Real-world understanding of entrepreneurship & strategy</li>
+              </ul>
+            </div>
+            <div class="card" style="background: var(--ce-off-white);">
+              <h4 style="color: var(--ce-orange); margin-bottom: var(--space-4);">A Transformative Jaipur Experience</h4>
+              <p class="mb-4">This walk helps students see Jaipur in a completely new way — not as tourists, but as <strong>thinkers, creators, and future-ready leaders</strong>.</p>
+              <p>Over 2 hours, we explore hidden places, powerful stories, and real-world lessons on leadership, entrepreneurship, and strategy.</p>
+              <p style="margin-top: var(--space-4); font-style: italic; color: var(--ce-mid-gray);">"I loved my walk. Found it really interesting for teenagers! Would definitely get my son to join!"<br>— Marcela, Mother and Creator @jaipurbymarcela</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- The Walk Journey / Stops -->
+  <section class="section bg-off-white">
     <div class="container">
-      <span class="label">Testimonials</span>
-      <h2 class="mb-8">What Walkers Say</h2>
+      <span class="label">The Journey</span>
+      <h2 class="mb-6">10 Stops. 298 Years of Entrepreneurship.</h2>
+      <p class="mb-8" style="max-width: 800px;">Each stop teaches one business lesson through the lives of Jaipur's Maharajas. We do not reveal the full route — the magic lies in discovering spaces you've crossed but never perceived.</p>
 
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"I've done walking tours in 20+ cities. This was different. This was education disguised as experience."</p>
-          <p class="testimonial-author">— Walk Participant, Corporate Group</p>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"The way Atray connects historical decisions to modern business — it clicks in a way no MBA case study ever did."</p>
-          <p class="testimonial-author">— Walk Participant, Founder</p>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"My daughter finally understood why I care about history. She saw it through a lens that mattered to her."</p>
-          <p class="testimonial-author">— Parent, Student Walk</p>
+      <div class="walk-stop">
+        <div class="stop-number">STOP 1</div>
+        <h4 class="stop-title">City Palace & Jantar Mantar — The Science-Based City</h4>
+        <p class="stop-duration">15 mins · Sawai Jai Singh II (1688-1743)</p>
+        <p><strong>Lesson:</strong> Knowledge as Competitive Advantage. Jai Singh invested massive resources in astronomy not for pure science, but to create political authority and attract scholars and capital. <em>Modern parallel: SpaceX using scientific expertise as defensible advantage.</em></p>
+      </div>
+
+      <div class="walk-stop">
+        <div class="stop-number">STOP 2</div>
+        <h4 class="stop-title">Ishvar Lat (Swarga Shuli) — The Victory Tower</h4>
+        <p class="stop-duration">10 mins · Sawai Ishwari Singh (1743-1750)</p>
+        <p><strong>Lesson:</strong> The Debt Trap. Ishwari Singh borrowed heavily from Marathas to fight succession wars, then couldn't repay. Facing invasion and ruin, he committed suicide. <em>Modern parallel: Kingfisher Airlines — borrowing to fight competitive wars until creditors forced collapse.</em></p>
+      </div>
+
+      <div class="walk-stop">
+        <div class="stop-number">STOP 3</div>
+        <h4 class="stop-title">Govind Dev Mandir — Religious Branding as Strategy</h4>
+        <p class="stop-duration">12 mins · Sawai Jai Singh II</p>
+        <p><strong>Lesson:</strong> Market Creation through Narrative. Jai Singh declared Krishna (not himself) the true king, creating religious legitimacy that defused opposition and drew pilgrims — creating a service economy. <em>Modern parallel: Apple Store as pilgrimage site, not just retail.</em></p>
+      </div>
+
+      <div class="walk-stop">
+        <div class="stop-number">STOP 4</div>
+        <h4 class="stop-title">Johari Bazaar — The Art of Attracting Capital</h4>
+        <p class="stop-duration">20 mins · Sawai Jai Singh II</p>
+        <p><strong>Lesson:</strong> Targeted Recruitment + Incentive Design. Jai Singh personally invited Jain merchants like Ghasiram Purohit with free land, 50% customs exemptions, and royal charters. Within 20 years, Jaipur became Rajputana's commercial capital. <em>Modern parallel: Amazon recruiting third-party sellers with low fees and logistics infrastructure.</em></p>
+      </div>
+
+      <div class="walk-stop">
+        <div class="stop-number">STOP 5</div>
+        <h4 class="stop-title">Purohit Ji Ka Katla — 300 Years of Business</h4>
+        <p class="stop-duration">15 mins · The Purohit Family (1728-Present)</p>
+        <p><strong>Lesson:</strong> Infrastructure Decay Risk. This trading complex worked for 300 years, but by 2022 became a fire hazard due to unplanned expansion. <em>Lesson: Scale requires reinvestment, not just extraction.</em></p>
+      </div>
+
+      <div class="walk-stop">
+        <div class="stop-number">STOP 6</div>
+        <h4 class="stop-title">Hawa Mahal — Employment as Strategy</h4>
+        <p class="stop-duration">18 mins · Sawai Pratap Singh (1778-1803)</p>
+        <p><strong>Lesson:</strong> Public Works for Talent Retention. During economic crisis, Pratap Singh built Hawa Mahal not just as architecture, but as a jobs program to keep 200+ artisans employed. <em>Modern parallel: MGNREGA, COVID wage subsidies, FDR's Works Progress Administration.</em></p>
+      </div>
+
+      <div class="walk-stop">
+        <div class="stop-number">STOP 7</div>
+        <h4 class="stop-title">Ram Prakash Theatre — Innovation Infrastructure</h4>
+        <p class="stop-duration">20 mins · Sawai Ram Singh II (1835-1880)</p>
+        <p><strong>Lesson:</strong> Ecosystem Thinking. Ram Singh built colleges, hospitals, gas works, and this theatre not as luxuries, but to attract modern commerce. He asked: "Can I educate my children there? Can my family access medical care?" <em>Modern parallel: Austin and Bangalore investing in cultural amenities to attract tech companies.</em></p>
+      </div>
+
+      <div class="walk-stop">
+        <div class="stop-number">STOP 8</div>
+        <h4 class="stop-title">Albert Hall Museum — Knowledge Monetization</h4>
+        <p class="stop-duration">10 mins · Sawai Ram Singh II & Madho Singh II</p>
+        <p><strong>Lesson:</strong> Heritage as Brand. What began as a town hall became a museum to document crafts, upgrade artisan skills, and attract tourists. <em>Modern parallel: "Make in India" — repositioning manufacturing as premium and aspirational.</em></p>
+      </div>
+
+      <div class="walk-stop">
+        <div class="stop-number">STOP 9</div>
+        <h4 class="stop-title">Mirza Ismail Road — Transition & Adaptation</h4>
+        <p class="stop-duration">8 mins · Sawai Man Singh II (1922-1949)</p>
+        <p><strong>Lesson:</strong> Managing Institutional Transition. Man Singh II negotiated Jaipur's smooth integration into India (1949) and became Rajasthan's first constitutional head, preserving royal property through adaptation rather than resistance.</p>
+      </div>
+
+      <div class="walk-stop">
+        <div class="stop-number">STOP 10</div>
+        <h4 class="stop-title">Rambagh Palace — Business Model Evolution</h4>
+        <p class="stop-duration">7 mins · Modern Era (1949-Present)</p>
+        <p><strong>Lesson:</strong> Pivoting Core Assets. When royal revenue ended, the family pivoted from "tax extraction" to "heritage tourism" — converting palaces into luxury hotels. <em>Revenue streams: ₹50+ crores annually from hotels, weddings, film locations, and merchandise.</em></p>
+      </div>
+
+      <div class="text-center" style="margin-top: var(--space-8);">
+        <p style="font-style: italic; color: var(--ce-mid-gray); max-width: 700px; margin: 0 auto;"">
+          "This walk really shows the economic intelligence as well as blunders of Jaipur, and Atray's modern day examples show how it happens all around us. One message shines through — the context keeps changing, but history keeps repeating itself."
+          <br>— Maitray, Mathematics Teacher
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Self-Guided Option -->
+  <section id="self-guided" class="section">
+    <div class="container">
+      <span class="label">New: Explore at Your Own Pace</span>
+      <h2 class="mb-6">Self-Guided Walk Option</h2>
+
+      <div class="self-guided-card">
+        <div class="two-col" style="align-items: center;">
+          <div>
+            <h3 class="mb-4">Experience The Walk On Your Own</h3>
+            <p class="mb-4">Can't make it to a guided session? Want to explore at your own pace with family or friends? Our Self-Guided Walk package gives you everything you need.</p>
+
+            <h4 class="mb-3">What's Included:</h4>
+            <ul style="padding-left: var(--space-5); margin-bottom: var(--space-6);">
+              <li style="margin-bottom: var(--space-2);">📱 <strong>Digital Guidebook</strong> — Detailed route map with GPS coordinates</li>
+              <li style="margin-bottom: var(--space-2);">🎧 <strong>Audio Narrations</strong> — 10 stop-by-stop audio stories (2+ hours)</li>
+              <li style="margin-bottom: var(--space-2);">📖 <strong>Written Scripts</strong> — Full text of each stop's history and lessons</li>
+              <li style="margin-bottom: var(--space-2);">📸 <strong>Photo References</strong> — Visual guides for finding each location</li>
+              <li style="margin-bottom: var(--space-2);">🗺️ <strong>Interactive Map</strong> — Mobile-friendly with offline access</li>
+              <li>💡 <strong>Reflection Prompts</strong> — Questions to deepen your learning</li>
+            </ul>
+
+            <p style="font-size: var(--text-sm); color: var(--ce-mid-gray);">Access valid for 30 days from purchase. Can be shared with up to 4 family members.</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div style="background: white; padding: var(--space-6); border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+              <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-bottom: var(--space-2);">Self-Guided Package</p>
+              <p style="font-size: var(--text-3xl); font-family: 'JetBrains Mono', monospace; color: var(--ce-orange); margin-bottom: var(--space-2);">₹499</p>
+              <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-bottom: var(--space-4);">per device · 30-day access</p>
+              <a href="/contact.html" class="btn btn-primary" style="width: 100%;">Get Self-Guided Access →</a>
+              <p style="margin-top: var(--space-3); font-size: var(--text-xs); color: var(--ce-mid-gray);">Perfect for families, solo explorers, and repeat visits</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="pricing-section">
+  <!-- Pricing & Booking -->
+  <section id="booking" class="pricing-section">
     <div class="container text-center">
-      <span class="label">Pricing</span>
-      <h2 class="mb-6">Book Your Walk</h2>
+      <span class="label">Book Your Experience</span>
+      <h2 class="mb-6">Choose Your Experience</h2>
 
-      <div class="pricing-cards">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); max-width: 900px; margin: 0 auto;">
+        <!-- Community Walk -->
         <div class="pricing-card">
           <h4 class="pricing-title">Community Walk</h4>
-          <p class="pricing-price">₹899<span style="font-size: var(--text-base);">/student</span></p>
-          <p class="pricing-price">₹1,299<span style="font-size: var(--text-base);">/adult</span></p>
-          <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-6);">Join a scheduled group walk</p>
-          <a href="/contact.html" class="btn btn-white">Book Community Walk</a>
+          <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-4);">Join a scheduled group walk</p>
+
+          <table class="pricing-table" style="margin: var(--space-4) 0;">
+            <tr>
+              <td>Adults</td>
+              <td style="text-align: right; font-family: 'JetBrains Mono', monospace;"><del style="color: var(--ce-mid-gray);">₹2000</del> <strong>₹1299</strong></td>
+            </tr>
+            <tr>
+              <td>Students</td>
+              <td style="text-align: right; font-family: 'JetBrains Mono', monospace;"><del style="color: var(--ce-mid-gray);">₹1500</del> <strong>₹899</strong></td>
+            </tr>
+          </table>
+
+          <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-bottom: var(--space-4);">
+            ⏱ 2 hours · 👥 Max 8 people<br>
+            Sundays: 9-11 AM or 4-6 PM
+          </p>
+
+          <a href="/contact.html" class="btn btn-white" style="margin-bottom: var(--space-2);">Book Community Walk</a>
+          <p style="font-size: var(--text-xs); color: var(--ce-mid-gray);">Use code "student" for student pricing</p>
         </div>
 
+        <!-- Private Walk -->
         <div class="pricing-card" style="border-color: var(--ce-orange);">
           <h4 class="pricing-title">Private Walk</h4>
-          <p class="pricing-price">₹2,499<span style="font-size: var(--text-base);">/person</span></p>
-          <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-6);">Min. 2 people · Custom date · Personalized experience</p>
-          <a href="/contact.html" class="btn btn-primary">Book Private Walk</a>
+          <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-4);">Your own group, custom timing</p>
+
+          <p style="font-size: var(--text-3xl); font-family: 'JetBrains Mono', monospace; color: var(--ce-orange); margin-bottom: var(--space-2);">₹2499</p>
+          <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-bottom: var(--space-4);">per person · Min. 2 people</p>
+
+          <ul style="text-align: left; padding-left: var(--space-5); margin-bottom: var(--space-4); font-size: var(--text-sm);">
+            <li style="margin-bottom: var(--space-2);">Custom date & time</li>
+            <li style="margin-bottom: var(--space-2);">Personalized experience</li>
+            <li style="margin-bottom: var(--space-2);">Flexible pace</li>
+            <li>Perfect for families, teams, or special occasions</li>
+          </ul>
+
+          <a href="/contact.html" class="btn btn-primary">Book Private Walk →</a>
         </div>
       </div>
 
-      <p class="mt-8">
-        <a href="https://wa.me/918742017911" class="btn btn-secondary">Questions? WhatsApp Us</a>
+      <p class="mt-8" style="color: var(--ce-mid-gray);">
+        Custom group pricing available for corporate teams, schools, and large families.<br>
+        <a href="/contact.html" style="color: var(--ce-orange);">Contact us for details →</a>
       </p>
     </div>
   </section>
 
+  <!-- About Atray -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="two-col" style="align-items: center;">
+        <div>
+          <span class="label">Your Guide</span>
+          <h2 class="mb-4">Atray Agrawal</h2>
+          <p class="mb-4" style="font-size: var(--text-lg); color: var(--ce-mid-gray);">Educator · Entrepreneur · Pattern-Thinker</p>
+
+          <p class="mb-4">Atray Agrawal is a Jaipur-based educator and entrepreneur working at the intersection of <strong>Physics, Entrepreneurship, and Human Expression</strong>. He is the founder of <strong>Cosmic Essence Education</strong> and <strong>Kythera</strong>, two mission-driven ventures shaping the next generation of thinkers and creators.</p>
+
+          <p class="mb-4">A serial entrepreneur, Atray has built and grown <strong>5+ ventures and communities</strong>, including Kythera — an arts-wellness movement with 1025+ community members, 80+ jams, and 197+ cultural events.</p>
+
+          <p>A natural teacher with a gift for simplifying the complex, he has taught <strong>195+ students and counting</strong>, using Physics as a tool for clarity and entrepreneurship as a tool for self-expression. His students have gone on to prestigious universities such as <strong>UChicago, Duke, Parsons, Pratt, SAIC, and University of Leeds</strong>.</p>
+
+          <p style="margin-top: var(--space-4); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); color: var(--ce-mid-gray);">Featured in: Times of India · DNA · City Radio</p>
+        </div>
+        <div>
+          <img src="/assets/images/atray-about.jpg" alt="Atray Agrawal" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practical Info -->
+  <section class="section">
+    <div class="container">
+      <span class="label">Practical Information</span>
+      <h2 class="mb-8">What to Expect</h2>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>📍 Meeting Point</h4>
+          <p>Chaisa Cafe, Chora Rasta, Walled City, Jaipur<br>End: Opposite Hawa Mahal</p>
+        </div>
+        <div class="card">
+          <h4>⏱ Duration</h4>
+          <p>2 hours of guided walking<br>~1.5 km total distance<br>Multiple storytelling halts</p>
+        </div>
+        <div class="card">
+          <h4>👥 Group Size</h4>
+          <p>Maximum 8 participants<br>Intimate and interactive<br>Mixed-age cohorts welcome</p>
+        </div>
+        <div class="card">
+          <h4>🚶 Difficulty</h4>
+          <p>Easy pace<br>Some stairs at temples<br>Comfortable footwear recommended</p>
+        </div>
+        <div class="card">
+          <h4>🎒 What to Bring</h4>
+          <p>Water bottle<br>Cap / sunglasses<br>Fully charged phone<br>Curiosity and openness</p>
+        </div>
+        <div class="card">
+          <h4>🙏 Local Etiquette</h4>
+          <p>Modest dress for temples<br>Remove footwear where required<br>Ask before photographing residents</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <span class="label">Questions</span>
+      <h2 class="mb-8">Frequently Asked</h2>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="week-item" style="border-bottom: 1px solid var(--ce-light-gray); padding-bottom: var(--space-4); margin-bottom: var(--space-4);">
+          <h4>Is this a typical sightseeing tour?</h4>
+          <p>No. This is not a tour of monuments or a history lecture. It's an experiential education walk where we examine entrepreneurship lessons through the lens of Jaipur's rulers. We focus on strategy, decision-making, and business models — not just dates and facts.</p>
+        </div>
+
+        <div class="week-item" style="border-bottom: 1px solid var(--ce-light-gray); padding-bottom: var(--space-4); margin-bottom: var(--space-4);">
+          <h4>What if I already know Jaipur well?</h4>
+          <p>Perfect. Most participants are locals who've walked these lanes hundreds of times. The magic is in seeing familiar spaces through a new lens — as case studies in entrepreneurship, not just heritage sites.</p>
+        </div>
+
+        <div class="week-item" style="border-bottom: 1px solid var(--ce-light-gray); padding-bottom: var(--space-4); margin-bottom: var(--space-4);">
+          <h4>Can I bring my child?</h4>
+          <p>Yes! The walk is designed for ages 12+. Younger students get more guidance and visual tools. Older students work independently and get leadership opportunities. Parents often report it as a meaningful bonding experience.</p>
+        </div>
+
+        <div class="week-item" style="border-bottom: 1px solid var(--ce-light-gray); padding-bottom: var(--space-4); margin-bottom: var(--space-4);">
+          <h4>What's the cancellation policy?</h4>
+          <p>Full refund if cancelled 48 hours before the walk. Rescheduling available up to 24 hours before. Weather contingency: We walk in light rain (ponchos provided), but reschedule for extreme weather.</p>
+        </div>
+
+        <div class="week-item" style="border-bottom: 1px solid var(--ce-light-gray); padding-bottom: var(--space-4); margin-bottom: var(--space-4);">
+          <h4>Is the Self-Guided option worth it?</h4>
+          <p>The Self-Guided package is perfect if you want flexibility, are visiting with family/friends who prefer their own pace, or want to revisit the content. You get the same deep content — just without Atray's live facilitation and group discussion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="container text-center">
+      <h2 class="mb-6">Walk Through 298 Years of Entrepreneurship</h2>
+      <p class="mb-8" style="max-width: 700px; margin-left: auto; margin-right: auto;">The maharajas of Jaipur were entrepreneurs, strategists, and innovators. Their successes and failures hold lessons for modern founders, professionals, and students alike.</p>
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center;">
+        <a href="/contact.html" class="btn btn-primary btn-large">Book a Guided Walk →</a>
+        <a href="#self-guided" class="btn btn-secondary btn-large">Get Self-Guided Access</a>
+      </div>
+      <p style="margin-top: var(--space-6); color: var(--ce-mid-gray);">
+        Questions? WhatsApp +91 87420 17911 or email atray@cosmicessence.co.in
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -247,5 +622,19 @@
   </footer>
 
   <script src="/assets/js/main.js"></script>
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.tab-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+        // Add active class to clicked button and corresponding content
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
