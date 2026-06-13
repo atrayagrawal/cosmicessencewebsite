@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Founder Readiness Score | Cosmic Essence Education</title>
+  <meta name="description" content="Take the 2-minute assessment to discover your teen's entrepreneurial DNA. Get personalized recommendations based on the 4D Framework.">
+
+  <link rel="icon" type="image/png" href="/assets/images/logo-small.png">
+  <meta property="og:title" content="Future Founder Readiness Score | Cosmic Essence">
+  <meta property="og:description" content="Is your teen a future founder? Take the 2-minute assessment.">
+  <meta property="og:image" content="/assets/images/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <style>
+    .assessment-page { padding-top: 120px; padding-bottom: 80px; }
+    .assessment-container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+    .assessment-header { text-align: center; margin-bottom: 40px; }
+    .assessment-header h1 { margin-bottom: 16px; }
+    .assessment-header p { color: var(--ce-mid-gray); font-size: 1.1rem; }
+
+    .question-card {
+      background: white;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+      transition: box-shadow 0.2s;
+    }
+    .question-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .question-number {
+      color: var(--ce-orange);
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    .question-text {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .options label {
+      display: block;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: 2px solid #eee;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+    .options label:hover {
+      border-color: var(--ce-orange);
+      background: #fff8f5;
+    }
+    .options input[type="radio"] {
+      margin-right: 12px;
+      accent-color: var(--ce-orange);
+    }
+    .options input[type="radio"]:checked + span {
+      font-weight: 700;
+    }
+    .options label:has(input:checked) {
+      border-color: var(--ce-orange);
+      background: #fff8f5;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 20px;
+      font-size: 1.15rem;
+      margin-top: 30px;
+      border: none;
+      cursor: pointer;
+    }
+    .submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Progress Bar */
+    .progress-wrapper { margin-bottom: 40px; }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--ce-orange);
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+    .progress-text {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--ce-mid-gray);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Results Section */
+    #result-section { display: none; }
+    .result-header { text-align: center; padding: 60px 20px; }
+    .score-circle {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: var(--ce-orange);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      box-shadow: 0 8px 24px rgba(242, 101, 34, 0.3);
+    }
+    .score-number { font-size: 3.5rem; font-weight: 700; line-height: 1; }
+    .score-label { font-size: 0.9rem; opacity: 0.9; margin-top: 4px; }
+    .profile-name {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--ce-black);
+    }
+    .profile-description {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--ce-mid-gray);
+    }
+
+    .recommendation-box {
+      background: var(--ce-off-white);
+      padding: 40px;
+      border-radius: 12px;
+      margin: 40px auto;
+      max-width: 600px;
+      text-align: center;
+    }
+    .recommendation-box h3 {
+      margin-bottom: 15px;
+      color: var(--ce-black);
+    }
+    .recommendation-box p {
+      margin-bottom: 25px;
+      color: var(--ce-mid-gray);
+      line-height: 1.6;
+    }
+
+    .email-capture {
+      margin-top: 40px;
+      padding: 30px;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    .email-capture h4 {
+      margin-bottom: 15px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .email-capture input, .email-capture select {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #eee;
+      border-radius: 6px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+    }
+    .email-capture input:focus, .email-capture select:focus {
+      outline: none;
+      border-color: var(--ce-orange);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: var(--ce-mid-gray);
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--ce-orange); }
+
+    .result-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+        <img src="/assets/images/logo-small.png" alt="" style="height: 32px; width: auto;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--ce-black);">Cosmic Essence Education</span>
+      </a>
+      <div class="nav-links">
+        <a href="/programs/" class="nav-link">Programs</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/programs/founders-walk.html" class="nav-link">The Walk</a>
+        <a href="/book.html" class="nav-link">Book</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+        <a href="/resources/" class="nav-link">Resources</a>
+      </div>
+      <a href="/contact.html" class="btn btn-primary nav-cta">Talk to Atray</a>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/programs/" class="nav-link">Programs</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/programs/founders-walk.html" class="nav-link">The Walk</a>
+      <a href="/book.html" class="nav-link">Book</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/resources/" class="nav-link">Resources</a>
+      <a href="/contact.html" class="btn btn-primary">Talk to Atray</a>
+    </div>
+  </nav>
+
+  <!-- Assessment Page -->
+  <main class="assessment-page">
+    <div class="assessment-container">
+
+      <!-- Assessment Form -->
+      <div id="assessment-form">
+        <a href="/" class="back-link">← Back to Home</a>
+
+        <div class="assessment-header">
+          <span class="label">Free Assessment</span>
+          <h1>Future Founder Readiness Score</h1>
+          <p>10 questions. 2 minutes. Discover your teen's entrepreneurial DNA across 4 dimensions — and get a personalized growth roadmap.</p>
+        </div>
+
+        <div class="progress-wrapper">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress" style="width: 0%"></div>
+          </div>
+          <p class="progress-text">Question <span id="current-q">1</span> of 10</p>
+        </div>
+
+        <form id="ffrs-form" name="ffrs-assessment" netlify netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="ffrs-assessment">
+          <input type="hidden" name="total_score" id="total-score-input">
+          <input type="hidden" name="profile" id="profile-input">
+          <p style="display: none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+          <!-- Question 1 -->
+          <div class="question-card" data-question="1">
+            <div class="question-number">Question 1 of 10</div>
+            <div class="question-text">When your teen gets interested in a topic, they typically...</div>
+            <div class="options">
+              <label><input type="radio" name="q1" value="1" required> <span>Read about it casually and move on</span></label>
+              <label><input type="radio" name="q1" value="3"> <span>Research it deeply for weeks</span></label>
+              <label><input type="radio" name="q1" value="5"> <span>Start a project or side hustle around it</span></label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question-card" data-question="2">
+            <div class="question-number">Question 2 of 10</div>
+            <div class="question-text">How do they handle setbacks or failure?</div>
+            <div class="options">
+              <label><input type="radio" name="q2" value="1" required> <span>Give up and move to something else</span></label>
+              <label><input type="radio" name="q2" value="3"> <span>Try once more, then let it go</span></label>
+              <label><input type="radio" name="q2" value="5"> <span>Analyze what went wrong and try a different approach</span></label>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question-card" data-question="3">
+            <div class="question-number">Question 3 of 10</div>
+            <div class="question-text">When they see a successful business, their first thought is...</div>
+            <div class="options">
+              <label><input type="radio" name="q3" value="1" required> <span>"That's nice"</span></label>
+              <label><input type="radio" name="q3" value="3"> <span>"I wonder how much money they make"</span></label>
+              <label><input type="radio" name="q3" value="5"> <span>"How did they get their first 10 customers?"</span></label>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="question-card" data-question="4">
+            <div class="question-number">Question 4 of 10</div>
+            <div class="question-text">How often do they question "why" things work the way they do?</div>
+            <div class="options">
+              <label><input type="radio" name="q4" value="1" required> <span>Rarely — they accept things as they are</span></label>
+              <label><input type="radio" name="q4" value="3"> <span>Sometimes — when it's interesting</span></label>
+              <label><input type="radio" name="q4" value="5"> <span>Constantly — it drives people around them crazy</span></label>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="question-card" data-question="5">
+            <div class="question-number">Question 5 of 10</div>
+            <div class="question-text">In group projects or team activities, they usually...</div>
+            <div class="options">
+              <label><input type="radio" name="q5" value="1" required> <span>Do the minimum required of them</span></label>
+              <label><input type="radio" name="q5" value="3"> <span>Do their fair share of the work</span></label>
+              <label><input type="radio" name="q5" value="5"> <span>Take initiative and naturally organize the team</span></label>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="question-card" data-question="6">
+            <div class="question-number">Question 6 of 10</div>
+            <div class="question-text">When facing a problem without clear instructions, they...</div>
+            <div class="options">
+              <label><input type="radio" name="q6" value="1" required> <span>Ask for help immediately</span></label>
+              <label><input type="radio" name="q6" value="3"> <span>Try the most obvious solution</span></label>
+              <label><input type="radio" name="q6" value="5"> <span>Experiment with multiple creative approaches</span></label>
+            </div>
+          </div>
+
+          <!-- Question 7 -->
+          <div class="question-card" data-question="7">
+            <div class="question-number">Question 7 of 10</div>
+            <div class="question-text">How do they talk about their future?</div>
+            <div class="options">
+              <label><input type="radio" name="q7" value="1" required> <span>"I'll figure it out later"</span></label>
+              <label><input type="radio" name="q7" value="3"> <span>Specific career plans (doctor, engineer, etc.)</span></label>
+              <label><input type="radio" name="q7" value="5"> <span>Specific impact they want to make on the world</span></label>
+            </div>
+          </div>
+
+          <!-- Question 8 -->
+          <div class="question-card" data-question="8">
+            <div class="question-number">Question 8 of 10</div>
+            <div class="question-text">How do they spend their free time?</div>
+            <div class="options">
+              <label><input type="radio" name="q8" value="1" required> <span>Consume content (Netflix, games, social media)</span></label>
+              <label><input type="radio" name="q8" value="3"> <span>Mix of consumption and hobbies</span></label>
+              <label><input type="radio" name="q8" value="5"> <span>Create, build, or make things</span></label>
+            </div>
+          </div>
+
+          <!-- Question 9 -->
+          <div class="question-card" data-question="9">
+            <div class="question-number">Question 9 of 10</div>
+            <div class="question-text">When they want something expensive...</div>
+            <div class="options">
+              <label><input type="radio" name="q9" value="1" required> <span>Ask parents to buy it for them</span></label>
+              <label><input type="radio" name="q9" value="3"> <span>Save their allowance</span></label>
+              <label><input type="radio" name="q9" value="5"> <span>Figure out how to earn the money themselves</span></label>
+            </div>
+          </div>
+
+          <!-- Question 10 -->
+          <div class="question-card" data-question="10">
+            <div class="question-number">Question 10 of 10</div>
+            <div class="question-text">How comfortable are they with uncertainty?</div>
+            <div class="options">
+              <label><input type="radio" name="q10" value="1" required> <span>Prefer clear expectations and rules</span></label>
+              <label><input type="radio" name="q10" value="3"> <span>Okay with some ambiguity</span></label>
+              <label><input type="radio" name="q10" value="5"> <span>Thrives when the path isn't clearly defined</span></label>
+            </div>
+          </div>
+
+          <!-- Email Capture -->
+          <div class="question-card email-capture">
+            <h4>📧 Where should we send the full report?</h4>
+            <p style="margin-bottom: 20px; color: var(--ce-mid-gray);">Get your personalized recommendations + next steps based on your teen's profile.</p>
+            <div class="form-row">
+              <input type="text" name="parent_name" placeholder="Your name (Parent)" required>
+              <input type="email" name="email" placeholder="Your email" required>
+            </div>
+            <div class="form-row">
+              <input type="text" name="teen_name" placeholder="Teen's name">
+              <select name="grade">
+                <option value="">Teen's grade (optional)</option>
+                <option value="6-8">Grades 6-8</option>
+                <option value="9-10">Grades 9-10</option>
+                <option value="11-12">Grades 11-12</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">
+            Get My Teen's Future Founder Score →
+          </button>
+        </form>
+      </div>
+
+      <!-- Results Section -->
+      <div id="result-section">
+        <a href="/" class="back-link">← Back to Home</a>
+
+        <div class="result-header">
+          <span class="label">Assessment Complete</span>
+          <h1>Your Teen's Future Founder Profile</h1>
+
+          <div class="score-circle">
+            <span class="score-number" id="score-display">0</span>
+            <span class="score-label">out of 50</span>
+          </div>
+
+          <h2 class="profile-name" id="profile-name">The Observer</h2>
+          <p class="profile-description" id="profile-description"></p>
+        </div>
+
+        <div class="recommendation-box">
+          <h3>Recommended Next Step</h3>
+          <p id="recommendation-text"></p>
+          <a href="#" class="btn btn-primary" id="cta-link">Learn More →</a>
+        </div>
+
+        <div class="result-actions">
+          <button onclick="window.print()" class="btn btn-secondary">Save or Print Result</button>
+          <a href="/programs/" class="btn btn-ghost">Explore All Programs</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: var(--ce-off-white); border-radius: 8px;">
+          <p style="margin-bottom: 15px;">📧 A detailed report has been sent to your email with specific recommendations.</p>
+          <p style="font-size: 0.9rem; color: var(--ce-mid-gray);">Questions? <a href="/contact.html">Contact us</a> or WhatsApp <a href="https://wa.me/918742017911">+91 87420 17911</a></p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Cosmic Essence Education</div>
+          <p class="footer-tagline">Teaching Entrepreneurship Through Physics</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Programs</h4>
+          <div class="footer-links">
+            <a href="/programs/first-spark.html" class="footer-link">First Spark Workshop</a>
+            <a href="/programs/founders-blueprint.html" class="footer-link">Future Founders Bootcamp</a>
+            <a href="/programs/founders-walk.html" class="footer-link">The Walk</a>
+            <a href="/programs/design-your-life.html" class="footer-link">Design Your Life</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <div class="footer-links">
+            <a href="/about.html" class="footer-link">About</a>
+            <a href="/blog/" class="footer-link">Blog</a>
+            <a href="/resources/" class="footer-link">Resources</a>
+            <a href="/book.html" class="footer-link">The Book</a>
+            <a href="/contact.html" class="footer-link">Join the Team</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-links">
+            <a href="https://instagram.com/atrayagrawal" target="_blank" class="footer-link">Instagram</a>
+            <a href="https://youtube.com/@atrayagrawal" target="_blank" class="footer-link">YouTube</a>
+            <a href="https://linkedin.com/in/atrayagrawal" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="https://wa.me/918742017911" target="_blank" class="footer-link">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 Cosmic Essence Education | <a href="#" class="footer-link">Privacy Policy</a></p>
+        <p class="footer-contact">atray@cosmicessence.co.in | +91 87420 17911</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    // Calculate score and show results
+    document.getElementById('ffrs-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Calculating...';
+
+      // Calculate total score
+      let total = 0;
+      for (let i = 1; i <= 10; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected) total += parseInt(selected.value);
+      }
+
+      // Determine profile
+      let profile, description, recommendation, ctaLink, ctaText;
+
+      if (total <= 20) {
+        profile = "The Observer";
+        description = "Your teen has a curious mind and is building important foundations. They show interest in how things work, but may need guidance to channel that curiosity into action. With the right environment, they could develop into a strong founder.";
+        recommendation = "Start with The First Spark Workshop — a 4-hour introduction that helps them taste entrepreneurial thinking through Physics without overwhelming commitment.";
+        ctaLink = "/programs/first-spark.html";
+        ctaText = "Explore First Spark Workshop";
+      } else if (total <= 32) {
+        profile = "The Builder";
+        description = "Your teen shows clear founder potential. They dig deep into interests, persist through challenges, and think systematically. They're ready for structured guidance to turn their instincts into real ventures.";
+        recommendation = "The Future Founders Bootcamp is perfect — 6 weeks of real frameworks to turn their ideas into an actionable business blueprint.";
+        ctaLink = "/programs/founders-blueprint.html";
+        ctaText = "Join Future Founders Bootcamp";
+      } else if (total <= 42) {
+        profile = "The Founder";
+        description = "Your teen has rare founder DNA. They take initiative, question everything, and naturally lead. They don't just consume — they create. What they need now is mentorship and a peer group that matches their ambition.";
+        recommendation = "Apply for personalized mentorship with Atray. Limited spots available for students who show this level of readiness.";
+        ctaLink = "/contact.html";
+        ctaText = "Apply for Mentorship";
+      } else {
+        profile = "The Visionary";
+        description = "Exceptional founder potential. Your teen thinks in systems, embraces uncertainty, and already demonstrates entrepreneurial behavior. They need advanced frameworks and direct access to founders who can accelerate their path.";
+        recommendation = "Book a strategy call immediately. Visionaries at this level benefit from 1:1 guidance to avoid common pitfalls and fast-track their first real venture.";
+        ctaLink = "/contact.html";
+        ctaText = "Book Strategy Call";
+      }
+
+      // Update hidden inputs
+      document.getElementById('total-score-input').value = total;
+      document.getElementById('profile-input').value = profile;
+
+      // Submit to Netlify in background
+      const formData = new FormData(this);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Accept': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      }).catch(err => console.log('Form submission error:', err));
+
+      // Show results after brief delay for effect
+      setTimeout(() => {
+        document.getElementById('assessment-form').style.display = 'none';
+        document.getElementById('result-section').style.display = 'block';
+
+        // Animate score
+        let currentScore = 0;
+        const scoreInterval = setInterval(() => {
+          currentScore++;
+          document.getElementById('score-display').textContent = currentScore;
+          if (currentScore >= total) clearInterval(scoreInterval);
+        }, 25);
+
+        // Populate result
+        document.getElementById('profile-name').textContent = profile;
+        document.getElementById('profile-description').textContent = description;
+        document.getElementById('recommendation-text').textContent = recommendation;
+        document.getElementById('cta-link').href = ctaLink;
+        document.getElementById('cta-link').textContent = ctaText;
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 500);
+    });
+
+    // Update progress bar
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+        document.getElementById('progress').style.width = (answered * 10) + '%';
+        document.getElementById('current-q').textContent = Math.min(answered + 1, 10);
+      });
+    });
+  </script>
+
+</body>
+</html>
