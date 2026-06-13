@@ -41,7 +41,7 @@
 │   ├── index.html              # Programs overview
 │   ├── first-spark.html        # First Spark Workshop
 │   ├── founders-blueprint.html # Founders Blueprint Bootcamp
-│   ├── founders-walk.html      # The Founder & CEO's Walk
+│   ├── founder-ceos-walk.html      # The Founder & CEO's Walk
 │   ├── math-classes.html       # Mathematics Classes
 │   └── learn-to-pitch.html     # Learn to Pitch Intensive (coming soon)
 ├── book.html                   # The Book page
@@ -461,7 +461,7 @@ Pull all content from CE_Website.pdf sections 12–16. Structure:
 
 ---
 
-### 4.6 The Founder & CEO's Walk (`programs/founders-walk.html`)
+### 4.6 The Founder & CEO's Walk (`programs/founder-ceos-walk.html`)
 
 Pull from Founder_CEOs_Walk__Students.pdf + Adults.pdf. Structure:
 1. Hero — "298 Years of Entrepreneurship Lessons. Walked."
