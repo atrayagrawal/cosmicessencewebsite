@@ -6,6 +6,11 @@
   to = "/admin/index.html"
   status = 200
 
+[[redirects]]
+  from = "/programs/founders-blueprint.html"
+  to = "/programs/future-founders-bootcamp.html"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

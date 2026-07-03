@@ -22,7 +22,7 @@ A modern, minimal website for Cosmic Essence Education — teaching entrepreneur
 ├── programs/
 │   ├── index.html              # Programs overview
 │   ├── first-spark.html        # First Spark Workshop
-│   ├── founders-blueprint.html # Founders Blueprint Bootcamp
+│   ├── future-founders-bootcamp.html # Future Founders Bootcamp
 │   ├── founders-walk.html      # The Founder & CEO's Walk
 │   ├── math-classes.html       # Mathematics Classes
 │   └── learn-to-pitch.html     # Learn to Pitch (coming soon)

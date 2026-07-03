@@ -40,7 +40,7 @@
 ├── programs/
 │   ├── index.html              # Programs overview
 │   ├── first-spark.html        # First Spark Workshop
-│   ├── founders-blueprint.html # Founders Blueprint Bootcamp
+│   ├── future-founders-bootcamp.html # Future Founders Bootcamp
 │   ├── founder-ceos-walk.html      # The Founder & CEO's Walk
 │   ├── math-classes.html       # Mathematics Classes
 │   └── learn-to-pitch.html     # Learn to Pitch Intensive (coming soon)
@@ -446,7 +446,7 @@ Pull all content from CE_Website.pdf sections 8–11. Structure:
 
 ---
 
-### 4.5 Founders Blueprint Bootcamp (`programs/founders-blueprint.html`)
+### 4.5 Future Founders Bootcamp (`programs/future-founders-bootcamp.html`)
 
 Pull all content from CE_Website.pdf sections 12–16. Structure:
 1. Hero
