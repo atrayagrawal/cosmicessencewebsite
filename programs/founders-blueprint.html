@@ -3,27 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Future Founders Bootcamp Bootcamp | Cosmic Essence Education</title>
-  <meta name="description" content="6-week bootcamp. Real frameworks. Your first venture blueprint. For grades 8-12.">
+  <title>Future Founders Bootcamp | Cosmic Essence Education</title>
+  <meta name="description" content="An 8-week live bootcamp where your child builds a fleshed-out business idea, develops leadership skills, and pitches to a panel of founders. Physics of Entrepreneurship, taught live.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/logo-small.png">
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Future Founders Bootcamp | Physics of Entrepreneurship">
+  <meta property="og:description" content="8 weeks. 36 hours. One venture, a leadership track record, and a live pitch to founders. Live cohort-based for ages 13+.">
+  <meta property="og:image" content="/assets/images/og-image.png">
+  <meta property="og:url" content="https://cosmicessence.co.in/programs/founders-blueprint.html">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 
+  <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .physics-card {
+      background: linear-gradient(135deg, var(--ce-off-white) 0%, #f5f0eb 100%);
+      border-left: 4px solid var(--ce-orange);
+      padding: var(--space-5);
+      margin-bottom: var(--space-5);
+      border-radius: 0 8px 8px 0;
+    }
+    .physics-concept {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: var(--text-sm);
+      color: var(--ce-orange);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--space-2);
+    }
+    .session-card {
+      border: 1px solid var(--ce-light-gray);
+      border-radius: 8px;
+      padding: var(--space-5);
+      margin-bottom: var(--space-4);
+      transition: all 0.3s ease;
+    }
+    .session-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-color: var(--ce-orange);
+    }
+    .session-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: var(--text-xs);
+      color: var(--ce-mid-gray);
+      margin-bottom: var(--space-2);
+    }
+    .week-header {
+      background: var(--ce-black);
+      color: white;
+      padding: var(--space-4) var(--space-5);
+      border-radius: 8px;
+      margin-bottom: var(--space-4);
+    }
+    .week-header-title {
+      color: var(--ce-orange);
+      margin-bottom: var(--space-1);
+    }
+    .deliverable-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .deliverable-list li {
+      position: relative;
+      padding-left: var(--space-6);
+      margin-bottom: var(--space-3);
+    }
+    .deliverable-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--ce-orange);
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="nav">
     <div class="container nav-inner">
       <a href="/" class="nav-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-      <img src="/assets/images/logo-small.png" alt="" style="height: 32px; width: auto;">
-      <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--ce-black);">Cosmic Essence Education</span>
-    </a>
+        <img src="/assets/images/logo-small.png" alt="" style="height: 32px; width: auto;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--ce-black);">Cosmic Essence Education</span>
+      </a>
+
       <div class="nav-links">
         <a href="/programs/" class="nav-link active">Programs</a>
         <a href="/about.html" class="nav-link">About</a>
@@ -32,13 +104,16 @@
         <a href="/blog/" class="nav-link">Blog</a>
         <a href="/resources/" class="nav-link">Resources</a>
       </div>
-      <a href="/contact.html" class="btn btn-primary nav-cta">Talk to Atray</a>
+
+      <a href="https://topmate.io/atrayagrawal" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Book a Consult</a>
+
       <button class="mobile-menu-btn" aria-label="Toggle menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
+
     <div class="mobile-menu">
       <a href="/programs/" class="nav-link active">Programs</a>
       <a href="/about.html" class="nav-link">About</a>
@@ -46,95 +121,529 @@
       <a href="/book.html" class="nav-link">Book</a>
       <a href="/blog/" class="nav-link">Blog</a>
       <a href="/resources/" class="nav-link">Resources</a>
-      <a href="/contact.html" class="btn btn-primary">Talk to Atray</a>
+      <a href="https://topmate.io/atrayagrawal" target="_blank" rel="noopener" class="btn btn-primary">Book a Consult</a>
     </div>
   </nav>
 
+  <!-- Hero -->
   <section class="program-hero">
     <div class="container program-hero-content">
-      <span class="label">6-Week Bootcamp</span>
-      <h1>Future Founders Bootcamp</h1>
-      <p style="font-size: var(--text-xl); margin-bottom: var(--space-4);">Real frameworks. Your first venture blueprint.</p>
-      <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-6);">Grades 8–12 · Live Zoom + WhatsApp · Weekly milestones</p>
-      <a href="/contact.html" class="btn btn-primary">Apply Now</a>
+      <span class="label">Future Founders Bootcamp</span>
+      <h1>From "I want to build" to "I have built."</h1>
+      <p style="font-size: var(--text-xl); margin-bottom: var(--space-4);">8 weeks. 36 hours. A fleshed-out business idea, a leadership track record, and a pitch your child has delivered to real founders.</p>
+      <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-6);">
+        A live, cohort-based bootcamp where teenagers learn to see the world through the lens of physics — and turn what they see into a venture worth pitching. Built for parents who want their child to leave with something real.
+      </p>
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center;">
+        <a href="https://topmate.io/atrayagrawal" target="_blank" rel="noopener" class="btn btn-primary btn-large">Book a 15-min Consult →</a>
+        <a href="#curriculum" class="btn btn-secondary btn-large">See the 8-Week Curriculum</a>
+      </div>
+      <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: var(--ce-mid-gray);">
+        Ages 13+ · 3 sessions/week, 1.5 hrs each · Cohort of 20 · New cohorts every 2 months
+      </p>
     </div>
   </section>
 
-  <section class="program-overview">
+  <!-- Quick Stats -->
+  <section class="section bg-off-white" style="padding: var(--space-8) 0;">
+    <div class="container">
+      <div class="stats-grid" style="margin: 0;">
+        <div>
+          <span class="stat-number">8</span>
+          <span class="stat-label">Weeks Live</span>
+        </div>
+        <div>
+          <span class="stat-number">36</span>
+          <span class="stat-label">Hours of Learning</span>
+        </div>
+        <div>
+          <span class="stat-number">20</span>
+          <span class="stat-label">Students per Cohort</span>
+        </div>
+        <div>
+          <span class="stat-number">1</span>
+          <span class="stat-label">Live Pitch to Founders</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Gap -->
+  <section class="section">
+    <div class="container">
+      <span class="label">The Gap</span>
+      <h2 class="mb-6">What the school system is not teaching your child</h2>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h4 class="mb-4">Memory, not seeing</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">IB, IGCSE, CBSE, ICSE — every curriculum rewards the recall of what is already known. None of them teach your child to see what is not yet obvious.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">Sameness on applications</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">Two applicants, same grades, same test scores, same extracurriculars. "I built a venture from scratch in 8 weeks" is a different signal than "I was president of a club."</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">Leadership as a title, not a craft</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">Being elected head boy is not the same as leading a team through ambiguity. Your child needs to know how to decide, disagree, and ship — not how to chair a meeting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Outcome -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="text-center mb-12">
+        <span class="label">The Outcome</span>
+        <h2>What your child walks away with</h2>
+        <p style="max-width: 700px; margin: var(--space-6) auto 0; color: var(--ce-mid-gray);">This is not a course your child "attends." It is a program they finish. On the last day, they pitch a real business idea to a panel of founders, mentors, and operators.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <span class="label">01</span>
+          <h4 class="mt-8 mb-4">A fleshed-out business idea</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">A clearly defined problem, a target customer they have actually spoken to, a proposed solution, a business model, and a go-to-market path. The kind of thing that lives in a real deck.</p>
+        </div>
+        <div class="card">
+          <span class="label">02</span>
+          <h4 class="mt-8 mb-4">A leadership track record</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">The second half of the bootcamp is a working team. Your child is not "learning about leadership" — they are leading a project under pressure, with feedback, with consequences.</p>
+        </div>
+        <div class="card">
+          <span class="label">03</span>
+          <h4 class="mt-8 mb-4">A pitch they have delivered</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">Final week: live pitch to a panel. They have rehearsed, received critique, refined, and presented. The artifact that goes into a college application and a future LinkedIn profile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Physics Framework -->
+  <section class="section">
+    <div class="container">
+      <span class="label">The Method</span>
+      <h2 class="mb-6">Four dimensions of seeing the world</h2>
+      <p class="mb-8" style="max-width: 800px;">The bootcamp is built on a single idea: entrepreneurship is a way of seeing the world, and that way of seeing can be taught. We use physics as the lens — because physics is the most rigorous description we have of how things actually move, change, and compound.</p>
+
+      <div class="grid grid-3">
+        <div class="physics-card">
+          <div class="physics-concept">D1 · Seeing Clearly</div>
+          <h4>Strip problems to what is true</h4>
+          <p>First Principles · Experimentation · Inversion · Compounding</p>
+        </div>
+
+        <div class="physics-card">
+          <div class="physics-concept">D2 · Seeing Change</div>
+          <h4>Why some ideas move and others don't</h4>
+          <p>Inertia · Friction · Momentum · Activation Energy · Catalyst</p>
+        </div>
+
+        <div class="physics-card">
+          <div class="physics-concept">D3 · Seeing Systems</div>
+          <h4>The unit of progress</h4>
+          <p>Quantization · Bottleneck · Flywheel</p>
+        </div>
+
+        <div class="physics-card">
+          <div class="physics-concept">D4 · Seeing Scale</div>
+          <h4>How ideas stop being local</h4>
+          <p>Critical Mass · Surface Area · Leverage</p>
+        </div>
+
+        <div class="physics-card">
+          <div class="physics-concept">In Practice</div>
+          <h4>Built, not just memorised</h4>
+          <p>Every framework is applied to your child's own venture. No "case study" detachment — they use the lens to build their own thing, week by week.</p>
+        </div>
+
+        <div class="physics-card">
+          <div class="physics-concept">Why Physics</div>
+          <h4>The cleanest description of how things move</h4>
+          <p>Physics gives us a vocabulary that is precise, tested, and portable. The same lens works in a school project, a startup, or a life decision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum -->
+  <section id="curriculum" class="section bg-off-white">
     <div class="container">
       <span class="label">The Curriculum</span>
-      <h2 class="mb-8">6 Weeks to Your First Venture Blueprint</h2>
+      <h2 class="mb-6">8 weeks. 36 hours. One finished venture.</h2>
+      <p class="mb-8" style="max-width: 800px;">Three sessions per week, each 1.5 hours, all live and cohort-based. The first half is solo: your child picks a problem, talks to humans, designs a solution. The second half is in teams: they lead, they disagree, they ship.</p>
 
-      <div class="week-item">
-        <span class="week-number">Week 1</span>
-        <h4 class="week-title">Business as Tool + First Principles</h4>
-        <p class="week-topics">Understanding entrepreneurship as self-expression. The Reality Table framework.</p>
+      <!-- Week 1 -->
+      <div class="week-header">
+        <h3 class="week-header-title">WEEK 1 · SEEING THE PROBLEM</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.8);">First Principles · Inversion · Idea Hexagon</p>
+      </div>
+      <div class="session-card">
+        <div class="session-number">SESSIONS 1–3</div>
+        <h4 class="mb-2">How to see what others miss</h4>
+        <p class="mb-3">Before your child can build, they have to see. We start with the foundational question: how do you know a problem is worth solving? They learn to strip assumptions, invert the question, and generate ideas from multiple directions.</p>
+        <ul class="deliverable-list">
+          <li>First Principles decomposition of a real problem</li>
+          <li>Inversion exercise: how would you guarantee this fails?</li>
+          <li>Idea Hexagon: 30 candidate problem areas</li>
+        </ul>
+        <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-top: var(--space-3);"><strong>Deliverable:</strong> A shortlist of 5 problem areas worth exploring further.</p>
       </div>
 
-      <div class="week-item">
-        <span class="week-number">Week 2</span>
-        <h4 class="week-title">Leverage + Flywheels</h4>
-        <p class="week-topics">Building systems that compound. Understanding multipliers.</p>
+      <!-- Week 2 -->
+      <div class="week-header">
+        <h3 class="week-header-title">WEEK 2 · TALKING TO HUMANS</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.8);">Customer Discovery · Question Design · Bias Spotting</p>
+      </div>
+      <div class="session-card">
+        <div class="session-number">SESSIONS 4–6</div>
+        <h4 class="mb-2">Listening as a craft</h4>
+        <p class="mb-3">Most teenagers (and most adults) are bad at interviews. This week is practice. Your child designs questions, runs 5 real interviews with people outside their circle, and learns to hear what is actually being said versus what they want to hear.</p>
+        <ul class="deliverable-list">
+          <li>5 customer interviews (transcribed and synthesised)</li>
+          <li>Bias audit: where did I lead the witness?</li>
+          <li>Pattern map: what themes are emerging?</li>
+        </ul>
+        <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-top: var(--space-3);"><strong>Deliverable:</strong> A synthesised insights document from real conversations.</p>
       </div>
 
-      <div class="week-item">
-        <span class="week-number">Week 3</span>
-        <h4 class="week-title">Product/Market Dynamics + JTBD</h4>
-        <p class="week-topics">Jobs-to-be-Done framework. Understanding what customers actually want.</p>
+      <!-- Week 3 -->
+      <div class="week-header">
+        <h3 class="week-header-title">WEEK 3 · DESIGNING THE SOLUTION</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.8);">Minimum Viable Belief · Trade-off Mapping · Friction Mapping</p>
+      </div>
+      <div class="session-card">
+        <div class="session-number">SESSIONS 7–9</div>
+        <h4 class="mb-2">From problem to solution</h4>
+        <p class="mb-3">Your child has a problem and they have data from real humans. Now they design a solution that is the smallest thing that could actually work — and they map every trade-off they are making so the decisions are conscious, not accidental.</p>
+        <ul class="deliverable-list">
+          <li>Solution concept with explicit assumptions</li>
+          <li>Friction map: what does the user experience today vs. with your solution?</li>
+          <li>Rough prototype or detailed written description</li>
+        </ul>
+        <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-top: var(--space-3);"><strong>Deliverable:</strong> A solution concept and a prototype in some form.</p>
       </div>
 
-      <div class="week-item">
-        <span class="week-number">Week 4</span>
-        <h4 class="week-title">Business Model Canvas + Blue Ocean</h4>
-        <p class="week-topics">Mapping your business model. Finding uncontested market space.</p>
+      <!-- Week 4 -->
+      <div class="week-header">
+        <h3 class="week-header-title">WEEK 4 · WILL IT WORK? WILL IT SCALE?</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.8);">Bottleneck Analysis · Flywheel Design · Critical Mass</p>
+      </div>
+      <div class="session-card">
+        <div class="session-number">SESSIONS 10–12</div>
+        <h4 class="mb-2">The business model and the growth loop</h4>
+        <p class="mb-3">A good idea is not enough. This week your child figures out the unit economics, identifies the bottleneck that would kill the venture, and designs a flywheel — the self-reinforcing loop that makes growth compound.</p>
+        <ul class="deliverable-list">
+          <li>One-page business model (revenue, costs, customers)</li>
+          <li>Bottleneck analysis: the one thing that, if fixed, changes everything</li>
+          <li>Flywheel diagram: how does this thing actually grow?</li>
+        </ul>
+        <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-top: var(--space-3);"><strong>Deliverable:</strong> A one-page business model + an early growth loop.</p>
       </div>
 
-      <div class="week-item">
-        <span class="week-number">Week 5</span>
-        <h4 class="week-title">Growth Systems + Second Order Thinking</h4>
-        <p class="week-topics">Building growth engines. Understanding consequences of consequences.</p>
+      <!-- Week 5 -->
+      <div class="week-header">
+        <h3 class="week-header-title">WEEK 5 · BUILDING THE DECK</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.8);">Pitch Architecture · Storytelling · Data Visualisation</p>
+      </div>
+      <div class="session-card">
+        <div class="session-number">SESSIONS 13–15</div>
+        <h4 class="mb-2">The pitch as an artifact</h4>
+        <p class="mb-3">If you cannot explain it, you do not understand it. Your child builds a real investor-style pitch deck — not a school presentation. The deck is the cumulative artifact of the first 4 weeks, and it is what they will pitch on Demo Day.</p>
+        <ul class="deliverable-list">
+          <li>Full pitch deck (problem, customer, solution, model, traction plan)</li>
+          <li>Story arc: the narrative thread that holds it together</li>
+          <li>Practice pitch + peer critique</li>
+        </ul>
+        <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-top: var(--space-3);"><strong>Deliverable:</strong> A complete pitch deck, first draft.</p>
       </div>
 
-      <div class="week-item">
-        <span class="week-number">Week 6</span>
-        <h4 class="week-title">Personal OS + Pitch Refinement</h4>
-        <p class="week-topics">Building systems for sustainable performance. Final pitch preparation.</p>
+      <!-- Week 6 -->
+      <div class="week-header">
+        <h3 class="week-header-title">WEEK 6 · INTO TEAMS</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.8);">Team Formation · Role Clarity · Decision-Making Under Pressure</p>
+      </div>
+      <div class="session-card">
+        <div class="session-number">SESSIONS 16–18</div>
+        <h4 class="mb-2">Leadership begins</h4>
+        <p class="mb-3">The bootcamp pivots. Your child joins a team around a shared project. They define roles (not "leader" — specific responsibilities), establish how decisions will get made, and start shipping under real constraints.</p>
+        <ul class="deliverable-list">
+          <li>Team charter: who decides what, and how</li>
+          <li>Defined roles with explicit accountabilities</li>
+          <li>First team deliverable (a working artifact, not a slide)</li>
+        </ul>
+        <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-top: var(--space-3);"><strong>Deliverable:</strong> A working team, defined roles, and a joint project in progress.</p>
+      </div>
+
+      <!-- Week 7 -->
+      <div class="week-header">
+        <h3 class="week-header-title">WEEK 7 · LEADING THE PROJECT</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.8);">Feedback Loops · Disagreement Protocols · Activation Energy</p>
+      </div>
+      <div class="session-card">
+        <div class="session-number">SESSIONS 19–21</div>
+        <h4 class="mb-2">The work of leading</h4>
+        <p class="mb-3">The team ships. Your child is responsible for a piece of it. They receive feedback — from peers, from the facilitator, from the work itself. They learn that disagreement is information, and the highest-leverage move is often the smallest one.</p>
+        <ul class="deliverable-list">
+          <li>Team output (whatever the project is producing)</li>
+          <li>Individual leadership reflection: what did I learn about how I lead?</li>
+          <li>Critique received and acted on</li>
+        </ul>
+        <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-top: var(--space-3);"><strong>Deliverable:</strong> A working team output + an individual leadership reflection.</p>
+      </div>
+
+      <!-- Week 8 -->
+      <div class="week-header" style="background: var(--ce-orange);">
+        <h3 class="week-header-title" style="color: white;">WEEK 8 · PITCH DAY</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.9);">Live Presentation · Fielding Questions · Receiving Critique</p>
+      </div>
+      <div class="session-card" style="border: 2px solid var(--ce-orange); background: rgba(242, 101, 34, 0.05);">
+        <div class="session-number">SESSIONS 22–24 · DEMO DAY</div>
+        <h4 class="mb-2">🎓 The pitch that ends the bootcamp</h4>
+        <p class="mb-3">Live pitches to a panel of founders, operators, and educators. Your child has rehearsed, received structured feedback, refined, and presented. They walk away with a recording, a written assessment, and a real artifact for their college applications and future opportunities.</p>
+        <ul class="deliverable-list">
+          <li>Live pitch (5 min + 5 min Q&amp;A) to outside panel</li>
+          <li>Written feedback from judges</li>
+          <li>Pitch recording (their property, theirs to use)</li>
+          <li>Written letter of assessment suitable for college applications</li>
+          <li>Certificate of completion + alumni status</li>
+        </ul>
+        <p style="font-size: var(--text-sm); color: var(--ce-mid-gray); margin-top: var(--space-3);"><strong>Final Deliverable:</strong> Live pitch, recorded + assessed.</p>
       </div>
     </div>
   </section>
 
-  <section class="includes-section">
+  <!-- What's Included -->
+  <section class="section">
     <div class="container">
-      <div class="text-center">
-        <span class="label">What's Included</span>
-        <h2 class="mb-6">Everything You Need</h2>
-      </div>
-
-      <div class="includes-grid">
-        <div class="include-item">6 Live Zoom sessions (90 min each)</div>
-        <div class="include-item">Weekly WhatsApp feedback</div>
-        <div class="include-item">Startup Builder Playbook</div>
-        <div class="include-item">Physics-for-Startups Vault</div>
-        <div class="include-item">Business Model Canvas templates</div>
-        <div class="include-item">1:1 Office hours with Atray</div>
-        <div class="include-item">Peer cohort community</div>
-        <div class="include-item">Lifetime access to materials</div>
+      <span class="label">What your child receives</span>
+      <h2 class="mb-6">Everything in the box</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4 class="mb-4">📊 Complete Business Model</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">Validated, refined, and stress-tested. Ready for a real conversation with a real investor or admissions officer.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">🎤 Live Pitch Recording</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">A 5-minute pitch delivered to outside judges. Proof that your child can communicate, persuade, and present under pressure.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">📓 Physics-of-Ent Playbook</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">All frameworks documented with your child's own applications. A portable toolkit they will use for the next decade.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">📝 Leadership Reflection</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">A structured document of what they learned leading a real team through a real project. A powerful essay seed.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">✉️ Letter of Assessment</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">Written by the facilitator, suitable for inclusion in college applications. Specific, not generic.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">🏆 Alumni Network</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">Lifetime access to the Future Founders community. Outstanding students are invited to apply for the Future Founders Fellowship (₹1,25,000).</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Who It's For -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="text-center mb-12">
+        <span class="label">Fit Check</span>
+        <h2>Is this the right program for your child?</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="card" style="border-left: 3px solid var(--ce-orange);">
+          <h4 class="mb-4">Built for your child if…</h4>
+          <ul style="list-style: disc; padding-left: var(--space-6); color: var(--ce-mid-gray); font-size: var(--text-sm);">
+            <li style="margin-bottom: var(--space-2);">They are 13+ and have started asking "what's the point" about school.</li>
+            <li style="margin-bottom: var(--space-2);">They have ideas — about businesses, problems, things they'd like to fix — but no structure to develop them.</li>
+            <li style="margin-bottom: var(--space-2);">They want to apply to universities or programs where "I built something real" matters more than another club membership.</li>
+            <li style="margin-bottom: var(--space-2);">They are willing to be uncomfortable, to be critiqued, to ship something imperfect.</li>
+            <li>You are a parent who values thinking skills over memorised content.</li>
+          </ul>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--ce-mid-gray);">
+          <h4 class="mb-4">Not built for if…</h4>
+          <ul style="list-style: disc; padding-left: var(--space-6); color: var(--ce-mid-gray); font-size: var(--text-sm);">
+            <li style="margin-bottom: var(--space-2);">Your child wants a "fun activity" or a line for the college essay without the work.</li>
+            <li style="margin-bottom: var(--space-2);">They are not willing to talk to strangers, receive feedback, or have their ideas challenged.</li>
+            <li style="margin-bottom: var(--space-2);">They are looking for academic tutoring or test prep — this is neither.</li>
+            <li>You are looking for a guaranteed college admission outcome. We build capability, not acceptances.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilitator -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <img src="/assets/images/atray.jpg" alt="Atray Agrawal" class="hero-image" loading="lazy">
+        </div>
+        <div>
+          <span class="label">Who teaches this</span>
+          <h2 class="mb-6">Atray Agrawal</h2>
+          <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-4);">Founder, Cosmic Essence · 8 years teaching · 5 ventures · 195+ students</p>
+          <p>Atray has spent the last 8 years teaching physics to teenagers and, more recently, building businesses of his own. The Future Founders Bootcamp is the program he wished had existed when he was 14 — the one that would have taught him to see the world as something to be built, not just something to be graded on.</p>
+          <p>The bootcamp is led by Atray with one senior facilitator, capped at 20 students per cohort so that no one is anonymous.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="text-center mb-12">
+        <span class="label">Proof</span>
+        <h2>What students and parents say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"They made me curious about both Physics and Maths."</p>
+          <p class="testimonial-author">— Anurag Harsh, accepted to University of Leeds</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"I've gotten immense clarity about my goals through this intensive. I'm super clear and excited about my future now!"</p>
+          <p class="testimonial-author">— Ayana Sharma, Grade 8</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Atray didn't just give me strategies — he changed how I think about business."</p>
+          <p class="testimonial-author">— Eli Finer</p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div>
+          <span class="stat-number">195+</span>
+          <span class="stat-label">Students taught</span>
+        </div>
+        <div>
+          <span class="stat-number">11+</span>
+          <span class="stat-label">Universities admitted to</span>
+        </div>
+        <div>
+          <span class="stat-number">63+</span>
+          <span class="stat-label">Parent community</span>
+        </div>
+        <div>
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Partners</span>
+        </div>
+      </div>
+
+      <p class="universities-row">Recent admissions: UChicago · Duke · Parsons · Pratt · SAIC · University of Leeds · University of British Columbia · University of Waterloo</p>
+    </div>
+  </section>
+
+  <!-- Logistics -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <span class="label">The Details</span>
+        <h2>Logistics, plainly stated</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4 class="mb-4">Format</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">Live, cohort-based, online or in-person (Jaipur). 20 students per cohort.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">Schedule</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">3 sessions per week, 1.5 hours each. 36 hours of live learning over 8 weeks.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">Cadence</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">New cohorts start every 2 months. Limited seats — typically fills 3–4 weeks before start date.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">Age &amp; Group</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">For students aged 13+. Individual and team applications both welcome.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">Work outside sessions</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">Expect 3–5 hours per week of customer interviews, reading, and project work between sessions.</p>
+        </div>
+        <div class="card">
+          <h4 class="mb-4">Refund policy</h4>
+          <p style="color: var(--ce-mid-gray); font-size: var(--text-sm);">Full refund if cancelled within 7 days of Day 1. After Day 1, prorated refund based on sessions attended.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="text-center mb-12">
+        <span class="label">FAQ</span>
+        <h2>Common questions from parents</h2>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">My child has never studied physics formally. Will they be lost? <span>+</span></div>
+        <div class="accordion-content">
+          <p style="padding: var(--space-4) 0; color: var(--ce-mid-gray);">No. The physics is a lens, not a curriculum. We use concepts — inertia, friction, momentum, activation energy, critical mass — as thinking tools. Your child does not need any physics background, only curiosity.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">How is this different from an entrepreneurship summer camp? <span>+</span></div>
+        <div class="accordion-content">
+          <p style="padding: var(--space-4) 0; color: var(--ce-mid-gray);">Summer camps tend to be short, broad, and surface-level. The Future Founders Bootcamp is 36 hours of live, cohort-based work over 8 weeks, with a tangible deliverable at the end. Your child is not "exposed to entrepreneurship" — they build a venture.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">Is this good for college applications? <span>+</span></div>
+        <div class="accordion-content">
+          <p style="padding: var(--space-4) 0; color: var(--ce-mid-gray);">Yes — but indirectly. Your child will leave with a pitch deck, a business model, a leadership reflection, and a written letter of assessment. More importantly, they will have something distinctive to talk about in essays and interviews that 90% of applicants do not have.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">What if my child is shy or has never pitched before? <span>+</span></div>
+        <div class="accordion-content">
+          <p style="padding: var(--space-4) 0; color: var(--ce-mid-gray);">Most of our students have never pitched. The entire second half of the bootcamp is designed to build them up to pitch day. By week 8, they have rehearsed, received structured feedback, and refined. Shyness is not a barrier — it's the starting point.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">How much parent involvement is expected? <span>+</span></div>
+        <div class="accordion-content">
+          <p style="padding: var(--space-4) 0; color: var(--ce-mid-gray);">Minimal during the program. We ask parents to (1) ensure the student can attend all sessions, (2) read the mid-program and end-of-program reflections we send, and (3) attend the final pitch day if in Jaipur or join via livestream if not.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">What happens after the bootcamp ends? <span>+</span></div>
+        <div class="accordion-content">
+          <p style="padding: var(--space-4) 0; color: var(--ce-mid-gray);">Your child retains access to all frameworks, worksheets, and templates. Outstanding students are invited to apply for the Future Founders Fellowship — a 5-month program where they enter an international competition (Blue Ocean Strategy or NASA Space Settlement).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
   <section class="pricing-section">
     <div class="container text-center">
-      <span class="label">Investment</span>
-      <h2 class="mb-6">Pricing</h2>
-
-      <p style="font-size: var(--text-3xl); font-family: 'JetBrains Mono', monospace; color: var(--ce-orange); margin-bottom: var(--space-4);">₹45,000</p>
-      <p style="color: var(--ce-mid-gray); margin-bottom: var(--space-8);">6 weeks · All materials included · Limited cohort size</p>
-
-      <a href="/contact.html" class="btn btn-white">Apply Now</a>
+      <span class="label">Next step</span>
+      <h2 class="mb-6">See if this is the right fit for your child</h2>
+      <p style="color: var(--ce-mid-gray); max-width: 600px; margin: 0 auto var(--space-8);">A 15-minute call. We'll talk about where your child is now, what you want for them, and whether the bootcamp is the right next step. No sales pressure — if it's not a fit, we'll tell you.</p>
+      <a href="https://topmate.io/atrayagrawal" target="_blank" rel="noopener" class="btn btn-white">Book a 15-min Consult</a>
+      <p style="color: var(--ce-mid-gray); font-size: var(--text-sm); margin-top: var(--space-6);">Next cohort starts soon. Seats typically fill 3–4 weeks in advance.</p>
+      <p class="mt-8" style="color: var(--ce-mid-gray); font-size: var(--text-sm);">
+        Questions? WhatsApp +91 87420 17911 or email atray@cosmicessence.co.in
+      </p>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -171,8 +680,9 @@
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p class="footer-copyright">© 2026 Cosmic Essence Education</p>
+        <p class="footer-copyright">© 2026 Cosmic Essence Education | <a href="#" class="footer-link">Privacy Policy</a> | <a href="#" class="footer-link">T&amp;C</a></p>
         <p class="footer-contact">atray@cosmicessence.co.in | +91 87420 17911</p>
       </div>
     </div>
