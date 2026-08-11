@@ -141,64 +141,7 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-
-    /* Sticky floating CTA */
-    .sticky-readiness {
-      display: none;
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 9999;
-      background: #111111;
-      border: 1px solid rgba(242, 101, 34, 0.4);
-      border-radius: 12px;
-      padding: 14px 18px;
-      max-width: 300px;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      animation: slideUp 0.4s ease;
-    }
-    @keyframes slideUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .sticky-readiness-link {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      flex: 1;
-    }
-    .sticky-readiness-icon {
-      font-size: 1.2rem;
-      margin-bottom: 4px;
-    }
-    .sticky-readiness-text {
-      font-size: 0.8rem;
-      color: #888;
-      margin-bottom: 2px;
-    }
-    .sticky-readiness-cta {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #F26522;
-    }
-    .sticky-readiness-close {
-      background: none;
-      border: none;
-      color: #555;
-      cursor: pointer;
-      font-size: 1rem;
-      padding: 4px;
-      line-height: 1;
-      flex-shrink: 0;
-      align-self: flex-start;
-    }
-    .sticky-readiness-close:hover { color: #F9F6F1; }
-    @media (max-width: 480px) {
-      .sticky-readiness { bottom: 16px; right: 16px; left: 16px; max-width: none; }
-    }
-  </style>
+</style>
 </head>
 <body>
 
@@ -217,7 +160,7 @@
         <a href="/book.html" class="nav-link">Book</a>
         <a href="/blog/" class="nav-link">Blog</a>
         <a href="/resources/" class="nav-link">Resources</a>
-        <a href="https://tally.so/r/2EzpEM" target="_blank" class="nav-link nav-cta-pill">⚡ Readiness Score</a>
+        <a href="https://tally.so/r/2EzpEM" target="_blank" class="nav-link nav-cta-pill">Find Readiness Score</a>
       </div>
 
       <a href="https://topmate.io/atrayagrawal" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Book a Consult</a>
@@ -816,24 +759,6 @@
   </footer>
 
   <script src="/assets/js/main.js"></script>
-  <!-- Sticky Readiness CTA -->
-  <div class="sticky-readiness" id="stickyReadiness">
-    <a href="https://tally.so/r/2EzpEM" target="_blank" class="sticky-readiness-link">
-      <span class="sticky-readiness-icon">⚡</span>
-      <span class="sticky-readiness-text">Future Founder Readiness Score · ~10 min</span>
-      <span class="sticky-readiness-cta">Take the Future Founder Readiness Score →</span>
-    </a>
-    <button class="sticky-readiness-close" onclick="document.getElementById('stickyReadiness').style.display='none'; localStorage.setItem('readinessDismissed', Date.now())" aria-label="Close">✕</button>
-  </div>
-  <script>
-    // Show sticky CTA after 4 seconds, respecting dismiss preference
-    setTimeout(function() {
-      var dismissed = localStorage.getItem('readinessDismissed');
-      var sevenDays = 7 * 24 * 60 * 60 * 1000;
-      if (!dismissed || (Date.now() - parseInt(dismissed)) > sevenDays) {
-        document.getElementById('stickyReadiness').style.display = 'flex';
-      }
-    }, 4000);
-  </script>
+  
 </body>
 </html>
