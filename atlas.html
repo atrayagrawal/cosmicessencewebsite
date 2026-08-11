@@ -1178,24 +1178,24 @@
         <aside class="skills-controls">
           <span class="control-label">Profile</span>
           <div class="profile-btns" id="profileBtns">
-            <button class="profile-btn active" data-start="2026" data-age="14" type="button">
+            <button class="profile-btn active" data-age="14" data-year="2031" type="button">
               Age 14 · starting secondary
-              <small>Projects to graduation ~2030+</small>
+              <small>Jumps to 2031 · ~graduation horizon</small>
             </button>
-            <button class="profile-btn" data-start="2026" data-age="17" type="button">
+            <button class="profile-btn" data-age="17" data-year="2028" type="button">
               Age 17 · near graduation
-              <small>Enters labor market soon</small>
+              <small>Jumps to 2028 · early career window</small>
             </button>
-            <button class="profile-btn" data-start="2026" data-age="22" type="button">
+            <button class="profile-btn" data-age="22" data-year="2026" type="button">
               Age 22 · first career phase
-              <small>Skills already under automation pressure</small>
+              <small>Stays at 2026 · pressure already here</small>
             </button>
           </div>
 
           <span class="control-label">Scrub year</span>
           <div class="year-control">
             <div class="year-display" id="yearDisplay">2026</div>
-            <input type="range" id="yearSlider" min="2026" max="2040" value="2026" step="1">
+            <input type="range" id="yearSlider" min="2026" max="2040" value="2031" step="1">
             <div class="year-ticks"><span>2026</span><span>2033</span><span>2040</span></div>
           </div>
 
@@ -1587,7 +1587,7 @@
     let archFilter = 'all';
     let selectedId = null;
     let compareIds = [];
-    let skillYear = 2026;
+    let skillYear = 2031; // default Age 14 preset horizon
     let profileAge = 14;
     let tmIndex = 2;
     let tmTimer = null;
@@ -1973,6 +1973,11 @@ Systems train for exams. Markets pay for durable thinking.
           document.querySelectorAll('.profile-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           profileAge = +btn.dataset.age;
+          // Age presets jump the scrubber to a relevant horizon year
+          const targetYear = +btn.dataset.year || 2026;
+          skillYear = targetYear;
+          const slider = document.getElementById('yearSlider');
+          if (slider) slider.value = String(targetYear);
           renderSkills();
           markEngaged();
         });
