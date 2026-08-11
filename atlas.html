@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Education Atlas | Cosmic Essence Education</title>
+  <meta name="description" content="Interactive atlas of education systems, skill half-lives, and entrepreneurial learning worldwide. For parents, students, counsellors, and school leaders.">
+
+  <link rel="icon" type="image/png" href="/assets/images/logo-small.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Global Education Atlas — What systems optimize for, and which skills still compound">
+  <meta property="og:description" content="Explore education systems, skill half-lives, and entrepreneurial learning worldwide. Then measure durable founder skills with the Future Founder Readiness Score.">
+  <meta property="og:url" content="https://cosmicessence.co.in/atlas">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cosmicessence.co.in/assets/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Cosmic Essence Brand — light atlas (Brand Guidelines v1.0) */
+    :root {
+      --ce-orange: #F26522;
+      --ce-orange-hover: #d85a1f;
+      --ce-orange-10: rgba(242, 101, 34, 0.10);
+      --ce-orange-20: rgba(242, 101, 34, 0.18);
+      --ce-black: #111111;
+      --ce-off-white: #F9F6F1;
+      --ce-white: #FFFFFF;
+      --ce-dark-gray: #333333;
+      --ce-mid-gray: #666666;
+      --ce-light-gray: #E8E4DF;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --sans: 'Lato', system-ui, -apple-system, sans-serif;
+      --header-h: 68px;
+      --shadow-sm: 0 1px 2px rgba(17, 17, 17, 0.04);
+      --shadow-md: 0 8px 24px rgba(17, 17, 17, 0.06);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ce-off-white);
+      color: var(--ce-dark-gray);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: var(--ce-orange); }
+    button { font-family: inherit; cursor: pointer; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    ::selection {
+      background: rgba(242, 101, 34, 0.25);
+      color: var(--ce-black);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: var(--header-h);
+      border-bottom: 1px solid var(--ce-light-gray);
+      background: rgba(249, 246, 241, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand { min-width: 0; }
+    .brand-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      display: block;
+      color: var(--ce-black);
+    }
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--ce-mid-gray);
+    }
+    .brand-sub a {
+      color: var(--ce-orange);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .role-select {
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      color: var(--ce-dark-gray);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      padding: 9px 10px;
+      border-radius: 4px;
+      max-width: 150px;
+    }
+    .role-select option {
+      background: var(--ce-white);
+      color: var(--ce-dark-gray);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      border: 2px solid transparent;
+      padding: 10px 16px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--ce-orange);
+      color: var(--ce-white);
+      border-color: var(--ce-orange);
+    }
+    .btn-primary:hover {
+      background: var(--ce-orange-hover);
+      border-color: var(--ce-orange-hover);
+      color: var(--ce-white);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ce-orange);
+      border-color: var(--ce-orange);
+    }
+    .btn-secondary:hover {
+      background: var(--ce-orange);
+      color: var(--ce-white);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--ce-mid-gray);
+      border: 1px solid var(--ce-light-gray);
+      padding: 8px 12px;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+    .btn-ghost:hover {
+      border-color: var(--ce-orange);
+      color: var(--ce-orange);
+      transform: none;
+    }
+    .btn-lg {
+      padding: 14px 24px;
+      font-size: 0.8rem;
+    }
+
+    .hero {
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--ce-light-gray);
+      background: var(--ce-off-white);
+    }
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ce-orange);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      border: 1px solid var(--ce-orange-20);
+      background: var(--ce-orange-10);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .update-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--ce-orange);
+    }
+    .hero h1 {
+      font-family: var(--mono);
+      font-size: clamp(1.75rem, 4.2vw, 2.75rem);
+      line-height: 1.2;
+      font-weight: 700;
+      max-width: 22ch;
+      margin-bottom: 18px;
+      color: var(--ce-black);
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--ce-orange);
+    }
+    .hero-lead {
+      color: var(--ce-dark-gray);
+      font-size: 1.125rem;
+      max-width: 58ch;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .role-hint {
+      color: var(--ce-mid-gray);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+      min-height: 1.4em;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    .pulse-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      border-top: 1px solid var(--ce-light-gray);
+      padding-top: 28px;
+    }
+    .pulse-grid > div {
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .pulse-val {
+      font-family: var(--mono);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--ce-orange);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .pulse-label {
+      font-size: 0.92rem;
+      color: var(--ce-dark-gray);
+      line-height: 1.45;
+    }
+    .pulse-src {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ce-mid-gray);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .layer-nav-wrap {
+      position: sticky;
+      top: var(--header-h);
+      z-index: 150;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--ce-light-gray);
+    }
+    .layer-nav {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .layer-nav::-webkit-scrollbar { display: none; }
+    .layer-btn {
+      flex: 1;
+      min-width: max-content;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: var(--ce-mid-gray);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 16px 14px;
+      transition: color 0.15s, border-color 0.15s;
+      font-weight: 500;
+    }
+    .layer-btn:hover { color: var(--ce-black); }
+    .layer-btn.active {
+      color: var(--ce-orange);
+      border-bottom-color: var(--ce-orange);
+      font-weight: 700;
+    }
+
+    section.module {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--ce-light-gray);
+      background: var(--ce-off-white);
+    }
+    #skills, #bridge, #method { background: var(--ce-white); }
+    #systems, #time { background: var(--ce-off-white); }
+
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ce-orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+      font-weight: 600;
+    }
+    .section-title {
+      font-family: var(--mono);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: var(--ce-black);
+    }
+    .section-desc {
+      color: var(--ce-dark-gray);
+      max-width: 62ch;
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .sys-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      color: var(--ce-mid-gray);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 8px 12px;
+      border-radius: 999px;
+      transition: all 0.15s;
+      font-weight: 500;
+    }
+    .chip:hover, .chip.active {
+      border-color: var(--ce-orange);
+      color: var(--ce-orange);
+      background: var(--ce-orange-10);
+    }
+    .compare-bar {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ce-mid-gray);
+    }
+    .compare-bar strong { color: var(--ce-black); }
+
+    .sys-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .sys-card {
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: var(--radius);
+      padding: 18px;
+      text-align: left;
+      color: inherit;
+      width: 100%;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+      box-shadow: var(--shadow-sm);
+    }
+    .sys-card:hover {
+      border-color: #d5d0c9;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .sys-card.selected {
+      border-color: var(--ce-orange);
+      box-shadow: 0 0 0 2px var(--ce-orange-20);
+    }
+    .sys-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .sys-region {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--ce-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+    .sys-archetype {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--ce-mid-gray);
+      border: 1px solid var(--ce-light-gray);
+      padding: 2px 6px;
+      border-radius: 3px;
+      background: var(--ce-off-white);
+    }
+    .sys-name {
+      font-family: var(--mono);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--ce-black);
+    }
+    .sys-opt {
+      font-size: 0.9rem;
+      color: var(--ce-dark-gray);
+      margin-bottom: 14px;
+      line-height: 1.5;
+      min-height: 2.9em;
+    }
+    .rings {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .ring-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ring {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      background: conic-gradient(var(--ring-color) calc(var(--p) * 1%), var(--ce-light-gray) 0);
+      position: relative;
+    }
+    .ring::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      background: var(--ce-white);
+      border-radius: 50%;
+    }
+    .ring span {
+      position: relative;
+      z-index: 1;
+      color: var(--ce-black);
+    }
+    .ring-meta {
+      font-size: 0.72rem;
+      color: var(--ce-mid-gray);
+      line-height: 1.25;
+    }
+    .ring-meta b {
+      display: block;
+      color: var(--ce-dark-gray);
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+    .sys-card-foot {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--ce-light-gray);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--ce-mid-gray);
+    }
+    .ee-badge { color: var(--ce-orange); font-weight: 600; }
+
+    .detail-panel {
+      display: none;
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+    }
+    .detail-panel.open { display: block; }
+    .detail-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .detail-head h3 {
+      font-family: var(--mono);
+      font-size: 1.35rem;
+      color: var(--ce-black);
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 28px;
+    }
+    .score-bars { display: flex; flex-direction: column; gap: 14px; }
+    .score-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      margin-bottom: 6px;
+      color: var(--ce-dark-gray);
+    }
+    .score-bar-track {
+      height: 8px;
+      background: var(--ce-light-gray);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--ce-orange);
+      transition: width 0.4s ease;
+    }
+    .score-bar-fill.gold { background: var(--ce-black); }
+    .detail-copy h4 {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ce-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .detail-copy h4:first-child { margin-top: 0; }
+    .detail-copy p {
+      font-size: 0.95rem;
+      color: var(--ce-dark-gray);
+      line-height: 1.65;
+    }
+    .detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--ce-light-gray);
+    }
+
+    .compare-panel { display: none; margin-top: 8px; }
+    .compare-panel.open { display: block; }
+    .compare-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--ce-light-gray);
+      border-radius: var(--radius);
+      background: var(--ce-white);
+      box-shadow: var(--shadow-sm);
+    }
+    table.compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+    }
+    .compare-table th, .compare-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--ce-light-gray);
+      font-size: 0.9rem;
+      vertical-align: top;
+      color: var(--ce-dark-gray);
+    }
+    .compare-table th {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ce-mid-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--ce-off-white);
+    }
+    .compare-table td:first-child {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ce-mid-gray);
+      white-space: nowrap;
+    }
+    .compare-table .sys-th {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--ce-black);
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+    .mismatch {
+      color: var(--ce-orange);
+      font-weight: 700;
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .skills-controls {
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: 10px;
+      padding: 22px;
+      position: sticky;
+      top: calc(var(--header-h) + 60px);
+      box-shadow: var(--shadow-sm);
+    }
+    .control-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ce-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      display: block;
+      font-weight: 600;
+    }
+    .profile-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .profile-btn {
+      text-align: left;
+      background: var(--ce-off-white);
+      border: 1px solid var(--ce-light-gray);
+      color: var(--ce-dark-gray);
+      border-radius: 6px;
+      padding: 11px 12px;
+      font-size: 0.88rem;
+      font-family: var(--sans);
+    }
+    .profile-btn.active {
+      border-color: var(--ce-orange);
+      color: var(--ce-black);
+      background: var(--ce-orange-10);
+      font-weight: 700;
+    }
+    .profile-btn small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--ce-mid-gray);
+      margin-top: 3px;
+      font-weight: 400;
+    }
+    .year-control { margin-bottom: 20px; }
+    .year-display {
+      font-family: var(--mono);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--ce-orange);
+      margin-bottom: 8px;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--ce-orange);
+    }
+    .year-ticks {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--ce-mid-gray);
+      margin-top: 4px;
+    }
+    .decay-insight {
+      background: var(--ce-off-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: 6px;
+      padding: 14px;
+      font-size: 0.92rem;
+      color: var(--ce-dark-gray);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .decay-insight strong { color: var(--ce-black); }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .skill-row {
+      display: grid;
+      grid-template-columns: 1fr 100px 90px;
+      gap: 12px;
+      align-items: center;
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      transition: opacity 0.35s, filter 0.35s, border-color 0.35s;
+      box-shadow: var(--shadow-sm);
+    }
+    .skill-row.decayed {
+      opacity: 0.7;
+      background: #f3f1ec;
+      border-style: dashed;
+    }
+    .skill-row.decayed .skill-name {
+      text-decoration: line-through;
+      text-decoration-color: rgba(17,17,17,0.3);
+      color: var(--ce-mid-gray);
+    }
+    .skill-row.durable {
+      border-color: rgba(242, 101, 34, 0.28);
+    }
+    .skill-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--ce-black);
+    }
+    .skill-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--ce-mid-gray);
+      margin-top: 3px;
+    }
+    .skill-meta .dim { color: var(--ce-orange); font-weight: 600; }
+    .skill-class {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-align: center;
+      font-weight: 600;
+    }
+    .skill-class.durable { color: var(--ce-orange); }
+    .skill-class.transient { color: var(--ce-mid-gray); }
+    .skill-life {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      text-align: right;
+      color: var(--ce-dark-gray);
+      font-weight: 600;
+    }
+    .decay-bar {
+      grid-column: 1 / -1;
+      height: 4px;
+      background: var(--ce-light-gray);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: -2px;
+    }
+    .decay-bar > i {
+      display: block;
+      height: 100%;
+      background: var(--ce-orange);
+      transition: width 0.35s ease;
+    }
+    .decay-bar.durable > i { background: var(--ce-black); width: 100% !important; }
+
+    .timeline-shell {
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .tm-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .tm-year {
+      font-family: var(--mono);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--ce-orange);
+      line-height: 1;
+    }
+    .tm-era-title {
+      font-family: var(--mono);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ce-black);
+      margin-top: 6px;
+    }
+    .tm-physics {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ce-mid-gray);
+      margin-top: 6px;
+    }
+    .tm-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tm-slider-wrap { margin: 12px 0 28px; }
+    .tm-body {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .tm-block {
+      background: var(--ce-off-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .tm-block h4 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ce-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .tm-block p {
+      font-size: 0.95rem;
+      color: var(--ce-dark-gray);
+      line-height: 1.6;
+    }
+    .tm-metric {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--ce-light-gray);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--ce-mid-gray);
+    }
+    .tm-metric strong {
+      color: var(--ce-black);
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+      font-family: var(--sans);
+      font-weight: 700;
+    }
+
+    .bridge {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--ce-light-gray);
+      background: var(--ce-white);
+    }
+    .bridge-card {
+      background: var(--ce-off-white);
+      border: 2px solid var(--ce-orange-20);
+      border-radius: 12px;
+      padding: clamp(32px, 5vw, 52px);
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .bridge-card h2 {
+      font-family: var(--mono);
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      margin-bottom: 14px;
+      color: var(--ce-black);
+      line-height: 1.3;
+    }
+    .bridge-card .bridge-text {
+      color: var(--ce-dark-gray);
+      max-width: 52ch;
+      margin: 0 auto 12px;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+    .bridge-role-line {
+      color: var(--ce-orange);
+      font-size: 0.98rem;
+      margin-bottom: 28px;
+      min-height: 1.4em;
+      font-weight: 700;
+    }
+    .bridge-sub {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ce-mid-gray);
+      margin-top: 14px;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .method-card {
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .method-card h3 {
+      font-family: var(--mono);
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      color: var(--ce-black);
+    }
+    .method-card p, .method-card li {
+      font-size: 0.95rem;
+      color: var(--ce-dark-gray);
+      line-height: 1.6;
+    }
+    .method-card ul {
+      margin-left: 1.1em;
+      margin-top: 8px;
+      list-style: disc;
+    }
+    .method-card li { margin-bottom: 6px; }
+    .method-card strong { color: var(--ce-black); }
+    .source-list {
+      margin-top: 24px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ce-mid-gray);
+      line-height: 1.85;
+    }
+    .source-list a {
+      color: var(--ce-dark-gray);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .source-list a:hover { color: var(--ce-orange); }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--ce-black);
+      color: var(--ce-white);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      padding: 12px 18px;
+      border-radius: 6px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      z-index: 300;
+      max-width: 90vw;
+      text-align: center;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .sticky-assess {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 180;
+      background: var(--ce-white);
+      border: 1px solid var(--ce-light-gray);
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 12px 40px rgba(17,17,17,0.12);
+      max-width: 290px;
+      gap: 10px;
+      align-items: center;
+    }
+    .sticky-assess.show { display: flex; }
+    .sticky-assess p {
+      font-size: 0.8rem;
+      color: var(--ce-dark-gray);
+      line-height: 1.4;
+      flex: 1;
+      padding-right: 8px;
+    }
+    .sticky-assess .btn { padding: 8px 10px; font-size: 0.65rem; }
+    .sticky-close {
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      background: none;
+      border: none;
+      color: var(--ce-mid-gray);
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    footer {
+      padding: 40px 0 60px;
+      font-size: 0.85rem;
+      background: var(--ce-black);
+      color: #a8a8a8;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .footer-brand {
+      font-family: var(--mono);
+      font-weight: 700;
+      color: var(--ce-white);
+      margin-bottom: 8px;
+    }
+    footer p { color: #b8b8b8; max-width: 40ch; }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .footer-links a {
+      color: #d4d4d4;
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+    }
+    .footer-links a:hover { color: var(--ce-orange); }
+
+    @media (max-width: 900px) {
+      .skills-layout { grid-template-columns: 1fr; }
+      .skills-controls { position: static; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .tm-body { grid-template-columns: 1fr; }
+      .method-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .pulse-grid { grid-template-columns: 1fr; gap: 12px; }
+      .role-select { max-width: 110px; font-size: 0.65rem; padding: 7px 6px; }
+      .nav-cta-text { display: none; }
+      .skill-row { grid-template-columns: 1fr 70px; }
+      .skill-class { display: none; }
+      .hero { padding: 40px 0 32px; }
+      section.module { padding: 48px 0; }
+    }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="brand-title">GLOBAL EDUCATION ATLAS</span>
+        <span class="brand-sub">by <a href="https://cosmicessence.co.in">Cosmic Essence Education</a></span>
+      </div>
+      <div class="nav-right">
+        <label class="visually-hidden" for="roleSelect" style="position:absolute;left:-9999px">I am a</label>
+        <select id="roleSelect" class="role-select" aria-label="I am a">
+          <option value="parent">I'm a Parent</option>
+          <option value="student">I'm a Student</option>
+          <option value="counsellor">I'm a Counsellor</option>
+          <option value="leader">I'm a Leader</option>
+        </select>
+        <a id="navAssess" href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=nav" target="_blank" rel="noopener" class="btn btn-primary">
+          <span class="nav-cta-text">Readiness Score →</span>
+          <span class="nav-cta-short" style="display:none">Score →</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-eyebrow"><span class="update-dot"></span> Updated Aug 2026 · Interactive reference</span>
+      <h1>See what education systems optimize for — and which skills still <em>compound</em>.</h1>
+      <p class="hero-lead">
+        An interactive atlas of global education systems, skill half-lives, and entrepreneurial learning.
+        Built for parents, students, counsellors, and institution leaders.
+      </p>
+      <p class="role-hint" id="roleHint"></p>
+      <div class="hero-actions">
+        <a href="#systems" class="btn btn-primary btn-lg">Explore systems</a>
+        <a href="#skills" class="btn btn-secondary btn-lg">Watch skills decay</a>
+      </div>
+      <div class="pulse-grid">
+        <div>
+          <div class="pulse-val">39%</div>
+          <div class="pulse-label">Share of workers’ core skills employers expect to change by 2030</div>
+          <div class="pulse-src">WEF Future of Jobs Report 2025 (employer survey)</div>
+        </div>
+        <div>
+          <div class="pulse-val">~2.5 yr</div>
+          <div class="pulse-label">Often-cited half-life for technical skills (tools refresh faster than “soft” skills)</div>
+          <div class="pulse-src">IBM skills research · industry analyses — not a single universal law</div>
+        </div>
+        <div>
+          <div class="pulse-val">#1</div>
+          <div class="pulse-label">Analytical thinking — top core skill employers call essential (≈7 in 10)</div>
+          <div class="pulse-src">WEF Future of Jobs Report 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layer nav -->
+  <div class="layer-nav-wrap">
+    <div class="container layer-nav" role="tablist">
+      <button class="layer-btn active" data-target="systems" type="button">I · Systems</button>
+      <button class="layer-btn" data-target="skills" type="button">II · Skills</button>
+      <button class="layer-btn" data-target="time" type="button">III · Time</button>
+      <button class="layer-btn" data-target="bridge" type="button">IV · Measure</button>
+      <button class="layer-btn" data-target="method" type="button">Sources</button>
+    </div>
+  </div>
+
+  <!-- SYSTEMS -->
+  <section class="module" id="systems">
+    <div class="container">
+      <span class="section-eyebrow">I · World Systems</span>
+      <h2 class="section-title">What does each system optimize for?</h2>
+      <p class="section-desc">
+        Scores map tradeoffs — not a national league table. Click a system for detail.
+        Select up to 3 to compare credential intensity vs agency and entrepreneurial exposure.
+      </p>
+
+      <div class="sys-toolbar">
+        <div class="filter-row" id="archetypeFilters">
+          <button class="chip active" data-arch="all" type="button">All</button>
+          <button class="chip" data-arch="Exam-Sorted" type="button">Exam-Sorted</button>
+          <button class="chip" data-arch="Hybrid" type="button">Hybrid</button>
+          <button class="chip" data-arch="Phenomenon-Based" type="button">Phenomenon</button>
+          <button class="chip" data-arch="Enterprise-Signal" type="button">Enterprise</button>
+          <button class="chip" data-arch="International" type="button">International</button>
+        </div>
+        <div class="compare-bar">
+          Compare: <strong id="compareCount">0</strong>/3
+          <button class="btn btn-ghost" id="clearCompare" type="button" style="margin-left:8px">Clear</button>
+        </div>
+      </div>
+
+      <div class="sys-grid" id="sysGrid"></div>
+
+      <div class="detail-panel" id="detailPanel"></div>
+      <div class="compare-panel" id="comparePanel"></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="module" id="skills">
+    <div class="container">
+      <span class="section-eyebrow">II · Skills Economy</span>
+      <h2 class="section-title">The shelf-life of modern capabilities</h2>
+      <p class="section-desc">
+        Scrub the year forward. Transient tools dim. Durable cognitive and agency skills stay lit —
+        the layer Cosmic Essence trains and the Readiness Score measures.
+      </p>
+
+      <div class="skills-layout">
+        <aside class="skills-controls">
+          <span class="control-label">Profile</span>
+          <div class="profile-btns" id="profileBtns">
+            <button class="profile-btn active" data-start="2026" data-age="14" type="button">
+              Age 14 · starting secondary
+              <small>Projects to graduation ~2030+</small>
+            </button>
+            <button class="profile-btn" data-start="2026" data-age="17" type="button">
+              Age 17 · near graduation
+              <small>Enters labor market soon</small>
+            </button>
+            <button class="profile-btn" data-start="2026" data-age="22" type="button">
+              Age 22 · first career phase
+              <small>Skills already under automation pressure</small>
+            </button>
+          </div>
+
+          <span class="control-label">Scrub year</span>
+          <div class="year-control">
+            <div class="year-display" id="yearDisplay">2026</div>
+            <input type="range" id="yearSlider" min="2026" max="2040" value="2026" step="1">
+            <div class="year-ticks"><span>2026</span><span>2033</span><span>2040</span></div>
+          </div>
+
+          <div class="decay-insight" id="decayInsight"></div>
+
+          <button class="btn btn-secondary" id="shareDecay" type="button" style="width:100%; margin-bottom:10px">
+            Copy share text
+          </button>
+          <a id="skillsAssess" href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=skills"
+             target="_blank" rel="noopener" class="btn btn-primary" style="width:100%">
+            Measure durable skills →
+          </a>
+        </aside>
+
+        <div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-family:var(--mono); font-size:0.68rem; color:var(--ce-mid-gray)">
+            <span>SKILL</span>
+            <span style="display:flex; gap:40px"><span class="hide-sm">CLASS</span><span>SHELF-LIFE</span></span>
+          </div>
+          <div class="skills-list" id="skillsList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIME -->
+  <section class="module" id="time">
+    <div class="container">
+      <span class="section-eyebrow">III · Time Machine</span>
+      <h2 class="section-title">What school optimized for — 1926 to 2050</h2>
+      <p class="section-desc">
+        Drag the timeline. Watch the system goal, assessment method, and founder-relevant emphasis shift.
+      </p>
+
+      <div class="timeline-shell">
+        <div class="tm-top">
+          <div>
+            <div class="tm-year" id="tmYear">2025</div>
+            <div class="tm-era-title" id="tmTitle"></div>
+            <div class="tm-physics" id="tmPhysics"></div>
+          </div>
+          <div class="tm-controls">
+            <button class="btn btn-ghost" id="tmPrev" type="button">←</button>
+            <button class="btn btn-secondary" id="tmPlay" type="button">Play</button>
+            <button class="btn btn-ghost" id="tmNext" type="button">→</button>
+          </div>
+        </div>
+        <div class="tm-slider-wrap">
+          <input type="range" id="tmSlider" min="0" max="3" value="2" step="1">
+          <div class="year-ticks">
+            <span>1926</span><span>1975</span><span>2025</span><span>2050*</span>
+          </div>
+        </div>
+        <div class="tm-body">
+          <div class="tm-block">
+            <h4>System optimized for</h4>
+            <p id="tmOptimize"></p>
+          </div>
+          <div class="tm-block">
+            <h4>The durable constant</h4>
+            <p id="tmDurable"></p>
+          </div>
+          <div class="tm-block">
+            <h4>Assessment & signal</h4>
+            <p id="tmAssess"></p>
+          </div>
+        </div>
+        <div class="tm-metric">
+          <strong id="tmMetricLabel"></strong>
+          <span id="tmMetricText"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDGE -->
+  <section class="bridge" id="bridge">
+    <div class="container">
+      <div class="bridge-card">
+        <span class="section-eyebrow">Founder layer</span>
+        <h2 id="bridgeTitle">Systems describe the school. The assessment measures the student.</h2>
+        <p class="bridge-text" id="bridgeText">
+          This atlas maps credential pressure, agency, and skill decay at system level.
+          The Future Founder Readiness Score measures the durable layer:
+          Clarity, Change, Systems, and Scale — about 10 minutes.
+        </p>
+        <p class="bridge-role-line" id="bridgeRole"></p>
+        <a id="bridgeAssess" href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=bridge"
+           target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          Take the Future Founder Readiness Score →
+        </a>
+        <p class="bridge-sub">~10 minutes · Free · Personalized founder readiness profile</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="module" id="method">
+    <div class="container">
+      <span class="section-eyebrow">Sources & method</span>
+      <h2 class="section-title">How to read this atlas</h2>
+      <p class="section-desc">
+        Scores are research synthesis for orientation — not official government rankings or admissions advice.
+      </p>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <h3>What the scores mean</h3>
+          <ul>
+            <li><strong style="color:var(--ce-black)">Credential intensity</strong> — high-stakes exams, streaming, degree-as-gate.</li>
+            <li><strong style="color:var(--ce-black)">Agency orientation</strong> — learner choice, projects, portfolios.</li>
+            <li><strong style="color:var(--ce-black)">Entrepreneurial exposure</strong> — real builds vs theory-only business study.</li>
+            <li><strong style="color:var(--ce-black)">Durable-skills emphasis</strong> — explicit systems thinking & problem framing.</li>
+            <li><strong style="color:var(--ce-black)">Reform velocity</strong> — documented pivots in the last ~10 years.</li>
+          </ul>
+          <p style="margin-top:12px"><strong style="color:var(--ce-black)">Important:</strong> Country/system scores (0–100) are <em>directional synthesis</em> for comparison — not official indices, PISA ranks, or government grades.</p>
+        </div>
+        <div class="method-card">
+          <h3>What this is not</h3>
+          <p>Not a PISA substitute. Not a claim that one country is “best.” Not financial or career guarantees.</p>
+          <p style="margin-top:10px"><strong style="color:var(--ce-black)">Hero stats:</strong> The 39% figure and analytical-thinking rank are from WEF Future of Jobs 2025. The ~2.5-year technical skill half-life is widely cited (e.g. IBM training research; similar industry figures) — it is <em>not</em> a single McKinsey Global Institute universal constant.</p>
+          <p style="margin-top:10px">Skill-row half-lives in the observatory are illustrative teaching ranges, not lab measurements.</p>
+          <p style="margin-top:12px">Curated by Cosmic Essence Education as a public reference and bridge into founder readiness measurement.</p>
+        </div>
+        <div class="method-card">
+          <h3>Confidence labels</h3>
+          <ul>
+            <li><strong style="color:var(--ce-black)">Observed</strong> — grounded in widely cited policy or reports.</li>
+            <li><strong style="color:var(--ce-black)">Synthesized</strong> — comparative judgment across sources.</li>
+            <li><strong style="color:var(--ce-black)">Projected</strong> — scenario (e.g. 2050 era).</li>
+          </ul>
+        </div>
+        <div class="method-card">
+          <h3>Corrections</h3>
+          <p>Found an error or better primary source? Email <a href="mailto:atray@cosmicessence.co.in">atray@cosmicessence.co.in</a> with the system ID and citation. We log updates in the atlas header date.</p>
+        </div>
+      </div>
+
+      <div class="source-list">
+        Primary references (start here):
+        <br>
+        <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener">WEF Future of Jobs Report 2025</a>
+        (39% core-skill change by 2030; analytical thinking #1) ·
+        <a href="https://www.ibm.com/new/training/skills-transformation-2021-workplace" target="_blank" rel="noopener">IBM skills half-life note</a>
+        (technical skills often ~2.5 yr) ·
+        OECD Learning Compass 2030 · UNESCO Futures of Education ·
+        National policy: Singapore MOE, Japan MEXT, Finnish core curriculum, India NEP 2020 ·
+        Google Project Oxygen / Aristotle (org research, not a school system) ·
+        ASER / national assessment context for India notes
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">COSMIC ESSENCE EDUCATION</div>
+        <p style="max-width:36ch; color:#b8b8b8; margin-bottom:10px">
+          Teaching entrepreneurship through physics-based cognitive frameworks — for ambitious teenagers worldwide.
+        </p>
+        <p>© 2026 Cosmic Essence Education. Atlas data: synthesized research reference.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://cosmicessence.co.in">Home</a>
+        <a href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=footer" target="_blank" rel="noopener">Readiness Score</a>
+        <a href="https://cosmicessence.co.in/programs/">Programs</a>
+        <a href="mailto:atray@cosmicessence.co.in">Inquiries</a>
+        <a href="https://wa.me/918742017911" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="sticky-assess" id="stickyAssess">
+    <button class="sticky-close" type="button" id="stickyClose" aria-label="Close">×</button>
+    <p id="stickyText">Ready to score the durable skills?</p>
+    <a href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=sticky" target="_blank" rel="noopener" class="btn btn-primary">Assess →</a>
+  </div>
+
+  <script>
+    /* ========== DATA ========== */
+    const SYSTEMS = [
+      {
+        id: 'singapore', name: 'Singapore', region: 'East Asia', archetype: 'Hybrid',
+        scores: { credential: 88, agency: 52, entrepreneurial: 48, durable: 58, reform: 82 },
+        optimizes: 'High performance with Full Subject-Based Banding over rigid streams.',
+        limit: 'High-stakes exams (e.g. PSLE path) still fuel intensive private tutoring.',
+        reform: 'Full SBB; GEP in current form discontinued from 2027 (final cohorts wind down after).',
+        ee: 'Applied learning / electives; not primarily venture-founding',
+        eeLevel: 'Integrated',
+        sources: 'MOE Singapore public communications · Full SBB · Synthesized scores'
+      },
+      {
+        id: 'finland', name: 'Finland', region: 'Nordic', archetype: 'Phenomenon-Based',
+        scores: { credential: 28, agency: 86, entrepreneurial: 55, durable: 80, reform: 70 },
+        optimizes: 'Trust-based schooling, limited high-stakes testing, multidisciplinary modules.',
+        limit: 'Municipal variance; PhBL is required modules, not “no subjects forever.”',
+        reform: 'Phenomenon-based / multidisciplinary learning in national core curriculum (from mid-2010s).',
+        ee: 'Working-life & entrepreneurship as transversal competence; not venture-first',
+        eeLevel: 'Peripheral',
+        sources: 'Finnish National Agency for Education · curriculum research · Synthesized scores'
+      },
+      {
+        id: 'japan', name: 'Japan', region: 'East Asia', archetype: 'Exam-Sorted',
+        scores: { credential: 85, agency: 42, entrepreneurial: 40, durable: 50, reform: 68 },
+        optimizes: 'Rigorous fundamentals + Society 5.0 / STEAM direction.',
+        limit: 'University entrance exams still reward recall-heavy preparation.',
+        reform: 'Programming education expansion (elementary from 2020); interdisciplinary “So-Go-Chi” direction.',
+        ee: 'Rising STEAM; limited early venture build',
+        eeLevel: 'Peripheral',
+        sources: 'MEXT policy summaries · Synthesized scores'
+      },
+      {
+        id: 'south-korea', name: 'South Korea', region: 'East Asia', archetype: 'Exam-Sorted',
+        scores: { credential: 92, agency: 35, entrepreneurial: 38, durable: 45, reform: 55 },
+        optimizes: 'Elite university gates and intensive exam performance.',
+        limit: 'Hagwon load crowds out open-ended exploration time.',
+        reform: 'Periodic “happiness education” / reduced burden reforms with mixed uptake.',
+        ee: 'Clubs & special schools; mainstream still exam-first',
+        eeLevel: 'Peripheral',
+        sources: 'OECD / national policy summaries · Synthesized'
+      },
+      {
+        id: 'india', name: 'India', region: 'South Asia', archetype: 'Exam-Sorted',
+        scores: { credential: 90, agency: 32, entrepreneurial: 42, durable: 40, reform: 72 },
+        optimizes: 'Board exams, competitive entrance filters, coaching ecosystems.',
+        limit: 'NEP intent (flexibility, multidisciplinary) vs classroom/coaching reality.',
+        reform: 'NEP 2020; multidisciplinary & vocational push — uneven execution.',
+        ee: 'Startup culture high; school EE often add-on',
+        eeLevel: 'Peripheral',
+        sources: 'NEP 2020 · ASER context · Synthesized'
+      },
+      {
+        id: 'china', name: 'China', region: 'East Asia', archetype: 'Exam-Sorted',
+        scores: { credential: 94, agency: 30, entrepreneurial: 45, durable: 42, reform: 60 },
+        optimizes: 'Gaokao-centered sorting with STEM depth at scale.',
+        limit: 'Double-reduction & exam culture in tension; exploration time scarce.',
+        reform: 'Double reduction (tutoring); selective innovation school tracks.',
+        ee: 'Maker / innovation schools in pockets',
+        eeLevel: 'Peripheral',
+        sources: 'Policy summaries · Synthesized'
+      },
+      {
+        id: 'united-states', name: 'United States', region: 'North America', archetype: 'Hybrid',
+        scores: { credential: 55, agency: 62, entrepreneurial: 70, durable: 58, reform: 48 },
+        optimizes: 'Local control, AP/college signaling, uneven project culture.',
+        limit: 'Quality variance extreme; degree filter still dominates hiring heuristics.',
+        reform: 'Career pathways & CTE expansion; state-level experiments.',
+        ee: 'Strong DECA/FBLA/startup ecosystems in places',
+        eeLevel: 'Integrated',
+        sources: 'NCES / employer research · Synthesized'
+      },
+      {
+        id: 'united-kingdom', name: 'United Kingdom', region: 'Europe', archetype: 'Exam-Sorted',
+        scores: { credential: 78, agency: 48, entrepreneurial: 50, durable: 52, reform: 50 },
+        optimizes: 'GCSEs/A-levels as sharp sorting signals.',
+        limit: 'Subject silos; creative & venture time compete with exam years.',
+        reform: 'T Levels / technical routes alongside academic track.',
+        ee: 'Enterprise education variable by school',
+        eeLevel: 'Peripheral',
+        sources: 'DfE summaries · Synthesized'
+      },
+      {
+        id: 'ib', name: 'IB (International)', region: 'Global', archetype: 'International',
+        scores: { credential: 65, agency: 72, entrepreneurial: 58, durable: 70, reform: 55 },
+        optimizes: 'Inquiry, CAS, extended essay — global university mobility.',
+        limit: 'Still high workload; EE often academic not venture.',
+        reform: 'Ongoing DP/CP updates; CP more applied.',
+        ee: 'CP & CAS can host real projects if designed well',
+        eeLevel: 'Integrated',
+        sources: 'IBO programme frameworks · Synthesized'
+      },
+      {
+        id: 'estonia', name: 'Estonia', region: 'Europe', archetype: 'Hybrid',
+        scores: { credential: 50, agency: 75, entrepreneurial: 62, durable: 72, reform: 78 },
+        optimizes: 'Digital-first public education and strong PISA outcomes.',
+        limit: 'Small system — scale lessons need context.',
+        reform: 'ProgeTiger / digital competence as national project.',
+        ee: 'Tech & startup culture spills into schools',
+        eeLevel: 'Integrated',
+        sources: 'Education Estonia · Synthesized'
+      },
+      {
+        id: 'germany', name: 'Germany', region: 'Europe', archetype: 'Hybrid',
+        scores: { credential: 60, agency: 55, entrepreneurial: 48, durable: 58, reform: 45 },
+        optimizes: 'Dual vocational system + academic Gymnasium tracks.',
+        limit: 'Early tracking can lock pathways; venture culture uneven.',
+        reform: 'Digital pact / inclusion reforms ongoing.',
+        ee: 'Apprenticeship excellence; startup EE secondary',
+        eeLevel: 'Peripheral',
+        sources: 'BMBF / OECD · Synthesized'
+      },
+      {
+        id: 'enterprise', name: 'Enterprise Signal', region: 'Global', archetype: 'Enterprise-Signal',
+        scores: { credential: 35, agency: 78, entrepreneurial: 88, durable: 85, reform: 70 },
+        optimizes: 'Psychological safety, coaching, prioritization, team systems (e.g. Google studies).',
+        limit: 'Hiring still often defaults to degree heuristics despite internal research.',
+        reform: 'Skills-based hiring experiments at scale (uneven).',
+        ee: 'On-the-job & internal academies',
+        eeLevel: 'Flagship',
+        sources: 'Project Oxygen / Aristotle · Synthesized'
+      }
+    ];
+
+    const SKILLS = [
+      { id: 'fp', name: 'First-principles synthesis', cls: 'durable', life: 'Infinite', half: 99, dim: 'D1 · Clarity', tag: 'Durable cognitive' },
+      { id: 'sys', name: 'Systems mapping & flywheels', cls: 'durable', life: 'Infinite', half: 99, dim: 'D3 · Systems', tag: 'Durable cognitive' },
+      { id: 'agency', name: 'Personal agency & initiative', cls: 'durable', life: 'Infinite', half: 99, dim: 'D2 · Change', tag: 'Durable agency' },
+      { id: 'scale', name: 'Prioritization under uncertainty', cls: 'durable', life: 'Infinite', half: 99, dim: 'D4 · Scale', tag: 'Durable cognitive' },
+      { id: 'collab', name: 'Team psychological safety & coaching', cls: 'durable', life: 'Long', half: 25, dim: 'Social', tag: 'Durable social' },
+      { id: 'python', name: 'Coding languages (Python, SQL…)', cls: 'transient', life: '3–5 yr', half: 4, dim: 'Tool', tag: 'Transient tool' },
+      { id: 'prompt', name: 'Prompt patterns for a specific model', cls: 'transient', life: '1–2 yr', half: 1.5, dim: 'Tool', tag: 'Transient tool' },
+      { id: 'book', name: 'Routine data entry & bookkeeping', cls: 'transient', life: '2–3 yr', half: 2.5, dim: 'Process', tag: 'Transient process' },
+      { id: 'rote', name: 'Academic rote exam compliance', cls: 'transient', life: 'Post-exam', half: 0.5, dim: 'Signal', tag: 'Transient signal' },
+      { id: 'suite', name: 'Single office-suite certification', cls: 'transient', life: '3–4 yr', half: 3.5, dim: 'Tool', tag: 'Transient tool' },
+      { id: 'comm', name: 'Clear writing & persuasion', cls: 'durable', life: 'Long', half: 30, dim: 'Social', tag: 'Durable social' },
+      { id: 'domain', name: 'Narrow textbook domain recall', cls: 'transient', life: '2–4 yr', half: 3, dim: 'Content', tag: 'Transient content' }
+    ];
+
+    const ERAS = [
+      {
+        year: '1926',
+        title: 'The Assembly Paradigm',
+        physics: '⚛ Inertia — establishing uniform motion',
+        optimize: 'Standardized literacy, punctuality, and compliance for industrial and bureaucratic scale.',
+        durable: 'Strategic judgment and problem framing still differentiated leaders — rarely mass-taught.',
+        assess: 'Age-graded progression; basic certification; limited mass secondary access.',
+        metricLabel: 'Global baseline',
+        metricText: 'Adult literacy roughly ~32% globally (OWID-era estimates). Schooling expanding, elite higher ed scarce.'
+      },
+      {
+        year: '1975',
+        title: 'The Credentialization Era',
+        physics: '⚛ Quantization — packaging ability into units',
+        optimize: 'Exam gates, specialized degrees, and sortable credentials for white-collar growth.',
+        durable: 'Interdisciplinary synthesis still drove breakthroughs outside narrow tracks.',
+        assess: 'SAT/PISA-era logic, national boards, university as primary signal.',
+        metricLabel: 'System expansion',
+        metricText: 'Secondary enrollment rising fast; higher ed multiplies across OECD economies.'
+      },
+      {
+        year: '2025',
+        title: 'The AI & Tech Inflection',
+        physics: '⚛ Activation energy — breaking path dependence',
+        optimize: 'Legacy curricula under automation stress; many classrooms still grade memorization.',
+        durable: 'Agency, systems thinking, and learning agility become the scarce assets.',
+        assess: 'Credentials lag; portfolios and proof-of-work rise unevenly.',
+        metricLabel: 'Competency churn',
+        metricText: 'WEF: large share of core skills in flux by 2030; analytical/systems thinking tops demand lists.'
+      },
+      {
+        year: '2050*',
+        title: 'The Synthesis Era (projected)',
+        physics: '⚛ Compounding — long-range leverage',
+        optimize: 'Scenario: interdisciplinary creation, learner agency, phenomenon projects at scale.',
+        durable: 'Physics-style lenses — forces, change, systems, scale — remain founder foundations.',
+        assess: 'Projected: portfolios, adaptive problem indices, agency evidence over pure degrees.',
+        metricLabel: 'Uncertainty indexing',
+        metricText: 'Traditional degrees weaken as sole signal; proof of adaptive building strengthens. (Projected)'
+      }
+    ];
+
+    const ROLE_COPY = {
+      parent: {
+        hint: 'You’re mapping the system your child is inside — and the skills that outlast the next exam cycle.',
+        bridge: 'See how your teen scores on the durable skills this atlas keeps lit (~10 min).',
+        sticky: 'Score your teen’s durable founder skills (~10 min).'
+      },
+      student: {
+        hint: 'You’re mapping what schools reward vs what still makes you valuable when tools change.',
+        bridge: 'Get your Future Founder Readiness Score — what is already strong, what to build (~10 min).',
+        sticky: 'Get your Future Founder Readiness Score (~10 min).'
+      },
+      counsellor: {
+        hint: 'You’re gathering system tradeoffs and skill-decay language for family conversations.',
+        bridge: 'Use the Readiness Score as a structured profile in guidance conversations (~10 min).',
+        sticky: 'Run the readiness score with a student (~10 min).'
+      },
+      leader: {
+        hint: 'You’re benchmarking credential vs agency vs entrepreneurial exposure for strategy talks.',
+        bridge: 'Benchmark a learner profile — then pilot cohort scoring with the same framework (~10 min).',
+        sticky: 'Benchmark readiness on the durable layer (~10 min).'
+      }
+    };
+
+    /* ========== STATE ========== */
+    let role = 'parent';
+    let archFilter = 'all';
+    let selectedId = null;
+    let compareIds = [];
+    let skillYear = 2026;
+    let profileAge = 14;
+    let tmIndex = 2;
+    let tmTimer = null;
+    let engaged = false;
+
+    const ASSESS = (content) =>
+      `https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=${content}`;
+
+    /* ========== UTILS ========== */
+    function toast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), 2600);
+    }
+
+    function ringColor(score) {
+      if (score >= 70) return '#F26522';
+      if (score >= 45) return '#111111';
+      return '#666666';
+    }
+
+    function markEngaged() {
+      if (engaged) return;
+      engaged = true;
+      if (!localStorage.getItem('atlasStickyDismissed')) {
+        document.getElementById('stickyAssess').classList.add('show');
+      }
+    }
+
+    /* ========== ROLE ========== */
+    function applyRole() {
+      const c = ROLE_COPY[role];
+      document.getElementById('roleHint').textContent = c.hint;
+      document.getElementById('bridgeRole').textContent = c.bridge;
+      document.getElementById('stickyText').textContent = c.sticky;
+    }
+
+    /* ========== SYSTEMS ========== */
+    function renderSystems() {
+      const grid = document.getElementById('sysGrid');
+      const list = SYSTEMS.filter(s => archFilter === 'all' || s.archetype === archFilter);
+      grid.innerHTML = list.map(s => {
+        const selected = compareIds.includes(s.id) || selectedId === s.id;
+        return `
+          <button type="button" class="sys-card ${selected ? 'selected' : ''}" data-id="${s.id}">
+            <div class="sys-card-top">
+              <span class="sys-region">${s.region}</span>
+              <span class="sys-archetype">${s.archetype}</span>
+            </div>
+            <div class="sys-name">${s.name}</div>
+            <p class="sys-opt">${s.optimizes}</p>
+            <div class="rings">
+              ${ring('Cred', s.scores.credential)}
+              ${ring('Agency', s.scores.agency)}
+              ${ring('EE', s.scores.entrepreneurial)}
+              ${ring('Durable', s.scores.durable)}
+            </div>
+            <div class="sys-card-foot">
+              <span>Reform ${s.scores.reform}</span>
+              <span class="ee-badge">${s.eeLevel}</span>
+            </div>
+          </button>`;
+      }).join('');
+
+      grid.querySelectorAll('.sys-card').forEach(card => {
+        card.addEventListener('click', () => onSystemClick(card.dataset.id));
+      });
+    }
+
+    function ring(label, score) {
+      return `
+        <div class="ring-row">
+          <div class="ring" style="--p:${score}; --ring-color:${ringColor(score)}"><span>${score}</span></div>
+          <div class="ring-meta"><b>${label}</b>${score}</div>
+        </div>`;
+    }
+
+    function onSystemClick(id) {
+      markEngaged();
+      selectedId = id;
+      if (!compareIds.includes(id)) {
+        if (compareIds.length < 3) compareIds.push(id);
+        else {
+          compareIds.shift();
+          compareIds.push(id);
+        }
+      }
+      document.getElementById('compareCount').textContent = compareIds.length;
+      renderSystems();
+      renderDetail(id);
+      renderCompare();
+    }
+
+    function renderDetail(id) {
+      const s = SYSTEMS.find(x => x.id === id);
+      const panel = document.getElementById('detailPanel');
+      if (!s) { panel.classList.remove('open'); return; }
+      const bars = [
+        ['Credential intensity', s.scores.credential, ''],
+        ['Agency orientation', s.scores.agency, 'gold'],
+        ['Entrepreneurial exposure', s.scores.entrepreneurial, ''],
+        ['Durable-skills emphasis', s.scores.durable, 'gold'],
+        ['Reform velocity', s.scores.reform, '']
+      ];
+      const mismatch = s.scores.credential - s.scores.agency;
+      panel.classList.add('open');
+      panel.innerHTML = `
+        <div class="detail-head">
+          <div>
+            <div class="sys-region">${s.region} · ${s.archetype}</div>
+            <h3>${s.name}</h3>
+          </div>
+          <button type="button" class="btn btn-ghost" id="closeDetail">Close</button>
+        </div>
+        <div class="detail-grid">
+          <div class="score-bars">
+            ${bars.map(([label, val, cls]) => `
+              <div>
+                <div class="score-bar-label"><span>${label}</span><span>${val}</span></div>
+                <div class="score-bar-track"><div class="score-bar-fill ${cls}" style="width:${val}%"></div></div>
+              </div>`).join('')}
+            <p style="font-family:var(--mono);font-size:0.72rem;color:var(--ce-mid-gray);margin-top:8px">
+              Credential − Agency gap:
+              <span class="${mismatch > 30 ? 'mismatch' : ''}">${mismatch > 0 ? '+' : ''}${mismatch}</span>
+              ${mismatch > 30 ? ' · high pressure / lower agency' : ''}
+            </p>
+          </div>
+          <div class="detail-copy">
+            <h4>Optimizes for</h4>
+            <p>${s.optimizes}</p>
+            <h4>Structural limit</h4>
+            <p>${s.limit}</p>
+            <h4>Flagship reform</h4>
+            <p>${s.reform}</p>
+            <h4>Entrepreneurial education</h4>
+            <p>${s.ee} <span style="color:var(--ce-orange)">(${s.eeLevel})</span></p>
+            <h4>Sources</h4>
+            <p style="font-family:var(--mono);font-size:0.72rem;color:var(--ce-mid-gray)">${s.sources}</p>
+          </div>
+        </div>
+        <div class="detail-actions">
+          <button type="button" class="btn btn-secondary" id="shareSystem">Copy share text</button>
+          <a class="btn btn-primary" href="${ASSESS('system_' + s.id)}" target="_blank" rel="noopener">This is the system — score the student →</a>
+        </div>`;
+      document.getElementById('closeDetail').onclick = () => {
+        panel.classList.remove('open');
+        selectedId = null;
+        renderSystems();
+      };
+      document.getElementById('shareSystem').onclick = () => {
+        const text = `${s.name} education system (Atlas)\nCredential ${s.scores.credential} · Agency ${s.scores.agency} · Entrepreneurial ${s.scores.entrepreneurial} · Durable ${s.scores.durable}\nGap (Cred−Agency): ${mismatch}\n${s.optimizes}\n→ https://cosmicessence.co.in/atlas`;
+        copyText(text);
+      };
+    }
+
+    function renderCompare() {
+      const panel = document.getElementById('comparePanel');
+      if (compareIds.length < 2) {
+        panel.classList.remove('open');
+        panel.innerHTML = '';
+        return;
+      }
+      const rows = compareIds.map(id => SYSTEMS.find(s => s.id === id));
+      const metrics = [
+        ['Credential', r => r.scores.credential],
+        ['Agency', r => r.scores.agency],
+        ['Entrepreneurial', r => r.scores.entrepreneurial],
+        ['Durable skills', r => r.scores.durable],
+        ['Reform velocity', r => r.scores.reform],
+        ['Cred − Agency gap', r => r.scores.credential - r.scores.agency],
+        ['EE level', r => r.eeLevel],
+        ['Archetype', r => r.archetype]
+      ];
+      panel.classList.add('open');
+      panel.innerHTML = `
+        <h3 style="font-family:var(--mono);margin-bottom:12px;font-size:1.3rem;color:var(--ce-black)">Compare (${rows.length})</h3>
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                ${rows.map(r => `<th class="sys-th">${r.name}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>
+              ${metrics.map(([label, fn]) => `
+                <tr>
+                  <td>${label}</td>
+                  ${rows.map(r => {
+                    const v = fn(r);
+                    const gap = label.includes('gap') && v > 30;
+                    return `<td class="${gap ? 'mismatch' : ''}">${v}</td>`;
+                  }).join('')}
+                </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+        <div class="detail-actions">
+          <button type="button" class="btn btn-secondary" id="shareCompare">Copy comparison</button>
+          <a class="btn btn-primary" href="${ASSESS('compare')}" target="_blank" rel="noopener">Score durable skills next →</a>
+        </div>`;
+      document.getElementById('shareCompare').onclick = () => {
+        const lines = rows.map(r =>
+          `${r.name}: Cred ${r.scores.credential} · Agency ${r.scores.agency} · EE ${r.scores.entrepreneurial} · Durable ${r.scores.durable}`
+        );
+        copyText(`Education systems compare (Global Education Atlas)\n${lines.join('\n')}\n→ https://cosmicessence.co.in/atlas`);
+      };
+    }
+
+    /* ========== SKILLS ========== */
+    function yearsOut() {
+      return skillYear - 2026;
+    }
+
+    function isDecayed(skill) {
+      if (skill.cls === 'durable' && skill.half >= 20) return false;
+      const elapsed = yearsOut();
+      // decay when elapsed exceeds ~half-life
+      return elapsed >= skill.half;
+    }
+
+    function renderSkills() {
+      const list = document.getElementById('skillsList');
+      list.innerHTML = SKILLS.map(sk => {
+        const decayed = isDecayed(sk);
+        const elapsed = yearsOut();
+        const pct = sk.cls === 'durable' && sk.half >= 20
+          ? 100
+          : Math.max(0, Math.min(100, 100 - (elapsed / sk.half) * 100));
+        return `
+          <div class="skill-row ${sk.cls} ${decayed ? 'decayed' : ''}">
+            <div>
+              <div class="skill-name">${sk.name}</div>
+              <div class="skill-meta">${sk.tag}${sk.dim ? ` · <span class="dim">${sk.dim}</span>` : ''}</div>
+            </div>
+            <div class="skill-class ${sk.cls}">${sk.cls === 'durable' ? 'Durable' : 'Transient'}</div>
+            <div class="skill-life">${sk.life}</div>
+            <div class="decay-bar ${sk.cls === 'durable' && sk.half >= 20 ? 'durable' : ''}"><i style="width:${pct}%"></i></div>
+          </div>`;
+      }).join('');
+
+      const transient = SKILLS.filter(s => s.cls === 'transient');
+      const dead = transient.filter(isDecayed).length;
+      const durableLit = SKILLS.filter(s => s.cls === 'durable' && !isDecayed(s)).length;
+      const insight = document.getElementById('decayInsight');
+      if (yearsOut() === 0) {
+        insight.innerHTML = `<strong>Today (age ${profileAge} baseline).</strong> Scrub forward to see which tool-skills dim. Durable founder skills stay lit.`;
+      } else {
+        insight.innerHTML = `<strong>${skillYear} · ${dead}/${transient.length} transient skills dimmed.</strong> ${durableLit} durable capabilities still fully lit. Schools often grade the dimming layer hardest.`;
+      }
+      document.getElementById('yearDisplay').textContent = skillYear;
+    }
+
+    function shareDecayText() {
+      const transient = SKILLS.filter(s => s.cls === 'transient');
+      const dead = transient.filter(isDecayed);
+      const alive = SKILLS.filter(s => s.cls === 'durable').map(s => s.name);
+      const text = `Skills shelf-life (${skillYear}) — Global Education Atlas
+Transient dimmed: ${dead.length}/${transient.length}${dead.length ? ' (' + dead.map(d => d.name).slice(0,3).join('; ') + (dead.length>3?', …':'') + ')' : ''}
+Still compound: ${alive.slice(0,4).join('; ')}
+Systems train for exams. Markets pay for durable thinking.
+→ https://cosmicessence.co.in/atlas`;
+      copyText(text);
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => toast('Copied — paste into WhatsApp or LinkedIn')).catch(() => fallbackCopy(text));
+      } else fallbackCopy(text);
+    }
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); toast('Copied — paste into WhatsApp or LinkedIn'); }
+      catch { toast('Copy failed — select text manually'); }
+      document.body.removeChild(ta);
+    }
+
+    /* ========== TIME ========== */
+    function renderEra() {
+      const e = ERAS[tmIndex];
+      document.getElementById('tmYear').textContent = e.year;
+      document.getElementById('tmTitle').textContent = e.title;
+      document.getElementById('tmPhysics').textContent = e.physics;
+      document.getElementById('tmOptimize').textContent = e.optimize;
+      document.getElementById('tmDurable').textContent = e.durable;
+      document.getElementById('tmAssess').textContent = e.assess;
+      document.getElementById('tmMetricLabel').textContent = e.metricLabel;
+      document.getElementById('tmMetricText').textContent = e.metricText;
+      document.getElementById('tmSlider').value = tmIndex;
+    }
+
+    function setEra(i) {
+      tmIndex = Math.max(0, Math.min(ERAS.length - 1, i));
+      renderEra();
+      markEngaged();
+    }
+
+    function togglePlay() {
+      const btn = document.getElementById('tmPlay');
+      if (tmTimer) {
+        clearInterval(tmTimer);
+        tmTimer = null;
+        btn.textContent = 'Play';
+        return;
+      }
+      btn.textContent = 'Pause';
+      tmTimer = setInterval(() => {
+        if (tmIndex >= ERAS.length - 1) {
+          setEra(0);
+        } else setEra(tmIndex + 1);
+      }, 2200);
+    }
+
+    /* ========== NAV ========== */
+    function setupLayerNav() {
+      document.querySelectorAll('.layer-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.target;
+          document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      const sections = ['systems', 'skills', 'time', 'bridge', 'method'];
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (!en.isIntersecting) return;
+          const id = en.target.id;
+          document.querySelectorAll('.layer-btn').forEach(b => {
+            b.classList.toggle('active', b.dataset.target === id);
+          });
+        });
+      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) io.observe(el);
+      });
+    }
+
+    /* ========== INIT ========== */
+    document.addEventListener('DOMContentLoaded', () => {
+      applyRole();
+      renderSystems();
+      renderSkills();
+      renderEra();
+      setupLayerNav();
+
+      document.getElementById('roleSelect').addEventListener('change', (e) => {
+        role = e.target.value;
+        applyRole();
+      });
+
+      document.querySelectorAll('#archetypeFilters .chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('#archetypeFilters .chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          archFilter = chip.dataset.arch;
+          renderSystems();
+        });
+      });
+
+      document.getElementById('clearCompare').addEventListener('click', () => {
+        compareIds = [];
+        selectedId = null;
+        document.getElementById('compareCount').textContent = '0';
+        document.getElementById('detailPanel').classList.remove('open');
+        renderSystems();
+        renderCompare();
+      });
+
+      document.getElementById('yearSlider').addEventListener('input', (e) => {
+        skillYear = +e.target.value;
+        renderSkills();
+        markEngaged();
+      });
+
+      document.querySelectorAll('.profile-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.profile-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          profileAge = +btn.dataset.age;
+          renderSkills();
+          markEngaged();
+        });
+      });
+
+      document.getElementById('shareDecay').addEventListener('click', shareDecayText);
+      document.getElementById('tmSlider').addEventListener('input', (e) => setEra(+e.target.value));
+      document.getElementById('tmPrev').addEventListener('click', () => setEra(tmIndex - 1));
+      document.getElementById('tmNext').addEventListener('click', () => setEra(tmIndex + 1));
+      document.getElementById('tmPlay').addEventListener('click', togglePlay);
+
+      document.getElementById('stickyClose').addEventListener('click', () => {
+        document.getElementById('stickyAssess').classList.remove('show');
+        localStorage.setItem('atlasStickyDismissed', '1');
+      });
+
+      // mobile nav label
+      const mq = window.matchMedia('(max-width:700px)');
+      const syncNav = () => {
+        document.querySelector('.nav-cta-text').style.display = mq.matches ? 'none' : '';
+        document.querySelector('.nav-cta-short').style.display = mq.matches ? '' : 'none';
+      };
+      syncNav();
+      mq.addEventListener('change', syncNav);
+    });
+  </script>
+</body>
+</html>

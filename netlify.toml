@@ -11,6 +11,11 @@
   to = "/programs/future-founders-bootcamp.html"
   status = 301
 
+[[redirects]]
+  from = "/atlas"
+  to = "/atlas.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -24,6 +24,120 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+<style>
+  /* Nav pill CTA */
+  .nav-cta-pill {
+    background: var(--ce-orange) !important;
+    color: white !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.01em;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-cta-pill:hover { opacity: 0.85 !important; }
+
+  /* Readiness Strip */
+  .readiness-strip {
+    background: #111111;
+    padding: 48px 0;
+  }
+  .readiness-strip-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .readiness-strip-text { flex: 1; min-width: 260px; }
+  .readiness-strip-label {
+    display: inline-block;
+    background: rgba(242, 101, 34, 0.15);
+    color: #F26522;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .readiness-strip-headline {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #F9F6F1;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .readiness-strip-sub {
+    font-size: 0.95rem;
+    color: #888;
+    line-height: 1.6;
+  }
+  .readiness-strip-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Sticky floating CTA */
+  .sticky-readiness {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background: #111111;
+    border: 1px solid rgba(242, 101, 34, 0.4);
+    border-radius: 12px;
+    padding: 14px 18px;
+    max-width: 300px;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    animation: slideUp 0.4s ease;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .sticky-readiness-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    flex: 1;
+  }
+  .sticky-readiness-icon {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+  .sticky-readiness-text {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 2px;
+  }
+  .sticky-readiness-cta {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #F26522;
+  }
+  .sticky-readiness-close {
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px;
+    line-height: 1;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+  .sticky-readiness-close:hover { color: #F9F6F1; }
+  @media (max-width: 480px) {
+    .sticky-readiness { bottom: 16px; right: 16px; left: 16px; max-width: none; }
+  }
+</style>
 </head>
 <body>
 
@@ -42,6 +156,7 @@
         <a href="/book.html" class="nav-link">Book</a>
         <a href="/blog/" class="nav-link">Blog</a>
         <a href="/resources/" class="nav-link">Resources</a>
+        <a href="https://tally.so/r/2EzpEM" target="_blank" class="nav-link nav-cta-pill">⚡ Readiness Score</a>
       </div>
 
       <a href="/contact.html" class="btn btn-primary nav-cta">Talk to Atray</a>
@@ -75,7 +190,7 @@
         <p class="hero-proof">→ Students placed at UChicago · Duke · Parsons · Pratt · SAIC</p>
         <div class="hero-ctas">
           <a href="/programs/" class="btn btn-primary">Explore Programs</a>
-          <a href="/assessment.html" class="btn btn-secondary">Get The Future Founder Readiness Score</a>
+          <a href="https://tally.so/r/2EzpEM" target="_blank" rel="noopener" class="btn btn-secondary">Take the Future Founder Readiness Score →</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -313,16 +428,27 @@
   <!-- Section 9: Lead Magnet / Assessment CTA -->
   <section id="lead-magnet" class="lead-magnet">
     <div class="container">
-      <h2>Get The Future Founder Readiness Score</h2>
-      <p>Not sure if entrepreneurship is for your teen? Take the 2-minute readiness assessment!</p>
+      <h2>Future Founder Readiness Score</h2>
+      <p>See how your teen scores on durable founder skills — Clarity, Change, Systems, and Scale. About 10 minutes.</p>
 
       <div class="form-container" style="text-align: center; padding: 2rem;">
-        <a href="/assessment.html" class="btn btn-primary btn-large" style="font-size: 1.2rem; padding: 1rem 2rem;">
-          Get The Future Founder Readiness Score
-        </a>
+        <a href="https://tally.so/r/2EzpEM" target="_blank" rel="noopener" class="btn btn-primary btn-large" style="font-size: 1.2rem; padding: 1rem 2rem;">
+          Take the Future Founder Readiness Score →</a>
       </div>
 
-      <p class="lead-magnet-note">⚡ Takes 2 minutes • Instant score • Personalized recommendations</p>
+      <p class="lead-magnet-note">⚡ Rigorous 15-minute diagnostic • Personalized competency matrix • Sourced from OECD & WEF frameworks</p>
+    </div>
+  </section>
+
+  <!-- Cognitive Diagnostic CTA Strip -->
+  <section class="readiness-strip">
+    <div class="container readiness-strip-inner">
+      <div class="readiness-strip-text">
+        <span class="readiness-strip-label">⚡ Free · ~10 min</span>
+        <p class="readiness-strip-headline">Future Founder Readiness Score</p>
+        <p class="readiness-strip-sub">See how your teen scores on durable founder skills — Clarity, Change, Systems, and Scale. About 10 minutes.</p>
+      </div>
+      <a href="https://tally.so/r/2EzpEM" target="_blank" class="btn btn-primary readiness-strip-btn">Take the Future Founder Readiness Score →</a>
     </div>
   </section>
 
@@ -389,6 +515,25 @@
         loadBlogPosts('#homepage-blog', { limit: 3 });
       }
     });
+  </script>
+  <!-- Sticky Readiness CTA -->
+  <div class="sticky-readiness" id="stickyReadiness">
+    <a href="https://tally.so/r/2EzpEM" target="_blank" class="sticky-readiness-link">
+      <span class="sticky-readiness-icon">⚡</span>
+      <span class="sticky-readiness-text">Future Founder Readiness Score · ~10 min</span>
+      <span class="sticky-readiness-cta">Take the Future Founder Readiness Score →</span>
+    </a>
+    <button class="sticky-readiness-close" onclick="document.getElementById('stickyReadiness').style.display='none'; localStorage.setItem('readinessDismissed', Date.now())" aria-label="Close">✕</button>
+  </div>
+  <script>
+    // Show sticky CTA after 4 seconds, respecting dismiss preference
+    setTimeout(function() {
+      var dismissed = localStorage.getItem('readinessDismissed');
+      var sevenDays = 7 * 24 * 60 * 60 * 1000;
+      if (!dismissed || (Date.now() - parseInt(dismissed)) > sevenDays) {
+        document.getElementById('stickyReadiness').style.display = 'flex';
+      }
+    }, 4000);
   </script>
 </body>
 </html>
