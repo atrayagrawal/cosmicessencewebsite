@@ -58,7 +58,16 @@ Commit and push. Homepage and Resources update together. Do not put templates ba
 
 ---
 
-## Changelog
+### 2026-09-18 — Program Titles & Canonical Order Alignment
+
+- Hero H1 on `programs/future-founders-bootcamp.html` set to "Future Founders Bootcamp" (with "Learn to build. Learn to sell." as subtitle tagline).
+- Hero H1 on `programs/future-founders-fellowship.html` set to "Future Founders Fellowship" (with "Mentorship for a global entrepreneurship competition." as subtitle tagline).
+- Standardized program ordering across both `programs/index.html` and homepage `index.html`:
+  1. Design Your Life Intensive
+  2. Future Founders Bootcamp
+  3. Future Founders Fellowship
+  4. The Founder & CEO's Walk
+  5. Math Classes (IB / IGCSE)
 
 ### 2026-09-18 — Full Static HTML Alignment & Centralized Styling
 
