@@ -1,11 +1,25 @@
 [
   {
-    "slug": "ce-starter-guide",
-    "title": "The CE Starter Guide",
-    "description": "5 physics-based thinking tools every teenager (and parent) should have.",
-    "format": "PDF",
-    "download_url": "#",
-    "gated": true,
-    "draft": false
+    "id": "atlas",
+    "tag": "Interactive",
+    "title": "Global Education Atlas",
+    "description": "See what school systems actually optimize for — exams, agency, entrepreneurial exposure — and which skills still compound as tools go stale. Built for parents, students, counsellors, and school leaders who want a clearer map than “which board is best.”",
+    "url": "/atlas.html",
+    "cta": "Open the Atlas →",
+    "external": false,
+    "show_on_home": true,
+    "home_style": "card"
+  },
+  {
+    "id": "youtube-playlist",
+    "tag": "YouTube",
+    "title": "Cosmic Essence Playlist",
+    "description": "Lectures, frameworks, and conversations. Watch in order, or pick the one you need.",
+    "url": "https://www.youtube.com/playlist?list=PLAvixarDYsX4",
+    "cta": "Watch the Playlist →",
+    "external": true,
+    "show_on_home": true,
+    "home_style": "video",
+    "embed": "https://www.youtube.com/embed/videoseries?list=PLAvixarDYsX4"
   }
 ]

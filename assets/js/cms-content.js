@@ -225,8 +225,5 @@ document.addEventListener('DOMContentLoaded', function() {
     loadSinglePost();
   }
 
-  // Load resources
-  if (document.querySelector('.resources-grid')) {
-    loadResources('.resources-grid');
-  }
+  // Resources are loaded by main.js from _content/resources/index.json — do not use the CMS here.
 });

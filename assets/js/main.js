@@ -12,21 +12,44 @@ document.addEventListener('DOMContentLoaded', function() {
   initLazyLoading();
   initScrollAnimations();
   initSitewideCtas();
+  loadSiteResources();
 });
 
 const CE_LINKS = {
   community: 'https://superprofile.bio/lf/6a9a82a0f29e060013b4fdcc',
+  readinessCall: 'https://superprofile.bio/bookings/atrayagrawal?sessionId=6a6e1cca33211a0013338098',
+  assessment: 'https://tally.so/r/2EzpEM',
   mathWhatsapp: 'https://wa.me/918742017911?text=Hi%20Atray%2C%20I%27m%20interested%20in%20Math%20classes%20for%20IB%2FIGCSE.',
   fellowship: '/programs/future-founders-fellowship.html'
 };
 
+function pointToCommunity(a, label) {
+  if (!a) return;
+  a.href = CE_LINKS.community;
+  a.textContent = label || 'Join Community';
+  a.title = 'Join Future Founders Community on WhatsApp';
+  a.target = '_blank';
+  a.rel = 'noopener';
+}
+
 function initSitewideCtas() {
   document.querySelectorAll('a.nav-cta, .mobile-menu a.btn.btn-primary').forEach(function(a) {
-    a.href = CE_LINKS.community;
-    a.textContent = 'Join Community';
-    a.title = 'Join Future Founders Community on WhatsApp';
-    a.target = '_blank';
-    a.rel = 'noopener';
+    pointToCommunity(a, 'Join Community');
+  });
+
+  document.querySelectorAll('a.nav-cta-pill').forEach(function(a) {
+    pointToCommunity(a, 'Join Community');
+  });
+
+  document.querySelectorAll('.readiness-strip').forEach(function(strip) {
+    const btn = strip.querySelector('a');
+    const headline = strip.querySelector('.readiness-strip-headline');
+    const sub = strip.querySelector('.readiness-strip-sub');
+    const label = strip.querySelector('.readiness-strip-label');
+    if (headline) headline.textContent = 'Join Future Founders Community on WhatsApp';
+    if (sub) sub.textContent = 'Parents and students around the next cohort, frameworks, and dates.';
+    if (label) label.textContent = 'Community';
+    pointToCommunity(btn, 'Join Community');
   });
 
   document.querySelectorAll('a.footer-link').forEach(function(a) {
@@ -36,12 +59,62 @@ function initSitewideCtas() {
       a.textContent = 'Future Founders Fellowship';
     }
     if (t === 'WhatsApp') {
-      a.href = CE_LINKS.community;
-      a.textContent = 'Join WhatsApp Community';
-      a.target = '_blank';
-      a.rel = 'noopener';
+      pointToCommunity(a, 'Join WhatsApp Community');
     }
   });
+}
+
+function resourceCardHtml(r) {
+  const target = r.external ? ' target="_blank" rel="noopener"' : '';
+  return (
+    '<div class="resource-card">' +
+      '<span class="tag tag-students">' + (r.tag || 'Resource') + '</span>' +
+      '<h4 class="mt-4">' + r.title + '</h4>' +
+      '<p>' + (r.description || '') + '</p>' +
+      '<a href="' + r.url + '" class="btn btn-ghost"' + target + '>' + (r.cta || 'Open →') + '</a>' +
+    '</div>'
+  );
+}
+
+function resourceHomeHtml(r) {
+  if (r.home_style === 'video' && r.embed) {
+    return (
+      '<div class="video-container" style="margin-bottom: var(--space-6);">' +
+        '<iframe width="100%" height="100%" src="' + r.embed + '" title="' + r.title + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+      '</div>' +
+      '<p><a href="' + r.url + '" class="btn btn-ghost" target="_blank" rel="noopener">' + (r.cta || 'Watch →') + '</a></p>'
+    );
+  }
+  return resourceCardHtml(r);
+}
+
+async function loadSiteResources() {
+  const full = document.getElementById('resources-grid');
+  const home = document.getElementById('homepage-resources');
+  if (!full && !home) return;
+
+  try {
+    const response = await fetch('/_content/resources/index.json');
+    if (!response.ok) return;
+    const items = await response.json();
+    const published = items.filter(function(r) { return r.draft !== true && r.draft !== 'true'; });
+
+    if (full) {
+      full.innerHTML = published.map(resourceCardHtml).join('');
+    }
+    if (home) {
+      const featured = published.filter(function(r) { return r.show_on_home; });
+      const videos = featured.filter(function(r) { return r.home_style === 'video'; });
+      const cards = featured.filter(function(r) { return r.home_style !== 'video'; });
+      let html = videos.map(resourceHomeHtml).join('');
+      if (cards.length) {
+        html += '<div class="resources-grid">' + cards.map(resourceCardHtml).join('') + '</div>';
+      }
+      home.innerHTML = html;
+    }
+  } catch (err) {
+    console.error('Error loading resources:', err);
+  }
 }
 
 /**

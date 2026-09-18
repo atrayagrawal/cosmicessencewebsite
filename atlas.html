@@ -1079,9 +1079,9 @@
           <option value="counsellor">I'm a Counsellor</option>
           <option value="leader">I'm a Leader</option>
         </select>
-        <a id="navAssess" href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=nav" target="_blank" rel="noopener" class="btn btn-primary">
-          <span class="nav-cta-text">Find Readiness Score</span>
-          <span class="nav-cta-short" style="display:none">Score</span>
+        <a id="navAssess" href="https://superprofile.bio/bookings/atrayagrawal?sessionId=6a6e1cca33211a0013338098" target="_blank" rel="noopener" class="btn btn-primary">
+          <span class="nav-cta-text">Book a Readiness Call</span>
+          <span class="nav-cta-short" style="display:none">Call</span>
         </a>
       </div>
     </div>
@@ -1204,9 +1204,9 @@
           <button class="btn btn-secondary" id="shareDecay" type="button" style="width:100%; margin-bottom:10px">
             Copy share text
           </button>
-          <a id="skillsAssess" href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=skills"
+          <a id="skillsAssess" href="https://superprofile.bio/bookings/atrayagrawal?sessionId=6a6e1cca33211a0013338098"
              target="_blank" rel="noopener" class="btn btn-primary" style="width:100%">
-            Measure durable skills →
+            Book a Readiness Call →
           </a>
         </aside>
 
@@ -1283,11 +1283,11 @@
           Clarity, Change, Systems, and Scale — about 10 minutes.
         </p>
         <p class="bridge-role-line" id="bridgeRole"></p>
-        <a id="bridgeAssess" href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=bridge"
+        <a id="bridgeAssess" href="https://superprofile.bio/bookings/atrayagrawal?sessionId=6a6e1cca33211a0013338098"
            target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-          Take the Future Founder Readiness Score →
+          Book a Readiness Call →
         </a>
-        <p class="bridge-sub">~10 minutes · Free · Personalized founder readiness profile</p>
+        <p class="bridge-sub">15 minutes · Talk through where the student is, and which program fits.</p>
       </div>
     </div>
   </section>
@@ -1360,7 +1360,7 @@
       </div>
       <div class="footer-links">
         <a href="https://cosmicessence.co.in">Home</a>
-        <a href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=footer" target="_blank" rel="noopener">Find Readiness Score</a>
+        <a href="https://superprofile.bio/bookings/atrayagrawal?sessionId=6a6e1cca33211a0013338098" target="_blank" rel="noopener">Book a Readiness Call</a>
         <a href="https://cosmicessence.co.in/programs/">Programs</a>
         <a href="mailto:atray@cosmicessence.co.in">Inquiries</a>
         <a href="https://wa.me/918742017911" target="_blank" rel="noopener">WhatsApp</a>
@@ -1372,8 +1372,8 @@
 
   <div class="sticky-assess" id="stickyAssess">
     <button class="sticky-close" type="button" id="stickyClose" aria-label="Close">×</button>
-    <p id="stickyText">Ready to score the durable skills?</p>
-    <a href="https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=sticky" target="_blank" rel="noopener" class="btn btn-primary">Assess →</a>
+    <p id="stickyText">Ready to talk about where the student is?</p>
+    <a href="https://superprofile.bio/bookings/atrayagrawal?sessionId=6a6e1cca33211a0013338098" target="_blank" rel="noopener" class="btn btn-primary">Book a Call →</a>
   </div>
 
   <script>
@@ -1562,23 +1562,23 @@
     const ROLE_COPY = {
       parent: {
         hint: 'You’re mapping the system your child is inside — and the skills that outlast the next exam cycle.',
-        bridge: 'See how your teen scores on the durable skills this atlas keeps lit (~10 min).',
-        sticky: 'Score your teen’s durable founder skills (~10 min).'
+        bridge: 'Book a 15-minute Readiness Call — where your teen is, and which program fits.',
+        sticky: 'Book a Readiness Call (15 min).'
       },
       student: {
         hint: 'You’re mapping what schools reward vs what still makes you valuable when tools change.',
-        bridge: 'Get your Future Founder Readiness Score — what is already strong, what to build (~10 min).',
-        sticky: 'Get your Future Founder Readiness Score (~10 min).'
+        bridge: 'Book a Readiness Call — what is already strong, what to build next.',
+        sticky: 'Book a Readiness Call (15 min).'
       },
       counsellor: {
         hint: 'You’re gathering system tradeoffs and skill-decay language for family conversations.',
-        bridge: 'Use the Readiness Score as a structured profile in guidance conversations (~10 min).',
-        sticky: 'Run the readiness score with a student (~10 min).'
+        bridge: 'Book a Readiness Call to walk a family through the map and the next program.',
+        sticky: 'Book a Readiness Call (15 min).'
       },
       leader: {
         hint: 'You’re benchmarking credential vs agency vs entrepreneurial exposure for strategy talks.',
-        bridge: 'Benchmark a learner profile — then pilot cohort scoring with the same framework (~10 min).',
-        sticky: 'Benchmark readiness on the durable layer (~10 min).'
+        bridge: 'Book a Readiness Call to talk through how this maps onto a cohort or school.',
+        sticky: 'Book a Readiness Call (15 min).'
       }
     };
 
@@ -1594,7 +1594,7 @@
     let engaged = false;
 
     const ASSESS = (content) =>
-      `https://tally.so/r/2EzpEM?utm_source=atlas&utm_medium=cta&utm_content=${content}`;
+      'https://superprofile.bio/bookings/atrayagrawal?sessionId=6a6e1cca33211a0013338098';
 
     /* ========== UTILS ========== */
     function toast(msg) {
@@ -1731,7 +1731,7 @@
         </div>
         <div class="detail-actions">
           <button type="button" class="btn btn-secondary" id="shareSystem">Copy share text</button>
-          <a class="btn btn-primary" href="${ASSESS('system_' + s.id)}" target="_blank" rel="noopener">This is the system — score the student →</a>
+          <a class="btn btn-primary" href="${ASSESS('system_' + s.id)}" target="_blank" rel="noopener">This is the system — book a Readiness Call →</a>
         </div>`;
       document.getElementById('closeDetail').onclick = () => {
         panel.classList.remove('open');
@@ -1788,7 +1788,7 @@
         </div>
         <div class="detail-actions">
           <button type="button" class="btn btn-secondary" id="shareCompare">Copy comparison</button>
-          <a class="btn btn-primary" href="${ASSESS('compare')}" target="_blank" rel="noopener">Score durable skills next →</a>
+          <a class="btn btn-primary" href="${ASSESS('compare')}" target="_blank" rel="noopener">Book a Readiness Call →</a>
         </div>`;
       document.getElementById('shareCompare').onclick = () => {
         const lines = rows.map(r =>
