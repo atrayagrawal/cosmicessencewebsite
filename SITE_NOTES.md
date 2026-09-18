@@ -60,6 +60,12 @@ Commit and push. Homepage and Resources update together. Do not put templates ba
 
 ## Changelog
 
+### 2026-09-18 — Full Static HTML Alignment & Centralized Styling
+
+- Centralized `.nav-cta-pill` and `.readiness-strip` styles into `assets/css/components.css` (single source of truth for styles).
+- Aligned raw HTML in all templates (`about.html`, `book.html`, `contact.html`, `resources/index.html`, `blog/`, `programs/`) to "Join Community" so there is zero flash before `main.js` executes.
+- Added missing "Join Community" nav pill to `/resources/index.html`, `/blog/`, `404.html`, and `assessment.html`.
+
 ### 2026-09-18 — Community CTAs, Atlas → call, resources without CMS
 
 - Nav pill “Find Readiness Score” and footer assessment strips now point to the **WhatsApp community** (`initSitewideCtas` in `main.js`).

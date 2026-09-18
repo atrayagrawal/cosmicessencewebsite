@@ -664,3 +664,66 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Nav pill CTA */
+.nav-cta-pill {
+  background: var(--ce-orange) !important;
+  color: white !important;
+  padding: 6px 14px !important;
+  border-radius: 20px !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  display: inline-block;
+}
+.nav-cta-pill:hover {
+  opacity: 0.85 !important;
+}
+
+/* Readiness Strip (Community CTA Strip) */
+.readiness-strip {
+  background: #111111;
+  padding: 48px 0;
+}
+.readiness-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.readiness-strip-text {
+  flex: 1;
+  min-width: 260px;
+}
+.readiness-strip-label {
+  display: inline-block;
+  background: rgba(242, 101, 34, 0.15);
+  color: #F26522;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.readiness-strip-headline {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #F9F6F1;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.readiness-strip-sub {
+  font-size: 0.95rem;
+  color: #888;
+  line-height: 1.6;
+}
+.readiness-strip-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
