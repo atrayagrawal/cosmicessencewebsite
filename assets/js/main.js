@@ -11,7 +11,38 @@ document.addEventListener('DOMContentLoaded', function() {
   initAccordion();
   initLazyLoading();
   initScrollAnimations();
+  initSitewideCtas();
 });
+
+const CE_LINKS = {
+  community: 'https://superprofile.bio/lf/6a9a82a0f29e060013b4fdcc',
+  mathWhatsapp: 'https://wa.me/918742017911?text=Hi%20Atray%2C%20I%27m%20interested%20in%20Math%20classes%20for%20IB%2FIGCSE.',
+  fellowship: '/programs/future-founders-fellowship.html'
+};
+
+function initSitewideCtas() {
+  document.querySelectorAll('a.nav-cta, .mobile-menu a.btn.btn-primary').forEach(function(a) {
+    a.href = CE_LINKS.community;
+    a.textContent = 'Join Community';
+    a.title = 'Join Future Founders Community on WhatsApp';
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+
+  document.querySelectorAll('a.footer-link').forEach(function(a) {
+    const t = (a.textContent || '').trim();
+    if (t === 'First Spark Workshop') {
+      a.href = CE_LINKS.fellowship;
+      a.textContent = 'Future Founders Fellowship';
+    }
+    if (t === 'WhatsApp') {
+      a.href = CE_LINKS.community;
+      a.textContent = 'Join WhatsApp Community';
+      a.target = '_blank';
+      a.rel = 'noopener';
+    }
+  });
+}
 
 /**
  * Mobile Menu Toggle
