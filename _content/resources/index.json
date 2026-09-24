@@ -1,5 +1,16 @@
 [
   {
+    "id": "future-of-work",
+    "tag": "Research Report",
+    "title": "The Future of Work: Why Entrepreneurial Agency Stands Out in the Age of AI",
+    "description": "A strategic white paper analyzing cognitive automation, the collapse of entry-level apprenticeship ladders, and why high-agency orchestration is the primary differentiator for the next generation.",
+    "url": "/research/future-of-work.html",
+    "cta": "Read the White Paper →",
+    "external": false,
+    "show_on_home": true,
+    "home_style": "card"
+  },
+  {
     "id": "atlas",
     "tag": "Interactive",
     "title": "Global Education Atlas",

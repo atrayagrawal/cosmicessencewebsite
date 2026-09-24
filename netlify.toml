@@ -26,6 +26,16 @@
   to = "https://wa.me/918742017911?text=Hi%20Atray%2C%20I'm%20interested%20in%20Math%20classes%20for%20IB/IGCSE."
   status = 302
 
+[[redirects]]
+  from = "/assessment"
+  to = "https://tally.so/r/2EzpEM"
+  status = 302
+
+[[redirects]]
+  from = "/assessment.html"
+  to = "https://tally.so/r/2EzpEM"
+  status = 302
+
 [[headers]]
   for = "/*"
   [headers.values]

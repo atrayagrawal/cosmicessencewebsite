@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initScrollAnimations();
   initSitewideCtas();
   loadSiteResources();
+  initAnalyticsTracking();
 });
 
 const CE_LINKS = {
@@ -387,3 +388,61 @@ toastStyles.textContent = `
   }
 `;
 document.head.appendChild(toastStyles);
+
+// GA4 Automated Conversion & Outbound Event Tracking
+function initAnalyticsTracking() {
+  document.addEventListener('click', function(e) {
+    const target = e.target.closest('a, button');
+    if (!target) return;
+
+    const href = target.getAttribute('href') || '';
+    const text = (target.textContent || '').trim();
+
+    if (typeof gtag !== 'function') return;
+
+    // Join WhatsApp Community clicks
+    if (href.includes('superprofile.bio/lf/6a9a82a0f29e060013b4fdcc') || (text.includes('Community') && !href.startsWith('#'))) {
+      gtag('event', 'join_community_click', {
+        event_category: 'engagement',
+        event_label: text,
+        link_url: href
+      });
+    }
+
+    // Book Student Readiness Call clicks
+    if (href.includes('superprofile.bio/bookings') || text.includes('Readiness Call')) {
+      gtag('event', 'book_readiness_call_click', {
+        event_category: 'conversion',
+        event_label: text,
+        link_url: href
+      });
+    }
+
+    // Tally Form submissions / clicks
+    if (href.includes('tally.so')) {
+      gtag('event', 'tally_form_click', {
+        event_category: 'lead',
+        event_label: text,
+        link_url: href
+      });
+    }
+
+    // Direct WhatsApp chat clicks
+    if (href.includes('wa.me')) {
+      gtag('event', 'whatsapp_chat_click', {
+        event_category: 'lead',
+        event_label: text,
+        link_url: href
+      });
+    }
+
+    // PDF Print / Download actions
+    if (text.includes('Print / Save PDF') || text.includes('PDF')) {
+      gtag('event', 'pdf_download_action', {
+        event_category: 'resource',
+        event_label: text
+      });
+    }
+  });
+}
+

@@ -1,0 +1,42 @@
+# robots.txt for https://cosmicessence.co.in
+# Optimization for standard search engines and AI answer engines
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /_content/
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Generative AI & Answer Engine Crawlers (AEO / GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Canonical XML Sitemap
+Sitemap: https://cosmicessence.co.in/sitemap.xml

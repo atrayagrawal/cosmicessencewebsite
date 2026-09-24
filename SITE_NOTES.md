@@ -97,8 +97,25 @@ Commit and push. Homepage and Resources update together. Do not put templates ba
 
 1. **Bootcamp Program Details URL** (Superprofile `/lf/` or Google Doc). Until then, “Check out the Program Details” on Bootcamp goes to the Readiness Call.
 2. **Blog → Kit.com** once the custom URL exists. Current blog still uses `_content/blog/` + `cms-content.js`.
-3. **Assessment Tally** is parked as a sitewide CTA. It still exists at `https://tally.so/r/2EzpEM` and is still used as Bootcamp CTA 2.
+3. **Assessment Tally** is parked as a sitewide CTA. It still exists at `https://tally.so/r/2EzpEM` and is still used as Bootcamp CTA 2. Static `assessment.html` moved to `_archived_pages/` with 302 redirects in `netlify.toml`.
 4. First Spark and old math landing page files still exist on disk but are not sold. Math URL redirects to WhatsApp.
+
+### Content Gaps Roadmap (To Revisit)
+- **Lens 1: Neha (Parent / Payer):**
+  - Add Parent FAQ on Academic Load (reassure that 3-4 hrs/wk on weekends will not derail ICSE/CBSE/IBDP board exams).
+  - Explicitly frame outcomes as Common App Activity #1 / university proof-of-work spike.
+  - Add quick age/grade program decision guide (Grades 8-9 vs 10-12).
+  - Highlight peer cohort caliber (selective schools across India & abroad).
+- **Lens 2: Aarav (Teen / Discovery):**
+  - Student Proof-of-Work Gallery (showcase 3-4 real student projects: name, what they built, revenue/traction).
+  - 1-Click WhatsApp "Forward to Parents" kit.
+  - Authentic photos/behind-the-scenes visuals of cohorts working and pitch nights.
+- **Lens 3: Counsellors (IECs & School Guidance):**
+  - "For Counsellors" dedicated section / partnership & student referral protocol.
+  - 1-page alignment guide on how CE projects translate into Common App & college essays.
+- **Lens 4: Schools & Institutions:**
+  - Bring offline school proposals (`SPARK Lab Class 8-9`, `SEED Lab`, on-campus masterclasses) into a dedicated institutional partnerships page/section.
+  - Map to NEP 2020 skill directives, IB CAS, and Cambridge Enterprise.
 
 ---
 
