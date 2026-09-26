@@ -1,36 +1,48 @@
 [
   {
-    "id": "future-of-work",
-    "tag": "Research Report",
-    "title": "The Future of Work: Why Entrepreneurial Agency Stands Out in the Age of AI",
-    "description": "A strategic white paper analyzing cognitive automation, the collapse of entry-level apprenticeship ladders, and why high-agency orchestration is the primary differentiator for the next generation.",
-    "url": "/research/future-of-work.html",
-    "cta": "Read the White Paper →",
+    "id": "architecture-of-agency",
+    "tag": "Whitepaper & Report",
+    "type": "whitepaper",
+    "read_time": "28 min",
+    "title": "The Architecture of Agency",
+    "description": "Empirical study on Harvard and Stanford admissions data, Spencean costly signaling, and why verified ventures outperform credential stacking.",
+    "url": "/research/architecture-of-agency.html",
+    "cta": "Read Whitepaper →",
     "external": false,
-    "show_on_home": true,
-    "home_style": "card"
+    "show_on_home": true
+  },
+  {
+    "id": "future-of-work",
+    "tag": "Whitepaper & Report",
+    "type": "whitepaper",
+    "read_time": "14 min",
+    "title": "The Future of Work",
+    "description": "Strategic report on cognitive automation, the collapse of white-collar apprenticeship ladders, and the rise of high-agency orchestration.",
+    "url": "/research/future-of-work.html",
+    "cta": "Read Whitepaper →",
+    "external": false,
+    "show_on_home": true
   },
   {
     "id": "atlas",
-    "tag": "Interactive",
+    "tag": "Interactive Tool",
+    "type": "tool",
     "title": "Global Education Atlas",
-    "description": "See what school systems actually optimize for — exams, agency, entrepreneurial exposure — and which skills still compound as tools go stale. Built for parents, students, counsellors, and school leaders who want a clearer map than “which board is best.”",
+    "description": "Interactive map comparing global school boards (IB, Cambridge, CBSE) on exam pressure, agency cultivation, and curriculum half-life.",
     "url": "/atlas.html",
     "cta": "Open the Atlas →",
     "external": false,
-    "show_on_home": true,
-    "home_style": "card"
+    "show_on_home": true
   },
   {
     "id": "youtube-playlist",
-    "tag": "YouTube",
+    "tag": "Video Series",
+    "type": "media",
     "title": "Cosmic Essence Playlist",
-    "description": "Lectures, frameworks, and conversations. Watch in order, or pick the one you need.",
+    "description": "Curated video lectures and mental models connecting physical laws with entrepreneurship and adolescent agency.",
     "url": "https://www.youtube.com/playlist?list=PLAvixarDYsX4",
-    "cta": "Watch the Playlist →",
+    "cta": "Watch Playlist →",
     "external": true,
-    "show_on_home": true,
-    "home_style": "video",
-    "embed": "https://www.youtube.com/embed/videoseries?list=PLAvixarDYsX4"
+    "show_on_home": true
   }
 ]

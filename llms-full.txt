@@ -32,7 +32,7 @@ Cosmic Essence bridges scientific inquiry and commercial value creation by showi
 
 ### 1. Future Founders Bootcamp
 - **Target Audience:** Teenagers aged 12–18.
-- **Format:** High-intensity cohort-based program (online + interactive workshops).
+- **Format:** 8-Week Live Cohort (online + interactive workshops).
 - **Core Outcomes:**
   - Problem framing: Identifying real-world friction and unserved customer needs.
   - Rapid prototyping: Building functional minimum viable products (MVPs) using modern no-code and AI tools in days rather than months.
@@ -70,8 +70,18 @@ Cosmic Essence bridges scientific inquiry and commercial value creation by showi
 - **Features:** Comprehensive analysis comparing global education systems (CBSE, ICSE, Cambridge, IB) on metrics including exam pressure, agency cultivation, entrepreneurial exposure, and curriculum half-life.
 - **Canonical URL:** https://cosmicessence.co.in/atlas.html
 
-### 6. Research White Paper: The Future of Work
-- **Format:** Open-access research publication and 10-question interactive agency diagnostic.
+### 6. Resources & Strategic Whitepapers
+- **Format:** Open-access strategic whitepaper and curriculum resource repository.
+- **Features:** Empirical inquiries into adolescent cognitive agency, university admissions signaling, labor market disruption in the AI era, and curriculum comparisons.
+- **Canonical URL:** https://cosmicessence.co.in/resources/
+
+### 7. Strategic Whitepaper: The Architecture of Agency
+- **Format:** Open-access empirical research whitepaper (~28 min read) and interactive Harvard Extracurricular Rubric calculator.
+- **Features:** Rigorous meta-analysis of Harvard and Stanford admissions data (citing Students for Fair Admissions v. Harvard trial exhibits), Michael Spence's costly signaling theory, global competition benchmarking (Blue Ocean Competition, ISSDC NASA), and a 4-year longitudinal framework showing why authentic student ventures provide un-fakeable high-fidelity signals in selective admissions.
+- **Canonical URL:** https://cosmicessence.co.in/research/architecture-of-agency.html
+
+### 8. Strategic Whitepaper: The Future of Work
+- **Format:** Open-access strategic whitepaper (~14 min read) and 10-question interactive agency diagnostic.
 - **Features:** Meta-analysis examining cognitive automation, the erosion of corporate white-collar apprenticeship ladders, comparative archetype matrices, and actionable playbooks for parents, next-gen family business leaders, and educators.
 - **Canonical URL:** https://cosmicessence.co.in/research/future-of-work.html
 

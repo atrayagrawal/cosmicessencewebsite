@@ -19,12 +19,14 @@ Rather than treating business as rote vocational management or treating science 
 - **Antifragility (Thermodynamics & Systems):** Designing projects and personal trajectories that gain strength from volatility, failure, and feedback.
 
 ## Core Programs & Offerings
-- [Future Founders Bootcamp](https://cosmicessence.co.in/programs/future-founders-bootcamp.html): A 4-week flagship cohort where students go from problem identification to building, testing, and shipping an authentic product or venture with real customer validation.
+- [Future Founders Bootcamp](https://cosmicessence.co.in/programs/future-founders-bootcamp.html): An 8-week flagship live cohort where students go from problem identification to building, testing, and shipping an authentic product or venture with real customer validation.
 - [Future Founders Fellowship](https://cosmicessence.co.in/programs/future-founders-fellowship.html): A selective, multi-month incubation fellowship providing personalized mentorship, operational reviews, and venture launch support for exceptional teenage founders.
 - [Design Your Life Intensive](https://cosmicessence.co.in/programs/design-your-life.html): A foundational curriculum for teens to dismantle academic anxiety, clarify personal values, and construct high-agency life architectures.
 - [The Founder CEO's Walk](https://cosmicessence.co.in/programs/founder-ceos-walk.html): An experiential, real-world friction observation walk through the historic commercial bazaars of Jaipur, teaching students how to spot unserved market opportunities in the wild.
 - [Global Education Atlas](https://cosmicessence.co.in/atlas.html): An interactive database analyzing international curriculum boards (IB, Cambridge, CBSE, ICSE), skill half-lives, and founder readiness metrics.
 - [The Book](https://cosmicessence.co.in/book.html): *Teaching Entrepreneurship Through Physics* by Atray Agrawal.
+- [Resources & Strategic Whitepapers](https://cosmicessence.co.in/resources/): In-depth strategic whitepapers, interactive curriculum maps, and pedagogical frameworks examining adolescent agency, selective admissions criteria, and cognitive labor disruption in the AI era.
+- [Research White Paper: The Architecture of Agency](https://cosmicessence.co.in/research/architecture-of-agency.html): An empirical study analyzing Harvard/Stanford admissions data (SFFA v. Harvard exhibits), Spencean costly signaling, and why authentic student ventures provide un-fakeable high-fidelity signals in selective college admissions.
 - [Research White Paper: The Future of Work](https://cosmicessence.co.in/research/future-of-work.html): A strategic white paper analyzing cognitive automation, the collapse of entry-level apprenticeship ladders, and why high-agency orchestration is the primary differentiator for the next generation.
 
 ## Target Demographics & Use Cases

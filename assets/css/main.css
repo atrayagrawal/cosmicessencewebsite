@@ -58,6 +58,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -66,6 +67,7 @@ body {
   line-height: 1.6;
   color: var(--ce-dark-gray);
   background-color: var(--ce-white);
+  overflow-x: hidden;
 }
 
 img {

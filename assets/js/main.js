@@ -67,32 +67,32 @@ function initSitewideCtas() {
 
 function resourceCardHtml(r) {
   const target = r.external ? ' target="_blank" rel="noopener"' : '';
+  const isWhitepaper = r.type === 'whitepaper';
+  const cardClass = isWhitepaper ? 'resource-card card-whitepaper' : 'resource-card';
+  const tagClass = isWhitepaper ? 'tag tag-whitepaper' : 'tag tag-students';
+  const readTime = r.read_time ? '<span class="card-readtime">' + r.read_time + ' read</span>' : '';
+  
   return (
-    '<div class="resource-card">' +
-      '<span class="tag tag-students">' + (r.tag || 'Resource') + '</span>' +
-      '<h4 class="mt-4">' + r.title + '</h4>' +
+    '<div class="' + cardClass + '">' +
+      '<div class="resource-card-header">' +
+        '<span class="' + tagClass + '">' + (r.tag || 'Resource') + '</span>' +
+        readTime +
+      '</div>' +
+      '<h4><a href="' + r.url + '"' + target + '>' + r.title + '</a></h4>' +
       '<p>' + (r.description || '') + '</p>' +
-      '<a href="' + r.url + '" class="btn btn-ghost"' + target + '>' + (r.cta || 'Open →') + '</a>' +
+      '<div>' +
+        '<a href="' + r.url + '" class="btn btn-ghost"' + target + '>' + (r.cta || 'Open →') + '</a>' +
+      '</div>' +
     '</div>'
   );
 }
 
-function resourceHomeHtml(r) {
-  if (r.home_style === 'video' && r.embed) {
-    return (
-      '<div class="video-container" style="margin-bottom: var(--space-6);">' +
-        '<iframe width="100%" height="100%" src="' + r.embed + '" title="' + r.title + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
-      '</div>' +
-      '<p><a href="' + r.url + '" class="btn btn-ghost" target="_blank" rel="noopener">' + (r.cta || 'Watch →') + '</a></p>'
-    );
-  }
-  return resourceCardHtml(r);
-}
-
 async function loadSiteResources() {
+  const whitepapersContainer = document.getElementById('whitepapers-grid');
+  const toolsContainer = document.getElementById('tools-grid');
   const full = document.getElementById('resources-grid');
   const home = document.getElementById('homepage-resources');
-  if (!full && !home) return;
+  if (!whitepapersContainer && !toolsContainer && !full && !home) return;
 
   try {
     const response = await fetch('/_content/resources/index.json');
@@ -100,18 +100,25 @@ async function loadSiteResources() {
     const items = await response.json();
     const published = items.filter(function(r) { return r.draft !== true && r.draft !== 'true'; });
 
-    if (full) {
+    // Dedicated Whitepapers and Tools containers on /resources/
+    if (whitepapersContainer) {
+      const whitepapers = published.filter(function(r) { return r.type === 'whitepaper'; });
+      whitepapersContainer.innerHTML = whitepapers.map(resourceCardHtml).join('');
+    }
+    if (toolsContainer) {
+      const tools = published.filter(function(r) { return r.type !== 'whitepaper'; });
+      toolsContainer.innerHTML = tools.map(resourceCardHtml).join('');
+    }
+
+    // Fallback single container on /resources/
+    if (full && !whitepapersContainer) {
       full.innerHTML = published.map(resourceCardHtml).join('');
     }
+
+    // Homepage showcase
     if (home) {
       const featured = published.filter(function(r) { return r.show_on_home; });
-      const videos = featured.filter(function(r) { return r.home_style === 'video'; });
-      const cards = featured.filter(function(r) { return r.home_style !== 'video'; });
-      let html = videos.map(resourceHomeHtml).join('');
-      if (cards.length) {
-        html += '<div class="resources-grid">' + cards.map(resourceCardHtml).join('') + '</div>';
-      }
-      home.innerHTML = html;
+      home.innerHTML = '<div class="resources-grid">' + featured.map(resourceCardHtml).join('') + '</div>';
     }
   } catch (err) {
     console.error('Error loading resources:', err);
