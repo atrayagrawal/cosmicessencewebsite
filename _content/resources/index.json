@@ -24,6 +24,17 @@
     "show_on_home": true
   },
   {
+    "id": "essays-newsletter",
+    "tag": "Essays & Articles",
+    "type": "writing",
+    "title": "Cosmic Essence Essays",
+    "description": "Long-form essays by Atray Agrawal on adolescent agency, the physics of business, and preparing teenagers for an AI-native world.",
+    "url": "https://atray.kit.com",
+    "cta": "Read on Kit.com →",
+    "external": true,
+    "show_on_home": true
+  },
+  {
     "id": "atlas",
     "tag": "Interactive Tool",
     "type": "tool",

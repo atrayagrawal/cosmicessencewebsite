@@ -12,6 +12,16 @@
   status = 301
 
 [[redirects]]
+  from = "/showcase"
+  to = "/projects/"
+  status = 301
+
+[[redirects]]
+  from = "/showcase/*"
+  to = "/projects/"
+  status = 301
+
+[[redirects]]
   from = "/atlas"
   to = "/atlas.html"
   status = 200

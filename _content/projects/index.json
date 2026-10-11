@@ -1,0 +1,93 @@
+[
+  {
+    "id": "global-scholarship-database",
+    "title": "The Global Scholarship Directory",
+    "cohort": "High School Students",
+    "partner": "In partnership with Indian Women Impact (NGO)",
+    "image": "/assets/images/projects/dyl-cohort-celebration.jpg",
+    "summary": "High school students from non-elite backgrounds often miss out on transformative global scholarships simply because the information is scattered, confusing, and hard to find. This student cohort spent weeks researching, verifying, and indexing over 100 international funding opportunities into a clean public directory for other teenagers.",
+    "transformation": "Students went from feeling like passive recipients to realizing they can build real tools that solve problems for others.",
+    "resource": {
+      "type": "doc",
+      "url": "/assets/docs/projects/global-scholarship-directory-overview.pdf",
+      "label": "Download Project Document (PDF)"
+    },
+    "details": {
+      "problem": "Global scholarships exist for youth, but navigating fragmented websites, foreign deadlines, and eligibility criteria is overwhelming for teenagers without private counselors.",
+      "how_they_built_it": "Students learned internet research rigor, structured database fields (grade level, financial coverage, citizenship criteria), verified genuine deadlines, and published an accessible directory.",
+      "growth": "Public presentation confidence, data organizing skills, and the pride of publishing an asset that reached families in India and abroad."
+    }
+  },
+  {
+    "id": "aether-hotel-space-settlement",
+    "title": "Project Aether: Orbital Space Habitat",
+    "cohort": "High School Engineering Team",
+    "partner": "NASA Space Settlement Contest Submission \u2022 Mentored by Atray Agrawal",
+    "image": "/assets/images/projects/aether-habitat-preview.jpg",
+    "summary": "A team of high school students modeled a self-sustaining orbital human habitat. Guided by first-principles physics rather than memorized textbook formulas, they calculated rotational artificial gravity (1g), structural load distributions, radiation protection, and closed-loop life-support cycles.",
+    "transformation": "Instead of preparing for standard school exams through memorization, the team learned how real engineers solve open-ended scientific problems.",
+    "resource": {
+      "type": "doc",
+      "url": "/assets/docs/projects/aether-hotel-space-settlement.pdf",
+      "label": "Download NASA Project Dossier (PDF)"
+    },
+    "details": {
+      "problem": "How can humans live long-term in space without bone/muscle loss from microgravity and radiation damage?",
+      "how_they_built_it": "Calculated the exact radius and rotational speed needed to simulate Earth gravity without inducing nausea. Designed shielding materials, closed-loop hydroponics, and structural support trusses across a 40+ page engineering blueprint.",
+      "growth": "Students discovered that physics isn't just about passing tests\u2014it's a tool to design things that don't exist yet."
+    }
+  },
+  {
+    "id": "hexa-neuro-mars-colony",
+    "title": "HEXA NEURO: Asteroid Mining & Mars Base",
+    "cohort": "Middle & High School Team",
+    "partner": "NASA Space Settlement Contest Submission \u2022 Mentored by Atray Agrawal",
+    "image": "/assets/images/projects/hexa-neuro-preview.jpg",
+    "summary": "Students tackled one of space travel's biggest hurdles: the prohibitive fuel and economic cost of launching raw materials from Earth. They modeled how to redirect a near-Earth asteroid (Asteroid 1992-BF), extract metals and water directly in orbit, and use them to support an orbital base near Mars.",
+    "transformation": "Students learned orbital mechanics and systems thinking, realizing that complex problems become solvable when broken down into foundational physical principles.",
+    "resource": {
+      "type": "doc",
+      "url": "/assets/docs/projects/hexa-neuro-space-settlement.pdf",
+      "label": "Download NASA Project Dossier (PDF)"
+    },
+    "details": {
+      "problem": "Deep-space human presence is economically impossible if every kilogram of water, metal, and structural material must be lifted out of Earth's gravity well.",
+      "how_they_built_it": "Modeled orbital trajectories for asteroid redirection, estimated resource extraction economics, and engineered closed-loop life-support systems.",
+      "growth": "Cross-grade collaboration, defending technical ideas under scientific critique, and writing publication-grade mathematical documentation."
+    }
+  },
+  {
+    "id": "times-nie-national-recognition",
+    "title": "Young Minds Felicitated in National Press",
+    "cohort": "7 High School Students Mentored by Atray Agrawal",
+    "partner": "The Times of India (NIE) \u2022 August 10, 2023",
+    "image": "/assets/images/projects/times-nie-feature-2023.jpg",
+    "summary": "Seven high school students were felicitated in The Times of India for their outstanding performance in the NASA Space Settlement Contest. Mentored by Atray Agrawal as contest incharge and physics faculty, the feature celebrated how fostering genuine scientific curiosity helps teenagers achieve international-caliber work.",
+    "transformation": "Proved to students and their parents that teenagers don't have to wait until university to tackle cutting-edge scientific inquiries.",
+    "resource": {
+      "type": "image",
+      "url": "/assets/images/projects/times-nie-feature-2023.jpg",
+      "label": "View Full Newspaper Clipping"
+    },
+    "details": {
+      "problem": "Most high school science education treats students as passive memorizers, rarely giving them the mentorship or confidence to compete globally.",
+      "how_they_built_it": "Students spent months breaking down aerospace mechanics, habitability constraints, and life-support biology under rigorous faculty guidance.",
+      "growth": "National recognition, academic confidence, and an undeniable extracurricular signal for top university admissions."
+    }
+  },
+  {
+    "id": "design-your-life-cohorts",
+    "title": "Designing Your Life: Self-Direction Journals",
+    "cohort": "Adolescent Cohorts (Ages 12\u201317)",
+    "partner": "Summer Intensive \u2022 NGO & IB Student Cohorts",
+    "image": "/assets/images/projects/dyl-mentorship-circle.jpg",
+    "summary": "Teenagers today face intense exam pressure, often without any space to reflect on what they value or how they want to build their future. In this intensive, students conducted daily energy audits, dismantled passive habits, and constructed personalized 3-year roadmaps.",
+    "transformation": "Students replaced academic anxiety and compliance with self-directed agency, building physical life journals and presenting their goals to peers.",
+    "resource": null,
+    "details": {
+      "problem": "Students are trained to score marks on tests, but often feel completely lost or anxious when asked what they actually want to do with their lives.",
+      "how_they_built_it": "Interactive workshop sprints covering energy tracking, cognitive reframing, personal value audits, and peer presentation circles.",
+      "growth": "Developed public defense skills, self-awareness, and the ability to make deliberate decisions about their own education and time."
+    }
+  }
+]
