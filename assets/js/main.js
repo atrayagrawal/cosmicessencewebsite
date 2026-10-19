@@ -21,7 +21,8 @@ const CE_LINKS = {
   readinessCall: 'https://superprofile.bio/bookings/atrayagrawal?sessionId=6a6e1cca33211a0013338098',
   assessment: 'https://tally.so/r/2EzpEM',
   mathWhatsapp: 'https://wa.me/918742017911?text=Hi%20Atray%2C%20I%27m%20interested%20in%20Math%20classes%20for%20IB%2FIGCSE.',
-  fellowship: '/programs/future-founders-fellowship.html'
+  fellowship: '/programs/future-founders-fellowship.html',
+  dylDetails: '/programs/design-your-life-details.html'
 };
 
 function pointToCommunity(a, label) {

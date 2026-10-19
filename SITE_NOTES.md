@@ -85,7 +85,7 @@ Commit and push. Homepage and Resources update together. Do not put templates ba
 
 ### 2026-09-18 — Programs match sales calls
 
-- Design Your Life: 7 days, 1 hour/day, ages 12+, ₹6,500. CTA: Readiness Call.
+- Design Your Life: 7 days, 1 hour/day, ages 12+, ₹9,500 listed. CTA: Program Details form (`/programs/design-your-life-details.html`, Netlify form → PDF). Cohort ₹6,500 is only in the downloaded document.
 - Future Founders Bootcamp: 8 weeks, learn to build / learn to sell, no fee on page. CTA 1 currently Readiness Call (waiting on Program Details Superprofile/doc). CTA 2: Assessment.
 - Future Founders Fellowship: new Blue Ocean Track page, cohort 15, no fee. Details + Apply Now wired.
 - Walk stays in nav. Math classes: no landing page, WhatsApp IB/IGCSE. First Spark unlisted.
@@ -96,6 +96,7 @@ Commit and push. Homepage and Resources update together. Do not put templates ba
 ## Parked / do next
 
 1. **Bootcamp Program Details URL** (Superprofile `/lf/` or Google Doc). Until then, “Check out the Program Details” on Bootcamp goes to the Readiness Call.
+1b. **DYL Program Details form:** `/programs/design-your-life-details.html` posts to Netlify Forms (`dyl-program-details`). After first deploy, in Netlify → Forms, turn on email notifications to atray@cosmicessence.co.in. PDF lives at `/assets/docs/dyl-program-details.pdf` (blocked in robots). Swap this form for a Superprofile `/lf/` later if you want it in the same CRM as Fellowship.
 2. **Blog → Kit.com** once the custom URL exists. Current blog still uses `_content/blog/` + `cms-content.js`.
 3. **Assessment Tally** is parked as a sitewide CTA. It still exists at `https://tally.so/r/2EzpEM` and is still used as Bootcamp CTA 2. Static `assessment.html` moved to `_archived_pages/` with 302 redirects in `netlify.toml`.
 4. First Spark and old math landing page files still exist on disk but are not sold. Math URL redirects to WhatsApp.
@@ -140,7 +141,7 @@ Netlify deploys `main`. A revert + push restores the live site.
 
 - Do not publish Bootcamp or Fellowship fees on the site.
 - Do not mention 1-on-1s on public pages.
-- DYL is the only program with a public price (₹6,500).
+- DYL is the only program with a public price (₹9,500 listed). Cohort ₹6,500 lives in the gated program details PDF.
 - Fellowship: mentorship for global entrepreneurship competitions, Blue Ocean Track, cohort of 15.
 - Bootcamp: Learn to build. Learn to sell. 8 weeks.
 - Resources are not a CMS. Do not reconnect `cms-content.js` to `/resources/`.

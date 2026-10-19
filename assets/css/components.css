@@ -1017,6 +1017,73 @@
   }
 }
 
+/* DYL program-details lead form */
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.lead-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ce-black);
+}
+.lead-form .hint {
+  font-weight: 400;
+  color: var(--ce-mid-gray);
+  font-size: 0.8rem;
+}
+.lead-form input,
+.lead-form select {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ce-black);
+  background: #fff;
+  border: 1px solid var(--ce-light-gray);
+  border-radius: 4px;
+  padding: 12px 14px;
+  min-height: 44px;
+  width: 100%;
+}
+.lead-form input:focus,
+.lead-form select:focus {
+  outline: 2px solid var(--ce-orange);
+  outline-offset: 1px;
+  border-color: var(--ce-orange);
+}
+.lead-form .lead-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.lead-form .honeypot {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+.lead-form .lead-form-submit {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+}
+@media (max-width: 600px) {
+  .lead-form .lead-form-row {
+    grid-template-columns: 1fr;
+  }
+  .cta-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cta-btn-group .btn {
+    width: 100%;
+  }
+}
+
 @media (max-width: 480px) {
   body {
     font-size: 16px !important;

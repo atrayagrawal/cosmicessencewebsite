@@ -5,6 +5,8 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /_content/
+Disallow: /assets/docs/dyl-program-details.pdf
+Disallow: /programs/design-your-life-details-thanks.html
 
 # Search Engine Crawlers
 User-agent: Googlebot
